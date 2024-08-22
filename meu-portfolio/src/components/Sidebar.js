@@ -1,11 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '../assets/perfil-1.jpeg'; // Coloque sua foto na pasta src/assets
+import ThemeToggle from './ThemeToggle';
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      <img src={profilePic} alt="Perfil" className="profile-pic" />
+      <div className='profile-section'>
+        <img src={profilePic} alt="Perfil" className="profile-pic" />
+        <ThemeToggle />
+      </div>
       <nav>
         <ul>
           <li><a href="#home">Home</a></li>

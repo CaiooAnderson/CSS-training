@@ -10,9 +10,14 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={toggleTheme} className="btn btn-secondary">
-      {darkTheme ? 'Modo Claro' : 'Modo Escuro'}
-    </button>
+    <label className="switch">
+      <input 
+        type="checkbox" 
+        checked={darkTheme} 
+        onChange={toggleTheme} 
+      />
+      <span className="slider round"></span>
+    </label>
   );
 };
 

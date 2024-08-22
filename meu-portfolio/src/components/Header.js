@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Header = ({ toggleTheme }) => {
+const Header = () => {
   return (
     <Navbar bg="light" expand="lg" className="d-none d-lg-block">
       <Navbar.Brand href="#home">Meu Portfólio</Navbar.Brand>
@@ -15,7 +15,6 @@ const Header = ({ toggleTheme }) => {
           <Nav.Link href="#projects">Projetos</Nav.Link>
           <Nav.Link href="#contact">Contato</Nav.Link>
         </Nav>
-        <button onClick={toggleTheme} className="btn btn-secondary">Trocar Tema</button>
       </Navbar.Collapse>
     </Navbar>
   );
