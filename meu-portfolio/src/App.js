@@ -13,8 +13,8 @@ import './styles.css';
 function App() {
   return (
       <div className="App">
-          <Header />
-          <Sidebar />
+          <Header className='header' />
+          <Sidebar className='sidebar' />
           <main>
               <Home />
               <About />
@@ -23,7 +23,7 @@ function App() {
               <Hint />
               <Contact />
           </main>
-          <ThemeToggle />
+          <ThemeToggle className='theme-toggle' />
       </div>
   );
 }

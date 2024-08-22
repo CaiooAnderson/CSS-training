@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Header = () => {
   return (
-    <Navbar bg="light" expand="lg" className="d-none d-lg-block">
+    <Navbar bg="light" expand="lg" className="header d-none d-lg-flex">
       <Navbar.Brand href="#home">Meu Portfólio</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

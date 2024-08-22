@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import profilePic from '../assets/perfil-1.jpeg'; // Coloque sua foto na pasta src/assets
+import profilePic from '../assets/perfil-1.jpeg';
 import ThemeToggle from './ThemeToggle';
 
 const Sidebar = () => {

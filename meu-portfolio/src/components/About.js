@@ -3,8 +3,7 @@ const About = () => {
         <section id="about">
             <h2>About Me</h2>
             <p>
-                I am [your name], a [your profession]. I have a strong background in [briefly describe your experience, education, and passion for the field]. 
-                My journey in tech started with [a brief story or reason why you chose this field] and has led me to work on numerous projects in [mention areas or technologies you have experience with].
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum aut mollitia ducimus quasi facere voluptates libero veniam ipsam dicta, possimus aliquam sed aliquid distinctio rem deserunt, est fuga eos consequatur?
             </p>
         </section>
     );
