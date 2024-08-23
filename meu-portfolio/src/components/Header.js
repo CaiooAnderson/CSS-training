@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Header = () => {
   return (
     <Navbar bg="light" expand="lg" className="header d-none d-lg-flex">
-      <Navbar.Brand href="#home">Meu Portfólio</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      {/* <Navbar.Brand href="#home">Meu Portfólio</Navbar.Brand> */}
+      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav>
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#about">Sobre Mim</Nav.Link>
           <Nav.Link href="#skills">Habilidades</Nav.Link>

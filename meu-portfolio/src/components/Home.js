@@ -1,12 +1,15 @@
+import React from 'react';
+import { Fade, Box, Typography } from '@mui/material';
+
 const Home = () => {
-    return (
-        <section id="home">
-            <h1>Bem vindo ao meu Portfolio</h1>
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum aut mollitia ducimus quasi facere voluptates libero veniam ipsam dicta, possimus aliquam sed aliquid distinctio rem deserunt, est fuga eos consequatur?
-            </p>
-        </section>
-    );
-}
+  return (
+    <Fade in={true} timeout={1000}>
+      <Box sx={{ textAlign: 'center', mt: 4 }}>
+        <Typography variant="h1">Bem-vindo ao Meu Portfólio</Typography>
+        <Typography variant="body1">Explore meus projetos e habilidades.</Typography>
+      </Box>
+    </Fade>
+  );
+};
 
 export default Home;

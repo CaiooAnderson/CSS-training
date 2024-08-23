@@ -5,7 +5,6 @@ import Skills from './components/Skills.js';
 import Projects from './components/Projects.js';
 import Hint from './components/Hint';
 import Contact from './components/Contact.js';
-import Header from './components/Header.js';
 import Sidebar from './components/Sidebar.js';
 import ThemeToggle from './components/ThemeToggle.js';
 import './styles.css';
@@ -13,7 +12,6 @@ import './styles.css';
 function App() {
   return (
       <div className="App">
-          <Header className='header' />
           <Sidebar className='sidebar' />
           <main>
               <Home />

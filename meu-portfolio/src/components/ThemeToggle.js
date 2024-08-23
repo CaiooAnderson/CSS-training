@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 
 const ThemeToggle = () => {
-  const [darkTheme, setDarkTheme] = useState(false);
+  const [lightTheme, setDarkTheme] = useState(false);
 
   const toggleTheme = () => {
-    setDarkTheme(!darkTheme);
-    document.body.classList.toggle('dark-mode');
+    setDarkTheme(!lightTheme);
+    document.body.classList.toggle('light-mode');
   };
 
   return (
     <label className="switch">
       <input 
         type="checkbox" 
-        checked={darkTheme} 
+        checked={lightTheme} 
         onChange={toggleTheme} 
       />
       <span className="slider round"></span>
