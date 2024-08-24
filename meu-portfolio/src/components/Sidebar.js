@@ -8,6 +8,7 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className='profile-section'>
         <img src={profilePic} alt="Perfil" className="profile-pic" />
+        <p>Caio Anderson</p>
         <ThemeToggle />
       </div>
       <nav>
@@ -19,6 +20,10 @@ const Sidebar = () => {
           <li><a href="#contact">Contato</a></li>
         </ul>
       </nav>
+      <div className='footer-sidebar'>
+        <p>&copy; Copyright</p>
+        <p>Desenvolvido por Caio Anderson.</p>
+      </div>
     </div>
   );
 };

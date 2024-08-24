@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 
 const ThemeToggle = () => {
-  const [lightTheme, setDarkTheme] = useState(false);
+  const [darkTheme, setDarkTheme] = useState(false);
 
   const toggleTheme = () => {
-    setDarkTheme(!lightTheme);
-    document.body.classList.toggle('light-mode');
+    setDarkTheme(!darkTheme);
+    document.body.classList.toggle('dark-mode');
   };
 
   return (
-    <label className="switch">
-      <input 
-        type="checkbox" 
-        checked={lightTheme} 
-        onChange={toggleTheme} 
-      />
-      <span className="slider round"></span>
-    </label>
+        <FormControlLabel className='switch' control={<Switch defaultChecked />} label={darkTheme ? 'Escuro' : 'Claro'} checked={darkTheme} onChange={toggleTheme} />
   );
 };
 
