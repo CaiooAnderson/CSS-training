@@ -20,31 +20,31 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         <ul>
           <li>
             <button className={activeSection === 'home' ? 'active' : ''} onClick={() => setActiveSection('home')}>
-              <HomeOutlinedIcon />
+              <HomeOutlinedIcon className='icon' />
               <p>Home</p>
             </button>
           </li>
           <li>
             <button className={activeSection === 'about' ? 'active' : ''} onClick={() => setActiveSection('about')}>
-              <PersonOutlinedIcon />
+              <PersonOutlinedIcon className='icon' />
               <p>Sobre Mim</p>
             </button>
           </li>
           <li>
             <button className={activeSection === 'skills' ? 'active' : ''} onClick={() => setActiveSection('skills')}>
-              <AutoStoriesOutlinedIcon />
+              <AutoStoriesOutlinedIcon className='icon' />
               <p>Habilidades</p>
             </button>
           </li>
           <li>
             <button className={activeSection === 'projects' ? 'active' : ''} onClick={() => setActiveSection('projects')}>
-              <AssignmentTurnedInOutlinedIcon />
+              <AssignmentTurnedInOutlinedIcon className='icon' />
               <p>Projetos</p>
             </button>
           </li>
           <li>
             <button className={activeSection === 'contact' ? 'active' : ''} onClick={() => setActiveSection('contact')}>
-              <PermContactCalendarOutlinedIcon />
+              <PermContactCalendarOutlinedIcon className='icon' />
               <p>Contato</p>
             </button>
           </li>

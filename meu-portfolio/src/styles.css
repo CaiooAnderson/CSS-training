@@ -11,8 +11,8 @@
   --secondary-color: #fff;
   --background-color: #0f0414;
   --text-color: #000;
-  --link-color: #14041c;
-  --link-hover-color: #2a0fc7;
+  --active-text-color: #fff;
+  --active-icon-color: #2a0fc7;
 
   --primary-color-opacity: rgba(217, 83, 79, 0.7); 
   --secondary-color-opacity: rgba(245, 166, 35, 0.7); 
@@ -122,7 +122,7 @@ main {
 }
 
 .sidebar nav ul li button:hover {
-  color: var(--link-hover-color);
+  color: var(--active-icon-color);
 }
 
 .sidebar nav ul li button p {
@@ -133,9 +133,29 @@ main {
   color: #fff;
 }
 
-/* .sidebar button.active {
-  
-} */
+.sidebar button.active p {
+  color: #fff;
+}
+
+.sidebar button.active .icon {
+  color: var(--active-icon-color);
+}
+
+.sidebar nav ul li button,
+.sidebar button p {
+  transition: 0.2s;
+}
+
+.sidebar button.active .icon {
+  border: 1px solid var(--active-icon-color);
+  border-radius: 25%;
+  background-color: #fff;
+}
+
+.sidebar button .icon {
+  width: 24px;
+  height: 24px;
+}
 
 .sidebar nav {
   flex: 1;
