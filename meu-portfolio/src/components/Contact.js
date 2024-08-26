@@ -1,3 +1,5 @@
+import Hint from './Hint.js'
+
 const Contact = () => {
     return (
         <section id="contact">
@@ -13,6 +15,7 @@ const Contact = () => {
                     <img src="path_to_icons/gmail.png" alt="Gmail" />
                 </a>
             </div>
+            <Hint />
         </section>
     );
 }

@@ -8,7 +8,7 @@ import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import PermContactCalendarOutlinedIcon from '@mui/icons-material/PermContactCalendarOutlined';
 
-const Sidebar = () => {
+const Sidebar = ({ activeSection, setActiveSection }) => {
   return (
     <div className="sidebar">
       <div className='profile-section'>
@@ -19,34 +19,34 @@ const Sidebar = () => {
       <nav>
         <ul>
           <li>
-            <a href="#home">
+            <button className={activeSection === 'home' ? 'active' : ''} onClick={() => setActiveSection('home')}>
               <HomeOutlinedIcon />
               <p>Home</p>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#about">
+            <button className={activeSection === 'about' ? 'active' : ''} onClick={() => setActiveSection('about')}>
               <PersonOutlinedIcon />
               <p>Sobre Mim</p>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#skills">
+            <button className={activeSection === 'skills' ? 'active' : ''} onClick={() => setActiveSection('skills')}>
               <AutoStoriesOutlinedIcon />
               <p>Habilidades</p>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#projects">
+            <button className={activeSection === 'projects' ? 'active' : ''} onClick={() => setActiveSection('projects')}>
               <AssignmentTurnedInOutlinedIcon />
               <p>Projetos</p>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#contact">
+            <button className={activeSection === 'contact' ? 'active' : ''} onClick={() => setActiveSection('contact')}>
               <PermContactCalendarOutlinedIcon />
               <p>Contato</p>
-            </a>
+            </button>
           </li>
         </ul>
         <div className='theme-toggle'>
