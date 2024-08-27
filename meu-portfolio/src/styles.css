@@ -61,9 +61,9 @@ code {
 
 main {
   margin-left: 300px; 
-  padding: 20px;
   flex: 1;
 }
+
 
 /* Componente Sidebar */
 .sidebar {
@@ -72,7 +72,7 @@ main {
   left: 0;
   width: 300px; 
   height: 100%;
-  background: linear-gradient(19deg, #c677fe 0%, #21d4fd 50%, #b721ff 100%);;
+  background: linear-gradient(19deg, #aeadff 0%, #21d4fd 50%, #a3caff 100%);
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   border-right: 2px solid var(--background-color-opacity);
@@ -135,6 +135,7 @@ main {
 
 .sidebar button.active p {
   color: #fff;
+  font-weight: bolder;
 }
 
 .sidebar button.active .icon {
