@@ -19,7 +19,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
       <nav>
         <ul>
           <li>
-            <button className={activeSection === 'home' ? 'active' : ''} onClick={() => setActiveSection('home')}>
+            <button href='#home' className={activeSection === 'home' ? 'active' : ''} onClick={() => setActiveSection('home')}>
               <HomeOutlinedIcon className='icon' />
               <p>Home</p>
             </button>

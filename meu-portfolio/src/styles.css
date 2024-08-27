@@ -141,15 +141,13 @@ main {
   color: var(--active-icon-color);
 }
 
+.dark-mode .sidebar button.active .icon {
+  color: var(--dark-link-hover-color);
+}
+
 .sidebar nav ul li button,
 .sidebar button p {
   transition: 0.2s;
-}
-
-.sidebar button.active .icon {
-  border: 1px solid var(--active-icon-color);
-  border-radius: 25%;
-  background-color: #fff;
 }
 
 .sidebar button .icon {
