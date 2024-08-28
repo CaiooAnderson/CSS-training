@@ -1,9 +1,9 @@
 import React from 'react';
-import { Fade, Box, Typography, Button, Slide } from '@mui/material';
+import { Fade, Box, Typography, Button, Zoom } from '@mui/material';
 
 const Home = () => {
   return (
-    <Fade in={true} timeout={2500}>
+    <Fade in={true} timeout={1000}>
       <Box 
         className='home' 
         sx={{ 
@@ -17,21 +17,22 @@ const Home = () => {
           backgroundImage: 'linear-gradient(135deg, #b4bfff 0%, #21d4fd 100%)'
         }}
       >
-        <Fade in={true} timeout={1000}>
+        <Zoom in={true} timeout={1500}>
           <Typography variant="h2" sx={{ color: '#000', fontWeight: 'bold' }}>
             Bem-vindo ao meu Portfólio!
           </Typography>
-        </Fade>
-        <Fade in={true} timeout={5000}>
-          <Typography variant="body1" sx={{ color: '#0f0414', mt: 2 }}>
-            Aqui será como um laboratório, feito para diversos experimentos.
+        </Zoom>
+        <Zoom in={true} timeout={2000}>
+          <Typography variant="h6" sx={{ color: '#2c2c2c', mt: 2 }}>
+          Este é o meu laboratório, onde as ideias ganham vida.
           </Typography>
-        </Fade>
-        <Fade in={true} timeout={8000}>
+        </Zoom>
+        <Zoom in={true} timeout={2500}>
           <Button variant="contained" sx={{ mt: 4, backgroundColor: '#000', color: '#fff' }}>
-            Veja meus projetos
+            Projetos
+            
           </Button>
-        </Fade>
+        </Zoom>
       </Box>
     </Fade>
   );

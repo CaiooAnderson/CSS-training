@@ -55,7 +55,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
       </nav>
       <div className='footer-sidebar'>
         <p>&copy; Copyright Portfólio</p>
-        <p>Desenvolvido por Caio Anderson.</p>
+        <p>Desenvolvido por Caio Anderson</p>
       </div>
     </div>
   );

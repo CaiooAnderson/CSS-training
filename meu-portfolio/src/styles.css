@@ -116,9 +116,10 @@ main {
   text-decoration: none;
   color: var(--link-color);
   font-weight: bold;
-  width: max-content;
+  width: 100%;
   border: none;
   background-color: transparent;
+  position: relative;
 }
 
 .sidebar nav ul li button:hover {
@@ -127,10 +128,22 @@ main {
 
 .sidebar nav ul li button p {
   margin: 0 0 0 10px;
+  white-space: nowrap;
 }
 
 .sidebar nav ul li button:hover p {
   color: #fff;
+}
+
+.sidebar nav ul li button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 30%;
+  height: 2px;
+  background-color: var(--link-color);
+  transform: translateX(-50%);
 }
 
 .sidebar button.active p {
@@ -236,6 +249,11 @@ body.dark-mode .sidebar {
   color: var(--dark-text-color);
   background-color: #cd3300;
   box-shadow: 0 2px 2px 1px #000000;
+}
+
+.dark-mode .sidebar nav ul li button,
+.dark-mode .sidebar button p {
+  transition: 0.2s;
 }
 
 /* App.js */
