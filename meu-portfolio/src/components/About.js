@@ -7,8 +7,8 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 const About = () => {
     return (
         <Fade in={true} timeout={2500}>
-            <Box className='about' sx={{    textAlign: 'center',
-                                            mt: 0,
+            <Box className='about' sx={{    mt: 0,
+                                            p: 2,
                                             display: 'flex',
                                             flexDirection: 'column',
                                             alignItems: 'center',
@@ -17,12 +17,14 @@ const About = () => {
                                             backgroundImage: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
                                         }}>
             <Slide direction='down' in={true} timeout={2000}>
-                <Typography variant='h3' sx={{  color: '#fff', fontWeight: 'bold', mb: 4 }}>
-                    Sobre Mim
-                </Typography>
+                <Box className='about-title' sx={{ display: 'flex', width: '100%', justifyContent: 'flex-start' }}>
+                    <Typography variant='h4' sx={{ color: '#fff', fontWeight: 'bold', mb: 4 }}>
+                        Sobre
+                    </Typography>
+                </Box>
             </Slide>
             <Zoom in={true} timeout={3000}>
-            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', mb: 4 }}>
+            <List sx={{ width: '100%', maxWidth: 'max-content', bgcolor: 'background.paper', mb: 4 }}>
                 <ListItem>
                     <ListItemAvatar>
                         <Avatar>
@@ -45,7 +47,7 @@ const About = () => {
                             <AccessTimeOutlinedIcon />
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText primary="Duração" secondary="Formado em Agosto de 2024" />
+                    <ListItemText primary="Duração" secondary="2 anos: (08/22) - (08/24)" />
                 </ListItem>
             </List>
             </Zoom>

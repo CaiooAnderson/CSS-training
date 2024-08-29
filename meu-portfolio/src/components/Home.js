@@ -29,7 +29,7 @@ const Home = () => {
         </Zoom>
         <Zoom in={true} timeout={2500}>
           <Button variant="contained" sx={{ mt: 4, backgroundColor: '#000', color: '#fff' }}>
-            Projetos
+            Currículo
             
           </Button>
         </Zoom>

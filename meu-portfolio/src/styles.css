@@ -108,6 +108,7 @@ main {
 
 .sidebar nav ul li {
   margin: 10px 0 20px;
+  width: max-content;
 }
 
 .sidebar nav ul li button {
@@ -135,20 +136,10 @@ main {
   color: #fff;
 }
 
-.sidebar nav ul li button.active::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 30%;
-  height: 2px;
-  background-color: var(--link-color);
-  transform: translateX(-50%);
-}
-
 .sidebar button.active p {
   color: #fff;
   font-weight: bolder;
+  filter: drop-shadow(0 0 5px #000);
 }
 
 .sidebar button.active .icon {
