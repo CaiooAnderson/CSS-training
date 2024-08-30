@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Box, Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-import 'pure-react-carousel/dist/react-carousel.es.css';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Cursos = () => {
     const [filter, setFilter] = useState('Front-End');
@@ -12,15 +11,15 @@ const Cursos = () => {
             {   nome: 'Desenvolvimento Front-end: HTML, CSS, JavaScript, React e TypeScript', 
                 curso: 'Udemy', duração: '50', year: '2022'
             },
-            {   nome: 'HTML - Avançado: Elementos para a criação de páginas Web',
+            {   nome: 'HTML: Elementos para a criação de páginas Web',
                 curso: 'Fundação Bradesco', duração: '0', year: '2000' }
         ],
         'Back-End': [
-            {   nome: 'Curso de Python: Conhecimento básico ao intermediário com bibliotecas em Python', 
+            {   nome: 'Python: Conhecimento básico ao intermediário com bibliotecas em Python', 
                 curso: 'CVTI', duração: '40', year: '2023' },
             {   nome: 'Desenvolvimento Back-End com JavaScript e MongoDB', 
                 curso: 'Alura', duração: '0', year: '2023' },
-            {   nome: 'Curso de Node.js: Foco no back-end', 
+            {   nome: 'Node.js: Foco no back-end', 
                 curso: 'Alura', duração: '0', year: '2024' }
         ],
         'Outros': [
@@ -36,47 +35,50 @@ const Cursos = () => {
         ]
     };
 
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 1,
+          slidesToSlide: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1,
+          slidesToSlide: 1
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          slidesToSlide: 1
+        }
+      };
+
     return (
-        <Box sx={{ display: 'flex', height: '100%', width: '100%' }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width: 'max-content', bgcolor: '#f5f5f5', borderRadius: '8px', p: 1, boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)' }}>
-                <Button variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Front-End')} sx={{ mb: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 2 }}>
+            <Typography variant="h6" sx={{ textAlign: 'center' }}>Cursos</Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 1 }}>
+                <Button variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Front-End')}>
                     Front-End
                 </Button>
-                <Button variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Back-End')} sx={{ mb: 1 }}>
+                <Button variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Back-End')}>
                     Back-End
                 </Button>
                 <Button variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => setFilter('Outros')}>
                     Outros
                 </Button>
             </Box>
-            <Box sx={{ flex: 1, height: '100%' }}>
-                <CarouselProvider
-                    naturalSlideWidth={100}
-                    naturalSlideHeight={125}
-                    totalSlides={cursos[filter].length}
-                    visibleSlides={1}
-                    infinite={true}
-                >
-            <Slider>
-                        {cursos[filter].map((object, index) => (
-                            <Slide index={index} key={filter + index}>
-                                <Accordion>
-                                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                                        <Typography>{object.nome}</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Typography>Curso: {object.curso}</Typography>
-                                        <Typography>Duração: {object.duração} horas</Typography>
-                                        <Typography>Ano: {object.year}</Typography>
-                                    </AccordionDetails>
-                                </Accordion>
-                            </Slide>
-                        ))}
-                    </Slider>
-                    <ButtonBack>Anterior</ButtonBack>
-                    <ButtonNext>Próximo</ButtonNext>
-                </CarouselProvider>
-                </Box>
+            <Box sx={{ maxWidth: '464px', width: '100%', flexDirection: 'column' }}>
+                <Carousel responsive={responsive}>
+                    {cursos[filter].map((object, index) => (
+                        <Box key={filter + index} sx={{ bgcolor: 'background.paper', borderRadius: '8px', textAlign: 'center', width: '90%', maxWidth: '350px', height: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', whiteSpace: 'normal', overflow: 'hidden', p: 2 }}>
+                            <Typography variant="subtitle1" sx={{ fontWeight: 'bold', mb: 1, textOverflow: 'ellipsis', overflow: 'hidden' }}>{object.nome}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'left' }}>Curso: {object.curso}</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'left' }}>Duração: {object.duração} horas</Typography>
+                            <Typography variant="body2" sx={{ textAlign: 'left' }}>Ano: {object.year}</Typography>
+                        </Box>
+                    ))}
+                </Carousel>
+            </Box>
         </Box>
     );
 };
