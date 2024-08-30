@@ -338,3 +338,15 @@ ul, ol {
 }
 
 /* HOME */
+
+
+/* ABOUT */
+
+.curso-container {
+  background-color: #fff;
+}
+
+.carousel li {
+  display: flex;
+  justify-content: space-around;
+}

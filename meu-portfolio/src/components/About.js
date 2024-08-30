@@ -36,7 +36,7 @@ const About = () => {
             </Box>
                 <Slide direction='up' in={true} timeout={2000}>
                     <Typography variant='body1' sx={{ color: '#333', mt: 2, maxWidth: '600px', mx: 'auto' }}>
-                        Ainda não possuo experiência profissional, mas estou aberto para novas oportunidades e sou bastante dedicado. Aqui está uma lista dos cursos que já realizei:
+                        Ainda não possuo experiência profissional, portanto estou em busca de oportunidades!
                     </Typography>
                 </Slide>
             </Box>
