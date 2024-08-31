@@ -5,36 +5,47 @@
 }
 
 :root {
-
-  /* modo padrão (claro) */
-  --primary-color: #D9534F;
-  --secondary-color: #fff;
-  --background-color: #0f0414;
-  --text-color: #000;
+  /* Modo Claro  */
+  --text-color: #0f0414;
+  --bg-text-color: #b4bfff;
+  --link-color: #0f0414; 
+  --link-hover-color: #fff;
   --active-text-color: #fff;
   --active-icon-color: #2a0fc7;
+  --button-hover-bg-color: #4A148C;
+  --button-hover-text-color: #6A1B9A;
+  --button-bg-color: linear-gradient(135deg, #99aff7 0%, #4e77ff 100%);
+  --sidebar-background: linear-gradient(19deg, #aeadff 0%, #21d4fd 50%, #a3caff 100%);
+  --home-background: linear-gradient(135deg, #b4bfff 0%, #21d4fd 100%);
+  --about-background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
 
-  --primary-color-opacity: rgba(217, 83, 79, 0.7); 
-  --secondary-color-opacity: rgba(245, 166, 35, 0.7); 
-  --background-color-opacity: rgba(203, 255, 255, 0.7);
-  --text-color-opacity: rgba(0, 0, 0, 0.7); 
-  --link-color-opacity: rgba(217, 83, 79, 0.7); 
-  --link-hover-color-opacity: rgba(245, 166, 35, 0.7);
+  --home-h2-color: #1e1e1e; 
+  --home-h6-color: #333333; 
+  --home-button-color: #4b4b4b; 
 
-  /* modo escuro */
-  --dark-primary-color: #C0392B;
-  --dark-secondary-color: #000;
-  --dark-background-color: #14041c;
-  --dark-text-color: #F5F5F5;
-  --dark-link-color: #adadad;
-  --dark-link-hover-color: #E74C3C; 
+  --about-span-color: #2c2c2c; 
+  --about-p-color: #333333; 
+  --about-h6-color: #4b4b4b; 
+  --about-button-text-color: #5c5c5c; 
 
-  --dark-primary-color-opacity: rgba(192, 57, 43, 0.7); 
-  --dark-secondary-color-opacity: rgba(231, 76, 60, 0.7);
-  --dark-background-color-opacity: rgba(21, 16, 16, 0.7);
-  --dark-text-color-opacity: rgba(245, 245, 245, 0.7); 
-  --dark-link-color-opacity: rgba(192, 57, 43, 0.7); 
-  --dark-link-hover-color-opacity: rgba(231, 76, 60, 0.7); 
+  /* Modo Escuro  */
+  --dark-text-color: #f8f8f8; 
+  --dark-bg-text-color: #e74c3c; 
+  --dark-link-color: #adadad; 
+  --dark-link-hover-color: #ffffff; 
+  --dark-active-text-color: #3c3c3c; 
+  --dark-active-icon-color: #E74C3C; 
+  --dark-home-background: linear-gradient(135deg, #8a2be2 0%, #2f4f4f 100%);
+  --dark-about-background: linear-gradient(135deg, #6a5acd 0%, #87ceeb 100%);
+
+  --dark-home-h2-color: #c0c0c0; 
+  --dark-home-h6-color: #d3d3d3; 
+  --dark-home-button-color: #a9a9a9; 
+
+  --dark-about-span-color: #b0c4de; 
+  --dark-about-p-color: #dcdcdc;
+  --dark-about-h6-color: #d3d3d3;
+  --dark-about-button-text-color: #e0e0e0;
 }
 
 body {
@@ -72,10 +83,10 @@ main {
   left: 0;
   width: 300px; 
   height: 100%;
-  background: linear-gradient(19deg, #aeadff 0%, #21d4fd 50%, #a3caff 100%);
+  background: var(--sidebar-background);
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  border-right: 2px solid var(--background-color-opacity);
+  box-shadow: 2px 0 5px #0000001a;
+  border-right: 2px solid #0000001a;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -88,8 +99,8 @@ main {
 
 .sidebar .subtitulo {
   font-weight: 500;
-  color: #000;
-  background-color: #b4bfff;
+  color: var(--text-color);
+  background-color: var(--bg-text-color);
   opacity: 80%;
   box-shadow: 0 2px 2px 1px #494949;
   padding: 8px;
@@ -115,7 +126,7 @@ main {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--active-icon-color);
   font-weight: bold;
   width: 100%;
   border: none;
@@ -124,30 +135,27 @@ main {
 }
 
 .sidebar nav ul li button:hover {
-  color: var(--active-icon-color);
+  color: var(--button-hover-bg-color);
 }
 
 .sidebar nav ul li button p {
+  color: var(--text-color);
   margin: 0 0 0 10px;
   white-space: nowrap;
 }
 
 .sidebar nav ul li button:hover p {
-  color: #fff;
+  color: var(--link-hover-color);
 }
 
 .sidebar button.active p {
-  color: #fff;
+  color: var(--active-text-color);
   font-weight: bolder;
   filter: drop-shadow(0 0 5px #000);
 }
 
 .sidebar button.active .icon {
   color: var(--active-icon-color);
-}
-
-.dark-mode .sidebar button.active .icon {
-  color: var(--dark-link-hover-color);
 }
 
 .sidebar nav ul li button,
@@ -225,7 +233,7 @@ body.dark-mode .sidebar {
 }
 
 .dark-mode .sidebar button:hover {
-  color: var(--dark-link-hover-color);
+  color: var(--dark-active-icon-color);
 }
 
 .dark-mode .sidebar button:hover p {
@@ -236,9 +244,13 @@ body.dark-mode .sidebar {
   animation: shineAndDecayDark 10s infinite;
 }
 
+.dark-mode .sidebar button.active .icon {
+  color: var(--dark-active-icon-color);
+}
+
 .dark-mode .sidebar .subtitulo {
   color: var(--dark-text-color);
-  background-color: #cd3300;
+  background-color: var(--dark-bg-text-color);
   box-shadow: 0 2px 2px 1px #000000;
 }
 
@@ -251,26 +263,6 @@ body.dark-mode .sidebar {
 .App {
   display: flex;
   height: 100vh;
-}
-
-/* Textos e links */
-p {
-  margin-bottom: 15px;
-}
-
-a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-
-ul, ol {
-  margin-bottom: 15px;
-  padding-left: 20px;
 }
 
 /* animações */
@@ -339,14 +331,61 @@ ul, ol {
 
 /* HOME */
 
+/* .home button {
+  color: var(--text-color);
+  background: ???
+} */
 
 /* ABOUT */
 
+.about h4 {
+  color: var(--text-color);
+  border-color: var(--bg-text-color);
+  border-width: 4px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.about p,
+.about span,
+.about h6,
+.about button {
+  color: var(--text-color);
+}
+
+.curso button {
+  background: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: 1px solid var(--button-hover-bg-color);
+}
+
+.curso button.active {
+  background: var(--button-hover-text-color);
+  color: var(--active-text-color);
+  border: 1px solid #fff;
+  box-shadow: 0 0 2px #0000001a;
+}
+
 .curso-container {
   background-color: #fff;
+  border: 2px solid #000;
+}
+
+.graduacao-icon div {
+  background-color: var(--link-hover-color);
+  outline: 1px solid var(--active-icon-color);
+  color: var(--active-icon-color);
 }
 
 .carousel li {
   display: flex;
   justify-content: space-around;
+}
+
+.carousel button {
+  margin: 0 -12px;
+}
+
+.lista {
+  margin: 32px 0;
 }

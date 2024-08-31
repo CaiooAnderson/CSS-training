@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button, Box, Typography } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 const Cursos = () => {
     const [filter, setFilter] = useState('Front-End');
+    const carouselRef = useRef(null);
 
     const cursos = {
         'Front-End': [
@@ -12,7 +13,7 @@ const Cursos = () => {
                 curso: 'Udemy', duração: '50', year: '2022'
             },
             {   nome: 'HTML: Elementos para a criação de páginas Web',
-                curso: 'Fundação Bradesco', duração: '0', year: '2000' }
+                curso: 'Bradesco', duração: '0', year: '2000' }
         ],
         'Back-End': [
             {   nome: 'Python: Conhecimento básico ao intermediário', 
@@ -24,11 +25,11 @@ const Cursos = () => {
         ],
         'Outros': [
             {   nome: 'Fundamentos de TI - Hardware e Software', 
-                curso: 'Fundação Bradesco', duração: '0', year: '2000' },
+                curso: 'Bradesco', duração: '0', year: '2000' },
             {   nome: 'Lei Geral de Proteção de Dados (LGPD)', 
-                curso: 'Fundação Bradesco', duração: '0', year: '2000' },
+                curso: 'Bradesco', duração: '0', year: '2000' },
             {   nome: 'Introdução à Programação Orientada a Objetos (POO)', 
-                curso: 'Fundação Bradesco', duração: '0', year: '2000' },
+                curso: 'Bradesco', duração: '0', year: '2000' },
             {   nome: 'Inglês (Avançado): Curso de Capacitação',
                 curso: 'Wizard', duração: '0', year: '2016'
             }
@@ -53,29 +54,37 @@ const Cursos = () => {
         }
       };
 
+      const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+        if (carouselRef.current) {
+            carouselRef.current.goToSlide(0, true);
+        }
+    };
+
     return (
-        <Box sx={{ 
-            width: '600px', 
+        <Box className='curso' sx={{ 
+            width: '400px', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
             flexDirection: 'column', 
-            gap: 2 
+            gap: 2,
+            padding: '8px 0'
             }}>
-            <Typography variant="h6" sx={{ textAlign: 'center' }}>Cursos Adicionais</Typography>
+            <Typography variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #000' }}>Cursos Adicionais</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 1 }}>
-                <Button variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Front-End')}>
+                <Button className={filter === 'Front-End' ? 'active' : ''} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
                     Front-End
                 </Button>
-                <Button variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => setFilter('Back-End')}>
+                <Button className={filter === 'Back-End' ? 'active' : ''} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
                     Back-End
                 </Button>
-                <Button variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => setFilter('Outros')}>
+                <Button className={filter === 'Outros' ? 'active' : ''} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
                     Outros
                 </Button>
             </Box>
             <Box sx={{ position: 'relative', maxWidth: '464px', width: '90%', flexDirection: 'column' }}>
-                <Carousel className='carousel' responsive={responsive} ssr={true} containerClass="carousel-container">
+                <Carousel className='carousel' responsive={responsive} ssr={true} containerClass="carousel-container" ref={carouselRef}>
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
@@ -96,7 +105,7 @@ const Cursos = () => {
                                 flexGrow: 1,
                                 m: 1
                                 }}>    
-                                <Typography variant="subtitle1" sx={{ 
+                                <Typography variant="subtitle2" sx={{ 
                                     fontWeight: 'bold',
                                     textAlign: 'center',
                                     mb: 2,
