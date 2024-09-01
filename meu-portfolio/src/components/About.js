@@ -17,7 +17,7 @@ const About = () => {
                                         }}>
             <Zoom in={true} timeout={1500}>
                 <Box className='about-title' sx={{ position: 'absolute', top: 32, left: 32 }}>
-                    <Typography variant='h4' sx={{ color: '#fff', fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
+                    <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
                         Sobre
                     </Typography>
                 </Box>

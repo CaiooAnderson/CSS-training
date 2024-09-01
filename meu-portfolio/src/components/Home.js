@@ -18,12 +18,12 @@ const Home = () => {
         }}
       >
         <Zoom in={true} timeout={1500}>
-          <Typography variant="h2" sx={{ color: '#000', fontWeight: 'bold' }}>
+          <Typography className='home-title' variant="h2" sx={{ fontWeight: 'bold' }}>
             Bem-vindo ao meu Portfólio!
           </Typography>
         </Zoom>
         <Zoom in={true} timeout={2000}>
-          <Typography variant="h6" sx={{ color: '#2c2c2c', mt: 2 }}>
+          <Typography className='home-subtitle' variant="h6" sx={{ mt: 2 }}>
           Este é o meu laboratório, onde as ideias ganham vida.
           </Typography>
         </Zoom>

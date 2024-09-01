@@ -6,14 +6,17 @@
 
 :root {
   /* Modo Claro  */
-  --text-color: #0f0414;
-  --bg-text-color: #b4bfff;
-  --link-color: #0f0414; 
-  --link-hover-color: #fff;
-  --active-text-color: #fff;
-  --active-icon-color: #2a0fc7;
-  --button-hover-bg-color: #4A148C;
-  --button-hover-text-color: #6A1B9A;
+  --bg-text-color: #b4bfffcc;
+  --text-color: #336699;
+  --icon-color: #4d80b0; 
+  --text-hover-color: #003366;
+  --icon-hover-color: #296199;
+  --active-text-color: #003366;
+  --active-icon-color: #003366;
+  --button-text-color: #003366;
+  --button-bg-color: #4a148c;
+  --button-active-text-color: #fff;
+  --button-active-bg-color: #6a1b9a;
   --button-bg-color: linear-gradient(135deg, #99aff7 0%, #4e77ff 100%);
   --sidebar-background: linear-gradient(19deg, #aeadff 0%, #21d4fd 50%, #a3caff 100%);
   --home-background: linear-gradient(135deg, #b4bfff 0%, #21d4fd 100%);
@@ -29,14 +32,21 @@
   --about-button-text-color: #5c5c5c; 
 
   /* Modo Escuro  */
-  --dark-text-color: #f8f8f8; 
-  --dark-bg-text-color: #e74c3c; 
-  --dark-link-color: #adadad; 
-  --dark-link-hover-color: #ffffff; 
-  --dark-active-text-color: #3c3c3c; 
-  --dark-active-icon-color: #E74C3C; 
+  --dark-bg-text-color: #2b2b2bcc; 
+  --dark-text-color: #fffadf; 
+  --dark-icon-color: #beb07a;
+  --dark-text-hover-color: #ca3600; 
+  --dark-icon-hover-color: #e57e00; 
+  --dark-active-text-color: #ca3600; 
+  --dark-active-icon-color: #ca3600;
+  --dark-button-text-color: #ca3600;
+  --dark-button-bg-color: linear-gradient(135deg, #4E2A6E 0%, #2E1A4B 100%);
+  --dark-button-hover-bg-color: #a1a1a1;
+  --dark-button-active-text-color: #000;
+  --dark-button-active-bg-color: #f5f5f5; 
+  --dark-sidebar-background: linear-gradient(to bottom, #12031a 0%, #3a0b54 40%, #50276b 80%, #24014b 100%);
   --dark-home-background: linear-gradient(135deg, #8a2be2 0%, #2f4f4f 100%);
-  --dark-about-background: linear-gradient(135deg, #6a5acd 0%, #87ceeb 100%);
+  --dark-about-background: linear-gradient(135deg, #4e3bc7 0%, #417f97 100%);
 
   --dark-home-h2-color: #c0c0c0; 
   --dark-home-h6-color: #d3d3d3; 
@@ -98,10 +108,9 @@ main {
 }
 
 .sidebar .subtitulo {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-color);
   background-color: var(--bg-text-color);
-  opacity: 80%;
   box-shadow: 0 2px 2px 1px #494949;
   padding: 8px;
   border-radius: 16px;
@@ -126,7 +135,6 @@ main {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: var(--active-icon-color);
   font-weight: bold;
   width: 100%;
   border: none;
@@ -145,13 +153,21 @@ main {
 }
 
 .sidebar nav ul li button:hover p {
-  color: var(--link-hover-color);
+  color: var(--text-hover-color);
 }
 
 .sidebar button.active p {
   color: var(--active-text-color);
   font-weight: bolder;
-  filter: drop-shadow(0 0 5px #000);
+  filter: drop-shadow(1px 1px 4px #00336680);
+}
+
+.sidebar button .icon {
+  color: var(--icon-color);
+}
+
+.sidebar button:hover .icon {
+  color: var(--icon-hover-color);
 }
 
 .sidebar button.active .icon {
@@ -209,7 +225,7 @@ img {
   max-width: 100%;
 }
 
-/* Modo escuro */
+/* MODO ESCURO */
 body.dark-mode {
   background: url('../src/assets/home-dark.svg');
   color: var(--dark-text-color);
@@ -224,28 +240,36 @@ body.dark-mode a:hover {
 }
 
 body.dark-mode .sidebar {
-  background: linear-gradient(to bottom, #12031a 0%, #3a0b54 40%, #50276b 80%, #24014b 100%);
+  background: var(--dark-sidebar-background);
   border-right-color: var(--dark-background-color-opacity);
 }
 
-.dark-mode .sidebar button {
-  color: var(--dark-link-color);
+.dark-mode .sidebar button .icon {
+  color: var(--dark-icon-color);
 }
 
-.dark-mode .sidebar button:hover {
-  color: var(--dark-active-icon-color);
-}
-
-.dark-mode .sidebar button:hover p {
-  color: var(--dark-text-color);
-}
-
-.dark-mode .profile-pic {
-  animation: shineAndDecayDark 10s infinite;
+.dark-mode .sidebar button:hover .icon {
+  color: var(--dark-icon-hover-color);
 }
 
 .dark-mode .sidebar button.active .icon {
   color: var(--dark-active-icon-color);
+}
+
+.dark-mode .sidebar button p {
+  color: var(--dark-text-color);
+}
+
+.dark-mode .sidebar button:hover p {
+  color: var(--dark-text-hover-color);
+}
+
+.dark-mode .sidebar button.active p {
+  color: var(--dark-active-text-color);
+}
+
+.dark-mode .profile-pic {
+  animation: shineAndDecayDark 10s infinite;
 }
 
 .dark-mode .sidebar .subtitulo {
@@ -257,6 +281,67 @@ body.dark-mode .sidebar {
 .dark-mode .sidebar nav ul li button,
 .dark-mode .sidebar button p {
   transition: 0.2s;
+}
+
+.dark-mode .home {
+  background: var(--dark-home-background);
+}
+
+.dark-mode .home-title {
+  color: var(--dark-home-h2-color);
+}
+
+.dark-mode .home-subtitle {
+  color: var(--dark-home-h6-color);
+}
+
+.dark-mode .home Button {
+  color: var(--dark-text-color);
+  background-color: var(--dark-bg-text-color);
+}
+
+.dark-mode .home Button:hover {
+  background: var(--dark-button-hover-bg-color);
+}
+
+.dark-mode .about {
+  background: var(--dark-about-background);
+}
+
+.dark-mode .about h4 {
+  color: var(--dark-text-hover-color);
+  border-color: var(--dark-bg-text-color);
+}
+
+.dark-mode .about p,
+.dark-mode .about span,
+.dark-mode .about h6,
+.dark-mode .about button {
+  color: var(--dark-text-color);
+}
+
+.dark-mode .curso button {
+  background: var(--dark-button-bg-color);
+  color: var(--dark-button-text-color);
+  border: 1px solid var(--dark-button-active-bg-color);
+}
+
+.dark-mode .curso button.active {
+  background: var(--dark-button-active-bg-color);
+  color: var(--dark-button-active-text-color);
+  border: 1px solid #000;
+  box-shadow: 0 0 2px #ffffff1a;
+}
+
+.dark-mode .curso-container {
+  background-color: #000;
+  border: 2px solid #fff;
+}
+
+.dark-mode .graduacao-icon div {
+  background: var(--dark-button-bg-color);
+  outline: 1px solid var(--dark-active-icon-color);
+  color: var(--dark-active-icon-color);
 }
 
 /* App.js */
@@ -330,16 +415,17 @@ body.dark-mode .sidebar {
 }
 
 /* HOME */
+.home-title {
+  color: var(--home-h2-color);
+}
 
-/* .home button {
-  color: var(--text-color);
-  background: ???
-} */
+.home-subtitle {
+  color: var(--home-h6-color);
+}
 
 /* ABOUT */
-
 .about h4 {
-  color: var(--text-color);
+  color: var(--text-hover-color);
   border-color: var(--bg-text-color);
   border-width: 4px;
   border-bottom-left-radius: 8px;
@@ -356,12 +442,12 @@ body.dark-mode .sidebar {
 .curso button {
   background: var(--button-bg-color);
   color: var(--button-text-color);
-  border: 1px solid var(--button-hover-bg-color);
+  border: 1px solid var(--button-active-bg-color);
 }
 
 .curso button.active {
-  background: var(--button-hover-text-color);
-  color: var(--active-text-color);
+  background: var(--button-active-bg-color);
+  color: var(--button-active-text-color);
   border: 1px solid #fff;
   box-shadow: 0 0 2px #0000001a;
 }
@@ -372,7 +458,7 @@ body.dark-mode .sidebar {
 }
 
 .graduacao-icon div {
-  background-color: var(--link-hover-color);
+  background: var(--button-bg-color);
   outline: 1px solid var(--active-icon-color);
   color: var(--active-icon-color);
 }
