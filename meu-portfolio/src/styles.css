@@ -24,7 +24,8 @@
 
   --home-h2-color: #1e1e1e; 
   --home-h6-color: #333333; 
-  --home-button-color: #4b4b4b; 
+  --home-button-color: #007acc;
+  --home-button-hover-color: #005f99;
 
   --about-span-color: #2c2c2c; 
   --about-p-color: #333333; 
@@ -32,7 +33,7 @@
   --about-button-text-color: #5c5c5c; 
 
   /* Modo Escuro  */
-  --dark-bg-text-color: #2b2b2bcc; 
+  --dark-bg-text-color: #242424cc; 
   --dark-text-color: #fffadf; 
   --dark-icon-color: #beb07a;
   --dark-text-hover-color: #ca3600; 
@@ -40,17 +41,18 @@
   --dark-active-text-color: #ca3600; 
   --dark-active-icon-color: #ca3600;
   --dark-button-text-color: #ca3600;
-  --dark-button-bg-color: linear-gradient(135deg, #4E2A6E 0%, #2E1A4B 100%);
-  --dark-button-hover-bg-color: #a1a1a1;
+  --dark-button-hover-bg-color: #6a1b9a;
   --dark-button-active-text-color: #000;
   --dark-button-active-bg-color: #f5f5f5; 
-  --dark-sidebar-background: linear-gradient(to bottom, #12031a 0%, #3a0b54 40%, #50276b 80%, #24014b 100%);
-  --dark-home-background: linear-gradient(135deg, #8a2be2 0%, #2f4f4f 100%);
-  --dark-about-background: linear-gradient(135deg, #4e3bc7 0%, #417f97 100%);
+  --dark-button-bg-color: linear-gradient(135deg, #4b3270 0%, #29123f 100%);
+  --dark-sidebar-background: linear-gradient(to bottom, #0e0213 0%, #2a0840 40%, #3f1f54 80%, #1b0140 100%);
+  --dark-home-background: linear-gradient(135deg, #401752 0%, #1b0130 100%);
+  --dark-about-background: linear-gradient(135deg, #542f9a 0%, #3a4f7f 100%);
 
   --dark-home-h2-color: #c0c0c0; 
   --dark-home-h6-color: #d3d3d3; 
-  --dark-home-button-color: #a9a9a9; 
+  --dark-home-button-color: #732993;
+  --dark-home-button-hover-color: linear-gradient(135deg, #6b51ab 0%, #765bbc 50%, #8471d1 100%);;
 
   --dark-about-span-color: #b0c4de; 
   --dark-about-p-color: #dcdcdc;
@@ -84,7 +86,6 @@ main {
   margin-left: 300px; 
   flex: 1;
 }
-
 
 /* Componente Sidebar */
 .sidebar {
@@ -297,11 +298,12 @@ body.dark-mode .sidebar {
 
 .dark-mode .home Button {
   color: var(--dark-text-color);
-  background-color: var(--dark-bg-text-color);
+  background-color: var(--dark-home-button-color);
 }
 
 .dark-mode .home Button:hover {
-  background: var(--dark-button-hover-bg-color);
+  background: var(--dark-home-button-hover-color);
+  color: #f5f5f5;
 }
 
 .dark-mode .about {
@@ -310,7 +312,7 @@ body.dark-mode .sidebar {
 
 .dark-mode .about h4 {
   color: var(--dark-text-hover-color);
-  border-color: var(--dark-bg-text-color);
+  border-color: var(--dark-text-color);
 }
 
 .dark-mode .about p,
@@ -320,22 +322,31 @@ body.dark-mode .sidebar {
   color: var(--dark-text-color);
 }
 
+.dark-mode .about-container {
+  background: var(--dark-home-background);
+}
+
 .dark-mode .curso button {
   background: var(--dark-button-bg-color);
-  color: var(--dark-button-text-color);
-  border: 1px solid var(--dark-button-active-bg-color);
+  color: var(--dark-home-h6-color);
+  border: 1px solid #000;
 }
 
 .dark-mode .curso button.active {
-  background: var(--dark-button-active-bg-color);
+  background: var(--dark-home-button-hover-color);
   color: var(--dark-button-active-text-color);
-  border: 1px solid #000;
+  border: 1px solid var(--dark-button-active-bg-color);
   box-shadow: 0 0 2px #ffffff1a;
 }
 
 .dark-mode .curso-container {
-  background-color: #000;
-  border: 2px solid #fff;
+  background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,41,247,1) 0%, rgba(24,22,39,1) 90% );
+  border: 2px solid #ca3600;
+}
+
+.dark-mode .curso .container-name,
+.dark-mode .graduacao h6 {
+  border-bottom: 1px solid #ffffff80;
 }
 
 .dark-mode .graduacao-icon div {
@@ -354,16 +365,16 @@ body.dark-mode .sidebar {
 
 @keyframes shineAndDecay {
   0% {
-    box-shadow: 1px 1px 12px 10px #FFD700; 
-    outline: 4px solid #FFD700; 
+    box-shadow: 1px 1px 12px 10px #ffd700; 
+    outline: 4px solid #ffd700; 
   }
   25% {
-    box-shadow: 1px 1px 10px 8px #FFA500; 
-    outline: 4px solid #FFA500; 
+    box-shadow: 1px 1px 10px 8px #ffa500; 
+    outline: 4px solid #ffa500; 
   }
   40% {
-    box-shadow: 1px 1px 12px 10px #FFD700;
-    outline: 4px solid #FFD700;
+    box-shadow: 1px 1px 12px 10px #ffd700;
+    outline: 4px solid #ffd700;
   }
   50% {
     box-shadow: 1px 1px 8px 4px #8B4513; 
@@ -374,27 +385,27 @@ body.dark-mode .sidebar {
     outline: 2px solid #000;
   }
   75% {
-    box-shadow: 1px 1px 12px 10px #FFD700;
-    outline: 4px solid #FFD700; 
+    box-shadow: 1px 1px 12px 10px #ffd700;
+    outline: 4px solid #ffd700; 
   }
   100% {
-    box-shadow: 1px 1px 10px 8px #FFA500; 
-    outline: 4px solid #FFA500; 
+    box-shadow: 1px 1px 10px 8px #ffa500; 
+    outline: 4px solid #ffa500; 
   }
 }
 
 @keyframes shineAndDecayDark {
   0% {
-    box-shadow: 1px 1px 12px 10px #FFD700;
-    outline: 4px solid #FFD700;
+    box-shadow: 1px 1px 12px 10px #ffd700;
+    outline: 4px solid #ffd700;
   }
   25% {
     box-shadow: 1px 1px 10px 8px #ff6a00;
     outline: 4px solid #ff6a00;
   }
   40% {
-    box-shadow: 1px 1px 12px 10px #FFD700;
-    outline: 4px solid #FFD700;
+    box-shadow: 1px 1px 12px 10px #ffd700;
+    outline: 4px solid #ffd700;
   }
   50% {
     box-shadow: 1px 1px 8px 4px #8B4513; 
@@ -405,8 +416,8 @@ body.dark-mode .sidebar {
     outline: 2px solid #fff; 
   }
   75% {
-    box-shadow: 1px 1px 12px 10px #FFD700;
-    outline: 4px solid #FFD700;
+    box-shadow: 1px 1px 12px 10px #ffd700;
+    outline: 4px solid #ffd700;
   }
   100% {
     box-shadow: 1px 1px 10px 8px #ff6a00; 
@@ -423,13 +434,21 @@ body.dark-mode .sidebar {
   color: var(--home-h6-color);
 }
 
+.home Button {
+  background-color: var(--home-button-color);
+}
+
+.home Button:hover {
+  background-color: var(--home-button-hover-color);
+}
+
 /* ABOUT */
 .about h4 {
   color: var(--text-hover-color);
-  border-color: var(--bg-text-color);
+  border-color: var(--button-bg-color);
   border-width: 4px;
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 4px;
 }
 
 .about p,
@@ -437,6 +456,10 @@ body.dark-mode .sidebar {
 .about h6,
 .about button {
   color: var(--text-color);
+}
+
+.about-container {
+  background-color: #b4bfff;
 }
 
 .curso button {
@@ -453,8 +476,13 @@ body.dark-mode .sidebar {
 }
 
 .curso-container {
-  background-color: #fff;
-  border: 2px solid #000;
+  background: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  border: 2px solid #420079;
+}
+
+.curso .container-name h6,
+.graduacao h6 {
+  border-bottom: 1px solid #00000080;
 }
 
 .graduacao-icon div {
