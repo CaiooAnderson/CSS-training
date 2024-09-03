@@ -9,11 +9,7 @@
   --bg-text-color: #b4bfffcc;
   --text-color: #336699;
   --icon-color: #4d80b0; 
-  --text-hover-color: #003366;
-  --icon-hover-color: #296199;
-  --active-text-color: #003366;
-  --active-icon-color: #003366;
-  --button-text-color: #003366;
+
   --button-bg-color: #4a148c;
   --button-active-text-color: #fff;
   --button-active-bg-color: #6a1b9a;
@@ -21,6 +17,12 @@
   --sidebar-background: linear-gradient(19deg, #aeadff 0%, #21d4fd 50%, #a3caff 100%);
   --home-background: linear-gradient(135deg, #b4bfff 0%, #21d4fd 100%);
   --about-background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); 
+
+  --sidebar-text-hover-color: #003366;
+  --sidebar-icon-hover-color: #296199;
+  --sidebar-active-text-color: #003366;
+  --sidebar-active-icon-color: #003366;
+  --sidebar-button-text-color: #003366;
 
   --home-h2-color: #1e1e1e; 
   --home-h6-color: #333333; 
@@ -36,11 +38,7 @@
   --dark-bg-text-color: #242424cc; 
   --dark-text-color: #fffadf; 
   --dark-icon-color: #beb07a;
-  --dark-text-hover-color: #ca3600; 
-  --dark-icon-hover-color: #e57e00; 
-  --dark-active-text-color: #ca3600; 
-  --dark-active-icon-color: #ca3600;
-  --dark-button-text-color: #ca3600;
+  
   --dark-button-hover-bg-color: #6a1b9a;
   --dark-button-active-text-color: #000;
   --dark-button-active-bg-color: #f5f5f5; 
@@ -48,6 +46,12 @@
   --dark-sidebar-background: linear-gradient(to bottom, #0e0213 0%, #2a0840 40%, #3f1f54 80%, #1b0140 100%);
   --dark-home-background: linear-gradient(135deg, #401752 0%, #1b0130 100%);
   --dark-about-background: linear-gradient(135deg, #542f9a 0%, #3a4f7f 100%);
+
+  --dark-sidebar-text-hover-color: #ca3600; 
+  --dark-sidebar-icon-hover-color: #e57e00; 
+  --dark-sidebar-active-text-color: #ca3600; 
+  --dark-sidebar-active-icon-color: #ca3600;
+  --dark-sidebar-button-text-color: #ca3600;
 
   --dark-home-h2-color: #c0c0c0; 
   --dark-home-h6-color: #d3d3d3; 
@@ -154,11 +158,11 @@ main {
 }
 
 .sidebar nav ul li button:hover p {
-  color: var(--text-hover-color);
+  color: var(--sidebar-text-hover-color);
 }
 
 .sidebar button.active p {
-  color: var(--active-text-color);
+  color: var(--sidebar-active-text-color);
   font-weight: bolder;
   filter: drop-shadow(1px 1px 4px #00336680);
 }
@@ -168,11 +172,11 @@ main {
 }
 
 .sidebar button:hover .icon {
-  color: var(--icon-hover-color);
+  color: var(--sidebar-icon-hover-color);
 }
 
 .sidebar button.active .icon {
-  color: var(--active-icon-color);
+  color: var(--sidebar-active-icon-color);
 }
 
 .sidebar nav ul li button,
@@ -250,11 +254,11 @@ body.dark-mode .sidebar {
 }
 
 .dark-mode .sidebar button:hover .icon {
-  color: var(--dark-icon-hover-color);
+  color: var(--dark-sidebar-icon-hover-color);
 }
 
 .dark-mode .sidebar button.active .icon {
-  color: var(--dark-active-icon-color);
+  color: var(--dark-sidebar-active-icon-color);
 }
 
 .dark-mode .sidebar button p {
@@ -262,11 +266,11 @@ body.dark-mode .sidebar {
 }
 
 .dark-mode .sidebar button:hover p {
-  color: var(--dark-text-hover-color);
+  color: var(--dark-sidebar-text-hover-color);
 }
 
 .dark-mode .sidebar button.active p {
-  color: var(--dark-active-text-color);
+  color: var(--dark-sidebar-active-text-color);
 }
 
 .dark-mode .profile-pic {
@@ -311,7 +315,7 @@ body.dark-mode .sidebar {
 }
 
 .dark-mode .about h4 {
-  color: var(--dark-text-hover-color);
+  color: var(--dark-sidebar-text-hover-color);
   border-color: var(--dark-text-color);
 }
 
@@ -341,7 +345,7 @@ body.dark-mode .sidebar {
 
 .dark-mode .curso-container {
   background: radial-gradient( circle farthest-corner at 10% 20%,  rgba(151,41,247,1) 0%, rgba(24,22,39,1) 90% );
-  border: 2px solid #ca3600;
+  border: 2px solid var(--dark-about-button-text-color);
 }
 
 .dark-mode .curso .container-name,
@@ -351,8 +355,8 @@ body.dark-mode .sidebar {
 
 .dark-mode .graduacao-icon div {
   background: var(--dark-button-bg-color);
-  outline: 1px solid var(--dark-active-icon-color);
-  color: var(--dark-active-icon-color);
+  outline: 1px solid var(--dark-sidebar-active-icon-color);
+  color: var(--dark-sidebar-active-icon-color);
 }
 
 /* App.js */
@@ -444,7 +448,7 @@ body.dark-mode .sidebar {
 
 /* ABOUT */
 .about h4 {
-  color: var(--text-hover-color);
+  color: var(--sidebar-text-hover-color);
   border-color: var(--button-bg-color);
   border-width: 4px;
   border-bottom-left-radius: 12px;
@@ -464,7 +468,7 @@ body.dark-mode .sidebar {
 
 .curso button {
   background: var(--button-bg-color);
-  color: var(--button-text-color);
+  color: var(--sidebar-button-text-color);
   border: 1px solid var(--button-active-bg-color);
 }
 
@@ -487,8 +491,8 @@ body.dark-mode .sidebar {
 
 .graduacao-icon div {
   background: var(--button-bg-color);
-  outline: 1px solid var(--active-icon-color);
-  color: var(--active-icon-color);
+  outline: 1px solid var(--sidebar-active-icon-color);
+  color: var(--sidebar-active-icon-color);
 }
 
 .carousel li {

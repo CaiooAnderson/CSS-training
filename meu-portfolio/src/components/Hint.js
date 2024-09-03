@@ -1,13 +1,27 @@
+import React, { useState, useEffect } from 'react';
+import { Fade } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
 import EmojiObjectsOutlinedIcon from '@mui/icons-material/EmojiObjectsOutlined';
 
-const Hint = () => {
+import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
+
+const Hint = ({ tips }) => {
+    const [index, setIndex] = useState(0);
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex((prevIndex) => (prevIndex + 1) % tips.length);
+        }, 5000)
+        return () => clearInterval(interval);
+    }, [tips.length]);
+    
     return (
-        <section id="hint">
-            <IconButton></IconButton>
-            <h2>Hint</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum aut mollitia ducimus quasi facere voluptates libero veniam ipsam dicta, possimus aliquam sed aliquid distinctio rem deserunt, est fuga eos consequatur?</p>
+        <section className='hint-container'>
+            <TipsAndUpdatesOutlinedIcon className='hint-icon' />
+            <Fade in={true} timeout={500} key={index}>
+                <p className='hint-text'>{tips[index]}</p>
+            </Fade>
         </section>
     );
 }
