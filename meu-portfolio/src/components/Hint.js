@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Fade } from '@mui/material';
-import IconButton from '@mui/material/IconButton';
-import LightbulbOutlinedIcon from '@mui/icons-material/LightbulbOutlined';
-import EmojiObjectsOutlinedIcon from '@mui/icons-material/EmojiObjectsOutlined';
-
-import TipsAndUpdatesOutlinedIcon from '@mui/icons-material/TipsAndUpdatesOutlined';
+import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const Hint = ({ tips }) => {
     const [index, setIndex] = useState(0);
@@ -18,7 +14,7 @@ const Hint = ({ tips }) => {
     
     return (
         <section className='hint-container'>
-            <TipsAndUpdatesOutlinedIcon className='hint-icon' />
+            <TipsAndUpdatesIcon className='hint-icon' />
             <Fade in={true} timeout={500} key={index}>
                 <p className='hint-text'>{tips[index]}</p>
             </Fade>

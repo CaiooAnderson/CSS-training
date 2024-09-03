@@ -53,6 +53,7 @@ const Skills = () => {
                     </div>
                 ))}
             </div>
+            <Hint tips={tips} />
         </section>
     );
 }

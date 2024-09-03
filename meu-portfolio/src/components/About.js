@@ -41,7 +41,7 @@ const About = () => {
                     </Typography>
                 </Box>
             </Zoom>
-            <Box className='about-center' sx={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-evenly', alignItems: 'center' }}>
+            <Box className='about-center' sx={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'center' }}>
                 <Fade in={true} timeout={2000}>
                     <Box className='about-container' sx={{ maxWidth: 'max-content', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '100%', overflow: 'hidden' }}>
                         <Graduacao />
@@ -54,9 +54,9 @@ const About = () => {
                 </Fade>
             </Box>
                 <Fade in={true} timeout={3000}>
-                    <Typography variant='body1' sx={{ color: '#333', mt: 2, maxWidth: '600px', mx: 'auto' }}>
+                    <Box className='about-hint'>
                         <Hint tips={tips} />
-                    </Typography>
+                    </Box>
                 </Fade>
             </Box>
         </Fade>

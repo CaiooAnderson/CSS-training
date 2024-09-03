@@ -3,17 +3,17 @@ import Hint from './Hint.js'
 const Contact = () => {
 
     const tips = [
-        'Não possuo habilidade em Node.js, que é o mais pedido em mercados',
-        'Aprimorar as habilidades em React pode ser uma boa estratégia',
-        'Considere aprender TypeScript para aumentar suas oportunidades',
         'Conecte-se comigo nas redes sociais para acompanhar meu trabalho e projetos.',
         'Fique à vontade para me enviar uma mensagem, seja sobre projetos ou uma simples troca de ideias.',
+        'Um grande exemplo do CSS sem o JavaScript é: Como uma nave tão linda assim não consegue voar?',
         'Estou a procura de novas oportunidades e colaborações!',
-        'Caso queira me dar algum feedback sobre o meu portfolio fico agradecido, mesmo com elogios ou críticas!',
-        'Este portfolio foi feito com amor, carinho e um pouco de CSS. Bem pouco mesmo..',
+        'Talvez Jack Sparrow não gostaria tanto de TypeScript, pois ele gosta de caminhar fora das leis.',
+        'Caso queira me dar algum feedback sobre o meu portfólio fico agradecido, mesmo com elogios ou críticas!',
         'Então na verdade é só comentar o erro na linha de código que o erro desaparece?',
+        'Este portfólio foi feito com amor, carinho e um pouco de CSS. Bem pouco mesmo..',
         'Acho que os sabres de luz da saga Star Wars possuem o filtro de brightness e drop-shadow muito altos.',
-        'Então foi assim que você começou na programação? Com um hello world? Que chique, o meu foi um comando para tirar o erro de tela azul do meu computador!'
+        'Então foi assim que você começou na programação? Com um hello world? Que chique, o meu foi um comando para tirar o erro de tela azul do meu computador!',
+        'Bônus: Ser programador é passar metade do tempo resolvendo problemas e a outra metade tentando lembrar o que você estava fazendo.'
     ]
 
     return (

@@ -4,17 +4,17 @@ import Hint from './Hint';
 const Projects = () => {
 
     const tips = [
-        'Aqui estão alguns dos meus projetos, ou como gosto de chamar, meus "experimentos de laboratório" onde a magia do código acontece!',
+        'Eis aqui alguns projetos, ou como gosto de chamar: "meus experimentos de laboratório", onde a magia do código acontece!',
+        'Cada projeto aqui representa um passo na minha jornada como desenvolvedor, mostrando o que posso criar.',
         'Acredito que os projetos nunca tem um final ao certo. Sempre possuem uma cara nova, uma nova história..',
-        'Por que fazer um simples "Hello World" se você pode construir um universo inteiro?',
         'Gosto de utilizar projetos pessoais como estudo prático. São neles que percebo que realmente consigo e posso alcançar objetivos.',
         'Se seu projeto não ficou como queria, relaxe. É uma mera ilusão! Os projetos tomam formas diferentes a cada vez que você pensa em algo para adicionar, inovar ou editar.',
         'O quanto você dedicaria em seus projetos? Eu costumo dar mais dedicação aos projetos do que em séries como Stranger Things.',
         'Utilizar o repositório do GitHub para salvar projetos é uma boa ideia!',
         'Os projetos não exigem 100 páginas para ser perfeito. Acredito que ninguém também iria curtir ler 100 páginas de um projeto.',
         'Meu repositório é como um laboratório, o experimento pode explodir, bombar, ou nem funcionar.',
-        '',
-        '',
+        'Estes projetos destacam minha habilidade em trabalhar com diferentes tecnologias e frameworks.',
+        'Bônus: Por que fazer um simples "Hello World" se você pode construir um universo inteiro?'
     ]
 
     const [filter, setFilter] = useState('All');
@@ -44,6 +44,7 @@ const Projects = () => {
                     </div>
                 ))}
             </div>
+            <Hint tips={tips} />
         </section>
     );
 }

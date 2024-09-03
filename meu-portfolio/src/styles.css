@@ -507,3 +507,67 @@ body.dark-mode .sidebar {
 .lista {
   margin: 32px 0;
 }
+
+
+
+
+
+/* HINT */
+
+.hint-container {
+  width: 300px;
+  min-height: 100px;
+  max-height: 200px;
+  background: linear-gradient(to top, #7c8944 0%, #ffd700 7%, #e8ff80 70%, #7c8944 99%, #ffd700 100%);
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  filter: drop-shadow(1px 1px 3px #000);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hint-container .hint-icon {
+  width: 100%;
+}
+
+.hint-icon {
+  color: #ffd700;
+  outline: 1px solid #0e0213;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: radial-gradient(circle, #00f2fe 0%, #ffd700 30%);
+}
+
+.hint-icon path {
+  filter: drop-shadow(0px 0px 5px #707100);
+}
+
+.hint-text {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.about-hint {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  min-height: 100px;
+}
