@@ -455,6 +455,10 @@ body.dark-mode .sidebar {
   border-bottom-right-radius: 4px;
 }
 
+.about-center {
+  margin: 20px auto;
+}
+
 .about p,
 .about span,
 .about h6,
@@ -484,11 +488,6 @@ body.dark-mode .sidebar {
   border: 2px solid #420079;
 }
 
-.curso .container-name h6,
-.graduacao h6 {
-  border-bottom: 1px solid #00000080;
-}
-
 .graduacao-icon div {
   background: var(--button-bg-color);
   outline: 1px solid var(--sidebar-active-icon-color);
@@ -516,8 +515,7 @@ body.dark-mode .sidebar {
 
 .hint-container {
   width: 300px;
-  min-height: 100px;
-  max-height: 200px;
+  height: 150px;
   background: linear-gradient(to top, #7c8944 0%, #ffd700 7%, #e8ff80 70%, #7c8944 99%, #ffd700 100%);
   box-sizing: border-box;
   border: 2px solid #000;
@@ -532,6 +530,7 @@ body.dark-mode .sidebar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
 .hint-container .hint-icon {
@@ -552,22 +551,29 @@ body.dark-mode .sidebar {
 
 .hint-text {
   width: 100%;
-  padding: 10px;
+  height: 100%;
+  padding: 0 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
+  animation: scroll-vertical 10s linear infinite;
+}
+
+.hint-text p {
+  position: absolute;
+  white-space: nowrap;
+  padding-top: 5px;
+  vertical-align: middle;
 }
 
 .about-hint {
-  margin-top: 20px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin-right: 40px;
   display: flex;
-  align-items: center;
   justify-content: center;
   width: 100%;
-  position: relative;
-  min-height: 100px;
 }

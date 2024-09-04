@@ -5,16 +5,16 @@ const Skills = () => {
 
     const tips = [
         'Em constante evolução. Tenho muito o que aprender.',
-        'Percebo que muitos desenvolvedores sentem que não estão preparados, mas a pergunta é: Quem está?',
-        'Quem não concorda que o Visual Studio Code é a melhor IDE, me fale agora ou cale-se para sempre.',
+        'Muitos desenvolvedores se sentem despreparados, mas quem realmente está?',
+        'Se não concorda que o Visual Studio Code é a melhor IDE, fale agora ou cale-se para sempre.',
         'Responsividade no CSS? Amo!',
-        'Versionamento de código é interessante! Acredito que seja uma das',
-        'Eu percebo que gosto de programar quando o resultado é esperado, quando é inesperado se torna melhor ainda!',
-        'Acredito que nem mesmo os Vingadores podem superar a junção do HTML, CSS e JavaScript.',
-        'Estou me empenhando em TypeScript e React atualmente.',
-        'Projetos feitos com Python que utilizam dele a automação de tarefas são impressionantes!',
-        'Estou aprendendo a utilizar a ferramenta Docker também. Acredito que seja uma ótima ferramenta!',
-        'Bônus: Erros e Bugs são considerados Bosses ou Aliados? No meu ponto de vista eles são neutros dependendo do quanto irão me afetar.'
+        'Percebo que gosto de programar quando o resultado é esperado, mas quando é inesperado, é ainda melhor!',
+        'Versionamento de código é interessante!',
+        'Nem mesmo os Vingadores podem superar a combinação do HTML, CSS e JavaScript.',
+        'Estou me dedicando em TypeScript e React atualmente.',
+        'Projetos feitos com Python que automatizam tarefas são impressionantes!',
+        'Estou aprendendo a utilizar a ferramenta Docker. Acredito que seja uma ótima ferramenta!',
+        'Bônus: Erros e Bugs são Bosses ou Aliados no começo de uma jornada?'
     ]
 
     const [filter, setFilter] = useState('All');

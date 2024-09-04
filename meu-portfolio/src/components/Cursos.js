@@ -71,7 +71,7 @@ const Cursos = () => {
             gap: 2,
             padding: '8px 0'
             }}>
-            <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%' }}>Cursos Adicionais</Typography>
+            <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080' }}>Cursos Adicionais</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 1 }}>
                 <Button className={filter === 'Front-End' ? 'active' : ''} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
                     Front-End
