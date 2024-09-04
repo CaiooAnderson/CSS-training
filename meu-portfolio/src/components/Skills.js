@@ -1,5 +1,11 @@
 import { useState } from 'react';
 import Hint from './Hint';
+import SkillCube from './SkillCube';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap, FaDocker, FaGithub, FaFigma } from "react-icons/fa";
+import { SiTypescript, SiPostgresql, SiVisualstudiocode } from "react-icons/si";
+import { Box } from '@mui/material';
 
 const Skills = () => {
 
@@ -17,42 +23,75 @@ const Skills = () => {
         'Bônus: Erros e Bugs são Bosses ou Aliados no começo de uma jornada?'
     ]
 
-    const [filter, setFilter] = useState('All');
+    const [selectedSkill, setSelectedSkill] = useState(null);
 
-    const skills = [
-        { name: 'HTML', category: 'Front-End' },
-        { name: 'CSS', category: 'Front-End' },
-        { name: 'JavaScript', category: 'Front-End' },
-        { name: 'React', category: 'Front-End' },
-        { name: 'TypeScript', category: 'Front-End' },
-        { name: 'Node.js', category: 'Back-End' },
-        { name: 'Python', category: 'Back-End' },
-        { name: 'PostgreSQL', category: 'Back-End' },
-        { name: 'Git', category: 'Tool' },
-        { name: 'GitHub', category: 'Tool' },
-        { name: 'Docker', category: 'Tool' },
-        { name: 'Visual Studio Code', category: 'Tool' },
-    ];
+    const skills = {
+        frontEnd: [
+            { name: 'HTML', icon: <FaHtml5 /> },
+            { name: 'CSS', icon: <FaCss3Alt /> },
+            { name: 'JavaScript', icon: <FaJs /> },
+            { name: 'React', icon: <FaReact /> },
+            { name: 'TypeScript', icon: <SiTypescript /> },
+        ],
+        backEnd: [
+            { name: 'Node.js', icon: <FaNodeJs /> },
+            { name: 'Python', icon: <FaPython /> },
+            { name: 'PostgreSQL', icon: <SiPostgresql /> },
+        ],
+        ferramentas: [
+            { name: 'GitHub', icon: <FaGithub /> },
+            { name: 'Visual Studio Code', icon: <SiVisualstudiocode /> },
+            { name: 'Figma', icon: <FaFigma /> },
+            { name: 'Docker', icon: <FaDocker /> },
+        ]
+    };
 
-    const filteredSkills = skills.filter(skill => filter === 'All' || skill.category === filter);
+    const responsive = {
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 2,
+          slidesToSlide: 1
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 1,
+          slidesToSlide: 1
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 1,
+          slidesToSlide: 1
+        }
+      };
 
     return (
-        <section id="skills">
-            <h2>Skills</h2>
-            <div>
-                <button onClick={() => setFilter('All')}>All</button>
-                <button onClick={() => setFilter('Front-End')}>Front-End</button>
-                <button onClick={() => setFilter('Back-End')}>Back-End</button>
-                <button onClick={() => setFilter('Tool')}>Tools</button>
-            </div>
-            <div>
-                {filteredSkills.map(skill => (
-                    <div key={skill.name}>
-                        <img src={`path_to_icons/${skill.name}.png`} alt={skill.name} />
-                        <span>{skill.name}</span>
-                    </div>
-                ))}
-            </div>
+        <section className='skills'>
+            <h2>Habilidades</h2>
+            
+            <h3>Front-End</h3>
+            <Box className='skill-carousel-container'>
+                <Carousel responsive={responsive}>
+                    {skills.frontEnd.map(skill => (
+                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                    ))}
+                </Carousel>
+            </Box>
+            <h3>Back-End</h3>
+            <Box className='skill-carousel-container'>
+                <Carousel responsive={responsive}>
+                    {skills.backEnd.map(skill => (
+                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                    ))}
+                </Carousel>
+            </Box>
+            <h3>Ferramentas</h3>
+            <Box className='skill-carousel-container'>
+                <Carousel responsive={responsive}>
+                    {skills.ferramentas.map(skill => (
+                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                    ))}
+                </Carousel>
+            </Box>
             <Hint tips={tips} />
         </section>
     );

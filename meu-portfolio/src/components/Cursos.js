@@ -84,7 +84,7 @@ const Cursos = () => {
                 </Button>
             </Box>
             <Box sx={{ position: 'relative', maxWidth: '464px', width: '90%', flexDirection: 'column' }}>
-                <Carousel className='carousel' responsive={responsive} ssr={true} containerClass="carousel-container" ref={carouselRef}>
+                <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}>
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
