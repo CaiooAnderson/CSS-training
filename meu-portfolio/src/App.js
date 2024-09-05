@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import Home from './components/Home.js';
-import About from './components/About.js';
-import Skills from './components/Skills.js';
-import Projects from './components/Projects.js';
-import Contact from './components/Contact.js';
-import Sidebar from './components/Sidebar.js';
+import Home from './components/Home.jsx';
+import About from './components/About.jsx';
+import Skills from './components/Skills.jsx';
+import Projects from './components/Projects.jsx';
+import Contact from './components/Contact.jsx';
+import Sidebar from './components/Sidebar.jsx';
 import { Fade } from '@mui/material';
 import './styles.css';
 

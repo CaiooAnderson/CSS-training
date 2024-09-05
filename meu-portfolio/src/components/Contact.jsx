@@ -1,4 +1,4 @@
-import Hint from './Hint.js'
+import Hint from './Hint.jsx'
 
 const Contact = () => {
 

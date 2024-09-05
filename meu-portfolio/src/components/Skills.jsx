@@ -65,13 +65,24 @@ const Skills = () => {
     };
 
     const [clickedSkill, setClickedSkill] = useState(null);
+    const [gradientPosition, setGradientPosition] = useState({ x: 50, y: 50 });
+    
     const handleSkillClick = (skillName) => {
         setClickedSkill(skillName);
     };
 
+    const handleMouseMove = (e) => {
+        const { clientX, clientY, currentTarget } = e;
+        const rect = currentTarget.getBoundingClientRect();
+        const x = ((clientX - rect.left) / rect.width) * 100;
+        const y = ((clientY - rect.top) / rect.height) * 100;
+
+        currentTarget.style.setProperty('--x', `${x}%`);
+        currentTarget.style.setProperty('--y', `${y}%`);
+    };
 
     return (
-        <Box className='skills'>
+        <Box className='skills' onMouseMove={handleMouseMove}>
             <Typography variant='h4' sx={{ textAlign: 'left', mb: 4 }}>Habilidades</Typography>
             <Box className='front-end-skills'>
             <Typography variant='h5' sx={{ px: 2, textAlign: 'center' }}>Front-End</Typography>
@@ -83,7 +94,7 @@ const Skills = () => {
                             className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : ''}`} 
                             onClick={() => handleSkillClick(skill.name)}
                             sx={{    
-                                backgroundColor: skill.bgColor, 
+                                backgroundColor: 'transparent',
                                 borderColor: skill.color,
                             }}>
                             <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} />
