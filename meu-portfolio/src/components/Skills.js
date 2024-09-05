@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Hint from './Hint';
-import SkillCube from './SkillCube';
+import SkillDetails from './SkillDetails';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap, FaDocker, FaGithub, FaFigma } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiVisualstudiocode } from "react-icons/si";
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 const Skills = () => {
 
@@ -23,26 +23,26 @@ const Skills = () => {
         'Bônus: Erros e Bugs são Bosses ou Aliados no começo de uma jornada?'
     ]
 
-    const [selectedSkill, setSelectedSkill] = useState(null);
-
     const skills = {
         frontEnd: [
-            { name: 'HTML', icon: <FaHtml5 /> },
-            { name: 'CSS', icon: <FaCss3Alt /> },
-            { name: 'JavaScript', icon: <FaJs /> },
-            { name: 'React', icon: <FaReact /> },
-            { name: 'TypeScript', icon: <SiTypescript /> },
+            { name: 'HTML', icon: FaHtml5, color: '#e44d26', bgColor: '#fff' },
+            { name: 'CSS', icon: FaCss3Alt, color: '#1572b6', bgColor: '#fff' },
+            { name: 'JavaScript', icon: FaJs, color: '#f7e02d', bgColor: '#000' },
+            { name: 'React', icon: FaReact, color: '#61dafb', bgColor: 'fff' },
+            { name: 'TypeScript', icon: SiTypescript, color: '#007acc', bgColor: '#fff' },
+            { name: 'BootStrap', icon: FaBootstrap, color: '#563d7c', bgColor: '#fff'},
+            { name: 'WordPress', icon: FaWordpress, color: '#0073aa', bgColor: '#fff' }
         ],
         backEnd: [
-            { name: 'Node.js', icon: <FaNodeJs /> },
-            { name: 'Python', icon: <FaPython /> },
-            { name: 'PostgreSQL', icon: <SiPostgresql /> },
+            { name: 'Node.js', icon: FaNodeJs, color: '#8cc84b', bgColor: '#fff' },
+            { name: 'Python', icon: FaPython, color: '#306998', bgColor: '#fff' },
+            { name: 'PostgreSQL', icon: SiPostgresql, color: '#fff', bgColor: '#336791' },
         ],
         ferramentas: [
-            { name: 'GitHub', icon: <FaGithub /> },
-            { name: 'Visual Studio Code', icon: <SiVisualstudiocode /> },
-            { name: 'Figma', icon: <FaFigma /> },
-            { name: 'Docker', icon: <FaDocker /> },
+            { name: 'GitHub', icon: FaGithub, color: '#181717', bgColor: '#fff' },
+            { name: 'Visual Studio Code', icon: SiVisualstudiocode, color: '#007acc', bgColor: '#fff' },
+            { name: 'Figma', icon: FaFigma, color: '#f24e1e', bgColor: '#fff' },
+            { name: 'Docker', icon: FaDocker, color: '#2496ed', bgColor: '#fff' },
         ]
     };
 
@@ -62,38 +62,94 @@ const Skills = () => {
           items: 1,
           slidesToSlide: 1
         }
-      };
+    };
+
+    const [clickedSkill, setClickedSkill] = useState(null);
 
     return (
-        <section className='skills'>
-            <h2>Habilidades</h2>
+        <Box className='skills' sx={{ width: '400px', display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Typography variant='h4' sx={{ textAlign: 'left', mb: 4 }}>Habilidades</Typography>
             
-            <h3>Front-End</h3>
+            <Typography variant='h5' sx={{ textAlign: 'left' }}>Front-End</Typography>
             <Box className='skill-carousel-container'>
                 <Carousel responsive={responsive}>
                     {skills.frontEnd.map(skill => (
-                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                        <Box 
+                            key={skill.name} 
+                            className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : ''}`} 
+                            onClick={() => setClickedSkill(skill.name)}
+                            sx={{   
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center', 
+                                backgroundColor: skill.bgColor, 
+                                padding: 2, 
+                                borderRadius: 1,
+                                border: '2px solid',
+                                borderColor: skill.color,
+                                transition: 'transform 0.3s, box-shadow 0.3s',
+                                cursor: 'pointer'
+                            }}>
+                            <SkillDetails icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} />
+                        </Box>
                     ))}
                 </Carousel>
             </Box>
-            <h3>Back-End</h3>
+            <Typography variant='h5' sx={{ textAlign: 'left' }}>Back-End</Typography >
             <Box className='skill-carousel-container'>
                 <Carousel responsive={responsive}>
                     {skills.backEnd.map(skill => (
-                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                        <Box 
+                            key={skill.name} 
+                            className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : ''}`} 
+                            onClick={() => setClickedSkill(skill.name)}
+                            sx={{   
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center', 
+                                backgroundColor: skill.bgColor, 
+                                padding: 2, 
+                                borderRadius: 1,
+                                border: '2px solid',
+                                borderColor: skill.color,
+                                transition: 'transform 0.3s, box-shadow 0.3s',
+                                cursor: 'pointer'
+                            }}>
+                            <SkillDetails icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} />
+                        </Box>
                     ))}
                 </Carousel>
             </Box>
-            <h3>Ferramentas</h3>
+            <Typography variant='h5' sx={{ textAlign: 'left' }}>Ferramentas</Typography>
             <Box className='skill-carousel-container'>
                 <Carousel responsive={responsive}>
                     {skills.ferramentas.map(skill => (
-                        <SkillCube key={skill.name} icon={skill.icon} label={skill.name} />
+                        <Box 
+                            key={skill.name} 
+                            className={`skill-item ${clickedSkill === skill.name ? 'selected' : ''}`} 
+                            onClick={() => setClickedSkill(skill.name)}
+                            sx={{   
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                justifyContent: 'center', 
+                                backgroundColor: skill.bgColor, 
+                                padding: 2, 
+                                borderRadius: 1,
+                                border: '2px solid',
+                                borderColor: skill.color,
+                                transition: 'transform 0.3s, box-shadow 0.3s',
+                                cursor: 'pointer'
+                            }}>
+                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} />
+                        </Box>
                     ))}
                 </Carousel>
             </Box>
             <Hint tips={tips} />
-        </section>
+        </Box>
     );
 }
 
