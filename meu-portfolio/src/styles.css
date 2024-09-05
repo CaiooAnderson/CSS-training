@@ -523,70 +523,79 @@ body.dark-mode .sidebar {
 
 /* SKILLS */
 .skills {
-  padding: 20px;
-}
-
-.skill-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.skill-item face {
+  width: 100%;
+  padding: 16px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
-
-.skill-item.clicked .face::before {
-  content: '';
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 80%);
-  animation: nebulosa 6s infinite ease-in-out;
-  opacity: 1;
-}
-
-h3 {
-  margin-top: 40px;
+  flex-direction: column;
+  gap: 2;
 }
 
 .skill-carousel-container {
-  width: 100%;
-  max-width: 600px;
-  height: 100px;
-  margin: 20px 0;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #000;
+  padding: 8px;
 }
 
-.carousel-item {
+.skill-carousel-container ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
+
+.skill-item {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 0 16px;
+  border: 2px solid;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.front-end-skills {
+  width: 500px;
+  border: 2px solid #e44d26;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin-bottom: 8px;
+}
+
+.back-end-skills {
+  width: 500px;
+  border: 2px solid #8cc84b;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin-bottom: 8px;
+}
+
+.tools-skills {
+  width: 500px;
+  border: 2px solid #2496ed;
+  border-radius: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  margin-bottom: 8px;
+}
+
 
 @keyframes nebulosa {
   0% {
     transform: scale(0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
     opacity: 0.5;
   }
   50% {
     transform: scale(1.2);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.4);
     opacity: 1;
   }
   100% {
     transform: scale(0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
     opacity: 0.5;
   }
 }
