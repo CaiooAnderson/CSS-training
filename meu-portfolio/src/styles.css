@@ -539,6 +539,15 @@ body.dark-mode .sidebar {
   transition: background 0.5s ease;
 }
 
+.skill-icon-container {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .skill-icon-container svg {
   display: flex;
   align-items: center;
@@ -550,8 +559,11 @@ body.dark-mode .sidebar {
 .skill-carousel-container {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.25);
-  padding: 8px;
+  padding: 10px;
   border-radius: 12px;
+  background: linear-gradient(270deg, #ff007f, #00d4ff, #4b0082, #ff007f);
+  background-size: 400% 400%;
+  animation: nebulosa 15s ease infinite;
 }
 
 .skill-carousel-container ul {
@@ -560,26 +572,28 @@ body.dark-mode .sidebar {
 }
 
 .skill-carousel-container button {
-  margin: -15px;
+  margin: -20px;
 }
 
+
 .skill-item {
-  background: transparent;
-  width: 150px;
-  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  margin: 0 16px;
+  margin: 0 20px;
   border: 2px solid;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .front-end-skills {
-  width: 500px;
+  width: 600px;
   border-radius: 10px;
   padding: 16px;
   margin-bottom: 8px;
@@ -602,19 +616,13 @@ body.dark-mode .sidebar {
 
 @keyframes nebulosa {
   0% {
-    transform: scale(0.8);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
-    opacity: 0.5;
+    background-position: 0% 50%;
   }
   50% {
-    transform: scale(1.2);
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.4);
-    opacity: 1;
+    background-position: 100% 50%;
   }
   100% {
-    transform: scale(0.8);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.2);
-    opacity: 0.5;
+    background-position: 0% 50%;
   }
 }
 

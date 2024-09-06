@@ -49,8 +49,8 @@ const Skills = () => {
     const responsive = {
         desktop: {
           breakpoint: { max: 3000, min: 1024 },
-          items: 2,
-          slidesToSlide: 1
+          items: 3,
+          slidesToSlide: 3
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
@@ -94,10 +94,9 @@ const Skills = () => {
                             className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : ''}`} 
                             onClick={() => handleSkillClick(skill.name)}
                             sx={{    
-                                backgroundColor: 'transparent',
                                 borderColor: skill.color,
                             }}>
-                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} />
+                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
                         </Box>
                     ))}
                 </Carousel>
