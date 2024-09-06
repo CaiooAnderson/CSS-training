@@ -365,6 +365,11 @@ body.dark-mode .sidebar {
   transition: background 0.5s ease;
 }
 
+.dark-mode .skills h4 {
+  color: var(--dark-sidebar-text-hover-color);
+  border-color: var(--dark-text-color);
+}
+
 .dark-mode .hint-container {
   background: var(--dark-sidebar-background);
 }
@@ -539,8 +544,28 @@ body.dark-mode .sidebar {
   transition: background 0.5s ease;
 }
 
+.skills h4 {
+  color: var(--sidebar-text-hover-color);
+  border-color: var(--button-bg-color);
+  border-width: 4px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 4px;
+}
+
+.skills h5 {
+  display: inline;
+  background: linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff);
+  background-size: 400% 400%;
+  padding: 5px 20px 3.5px;
+  border-top-left-radius: 15%;
+  border-top-right-radius: 50%;
+  position: relative;
+  animation: nebulosa 15s ease infinite;
+}
+
 .skill-icon-container {
   position: relative;
+  z-index: 5;
   width: 60px;
   height: 60px;
   display: flex;
@@ -556,12 +581,26 @@ body.dark-mode .sidebar {
   height: 60px;
 }
 
+.skill-icon {
+  transition: transform 0.6s ease-in-out;
+}
+
+.skill-item.selecionado .skill-icon {
+  animation: float 2.5s ease-in-out infinite;
+  filter: drop-shadow(0px 12px 4px rgba(0, 0, 0, 0.2));
+  margin-top: 8px;
+}
+
+.skill-item.nao-selecionado .skill-icon {
+  animation: rotate 1s ease-in-out forwards;
+}
+
 .skill-carousel-container {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.25);
   padding: 10px;
   border-radius: 12px;
-  background: linear-gradient(270deg, #ff007f, #00d4ff, #4b0082, #ff007f);
+  background: linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff);
   background-size: 400% 400%;
   animation: nebulosa 15s ease infinite;
 }
@@ -575,9 +614,8 @@ body.dark-mode .sidebar {
   margin: -20px;
 }
 
-
 .skill-item {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
   width: 100px;
   height: 100px;
@@ -590,29 +628,21 @@ body.dark-mode .sidebar {
   border: 2px solid;
   transition: 0.3s;
   cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
-.front-end-skills {
+.skill-item svg.selecionado {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.front-end-skills,
+.back-end-skills,
+.tools-skills {
   width: 600px;
   border-radius: 10px;
   padding: 16px;
-  margin-bottom: 8px;
+  padding-top: 0;
 }
-
-.back-end-skills {
-  width: 500px;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 8px;
-}
-
-.tools-skills {
-  width: 500px;
-  border-radius: 10px;
-  padding: 16px;
-  margin-bottom: 8px;
-}
-
 
 @keyframes nebulosa {
   0% {
@@ -627,20 +657,31 @@ body.dark-mode .sidebar {
 }
 
 @keyframes rotate {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
+  0% {
     transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0deg);
   }
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(10px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(0);
+  }
+}
+
+@keyframes drawBorder {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
   }
 }
 
