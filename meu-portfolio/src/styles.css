@@ -310,6 +310,36 @@ body.dark-mode .sidebar {
   color: #f5f5f5;
 }
 
+.dark-mode .home Button:not(:hover) .home-button-icon {
+  animation: rotateBackDark 2s forwards;
+}
+
+.dark-mode .home Button:hover .home-button-icon {
+  animation: rotateButtonDark 2s forwards;
+}
+
+@keyframes rotateButtonDark {
+  0% {
+    transform: rotate(0deg);
+    color: var(--dark-button-hover-bg-color);
+  }
+  100% {
+    transform: rotate(225deg);
+    color: var(--dark-sidebar-icon-hover-color);
+  }
+}
+
+@keyframes rotateBackDark {
+  0% {
+    transform: rotate(225deg);
+    color: var(--dark-button-hover-bg-color);
+  }
+  100% {
+    transform: rotate(0deg);
+    color: #fff;
+  }
+}
+
 .dark-mode .about {
   background: var(--dark-about-background);
 }
@@ -375,6 +405,24 @@ body.dark-mode .sidebar {
   background: linear-gradient(270deg, #420a4b, #231027, #51005d, #d7bdff);
   background-size: 400% 400%;
   animation: nebulosa 15s ease infinite;
+}
+
+.dark-mode .skill-carousel-container {
+  background: rgba(0, 0, 0, 0.25);
+  background: linear-gradient(270deg, #420a4b, #231027, #51005d, #d7bdff);
+  background-size: 400% 400%;
+}
+
+.dark-mode .skill-item.selecionado .skill-icon {
+  filter: drop-shadow(0px 12px 4px rgba(255, 255, 255, 0.2));
+}
+
+.dark-mode .skill-item {
+  background: rgba(86, 86, 86, 0.3);
+}
+
+.dark-mode .skill-item svg.selecionado {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .dark-mode .hint-container {
@@ -478,6 +526,40 @@ body.dark-mode .sidebar {
   background-color: var(--home-button-hover-color);
 }
 
+.home-button-icon {
+  transition: transform 2s ease, color 2s ease;
+}
+
+.home Button:not(:hover) .home-button-icon {
+  animation: rotateBack 2s forwards;
+}
+
+.home Button:hover .home-button-icon {
+  animation: rotateButton 2s forwards;
+}
+
+@keyframes rotateButton {
+  0% {
+    transform: rotate(0deg);
+    color: #007acc;
+  }
+  100% {
+    transform: rotate(225deg);
+    color: #00f2fe;
+  }
+}
+
+@keyframes rotateBack {
+  0% {
+    transform: rotate(225deg);
+    color: #007acc;
+  }
+  100% {
+    transform: rotate(0deg);
+    color: #fff;
+  }
+}
+
 /* ABOUT */
 .about h4 {
   color: var(--sidebar-text-hover-color);
@@ -506,6 +588,11 @@ body.dark-mode .sidebar {
   background: var(--button-bg-color);
   color: var(--sidebar-button-text-color);
   border: 1px solid var(--button-active-bg-color);
+}
+
+.curso button:hover {
+  opacity: 0.75;
+  filter: brightness(1.2);
 }
 
 .curso button.active {
@@ -564,8 +651,8 @@ body.dark-mode .sidebar {
   background: linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff);
   background-size: 400% 400%;
   padding: 5px 20px 3.5px;
-  border-top-left-radius: 15%;
-  border-top-right-radius: 50%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 4px;
   position: relative;
   animation: nebulosa 15s ease infinite;
 }

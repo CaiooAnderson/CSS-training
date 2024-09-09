@@ -28,11 +28,12 @@ const Cursos = () => {
                 curso: 'Bradesco', duração: '0', year: '2000' },
             {   nome: 'Lei Geral de Proteção de Dados (LGPD)', 
                 curso: 'Bradesco', duração: '0', year: '2000' },
+            {   nome: 'Microsoft Excel 2016 - Intermediário',
+                curso: 'Bradesco', duração: '20', year: '2024' },
             {   nome: 'Introdução à Programação Orientada a Objetos (POO)', 
                 curso: 'Bradesco', duração: '0', year: '2000' },
             {   nome: 'Inglês (Avançado): Curso de Capacitação',
-                curso: 'Wizard', duração: '0', year: '2016'
-            }
+                curso: 'Wizard', duração: '0', year: '2016' }
         ]
     };
 

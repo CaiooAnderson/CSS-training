@@ -4,14 +4,14 @@ import SkillDetails from './SkillDetails';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap, FaDocker, FaGithub, FaFigma } from "react-icons/fa";
-import { SiTypescript, SiPostgresql, SiVisualstudiocode } from "react-icons/si";
+import { SiTypescript, SiPostgresql, SiVisualstudiocode, SiMui } from "react-icons/si";
 import { Box, Typography, Fade } from '@mui/material';
 
 const Skills = () => {
 
     const tips = [
         'Em constante evolução. Tenho muito o que aprender.',
-        'Muitos desenvolvedores se sentem despreparados, mas quem realmente está?',
+        'Muitos desenvolvedores se sentem despreparados, mas quando que estamos preparados?',
         'Se não concorda que o Visual Studio Code é a melhor IDE, fale agora ou cale-se para sempre.',
         'Responsividade no CSS? Amo!',
         'Percebo que gosto de programar quando o resultado é esperado, mas quando é inesperado, é ainda melhor!',
@@ -28,7 +28,8 @@ const Skills = () => {
             { name: 'HTML', icon: FaHtml5, color: '#e44d26', bgColor: '#fff' },
             { name: 'CSS', icon: FaCss3Alt, color: '#1572b6', bgColor: '#fff' },
             { name: 'JavaScript', icon: FaJs, color: '#f7e02d', bgColor: '#000' },
-            { name: 'React', icon: FaReact, color: '#61dafb', bgColor: '#fff' },
+            { name: 'React.js', icon: FaReact, color: '#61dafb', bgColor: '#fff' },
+            { name: 'Material UI', icon: SiMui, color: '#3f51b5', bgColor: '#fff' },
             { name: 'TypeScript', icon: SiTypescript, color: '#007acc', bgColor: '#fff' },
             { name: 'BootStrap', icon: FaBootstrap, color: '#563d7c', bgColor: '#fff'},
             { name: 'WordPress', icon: FaWordpress, color: '#0073aa', bgColor: '#fff' }

@@ -28,9 +28,11 @@ const Home = () => {
           </Typography>
         </Zoom>
         <Zoom in={true} timeout={2500}>
-          <Button variant="contained" sx={{ mt: 4, backgroundColor: '#000', color: '#fff' }}>
-            Currículo
-            <OpenInNewOutlinedIcon />
+          <Button variant="contained" sx={{ mt: 4, backgroundColor: '#000', color: '#fff' }} onClick={() => window.open('https://drive.google.com/file/d/1-kefFziEzV0tSfeXT-mnJeBTAiazRds4/view?usp=sharing', '_blank')}>
+            <Typography className='home-button-text' variant='subtitle2'>
+              Currículo
+            </Typography>
+            <OpenInNewOutlinedIcon className='home-button-icon' />
           </Button>
         </Zoom>
       </Box>
