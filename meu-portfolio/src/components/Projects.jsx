@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import Hint from './Hint';
+import { Box, Modal, Button, Typography, Card, CardContent, CardActions } from '@mui/material';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const Projects = () => {
 
@@ -17,35 +20,105 @@ const Projects = () => {
         'Bônus: Por que fazer um simples "Hello World" enquanto você pode construir um universo inteiro?'
     ]
 
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState('Todos');
+    const [selectedProject, setSelectedProject] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
 
-    const projects = [
-        { name: 'Project 1', category: 'Front-End', imgSrc: 'path_to_image1' },
-        { name: 'Project 2', category: 'Back-End', imgSrc: 'path_to_image2' },
-        { name: 'Project 3', category: 'Other', imgSrc: 'path_to_image3' },
+    const projetos = [
+        { name: 'Projeto 1', categoria: 'Front-End', imgSrc: 'path_to_image1', desc: 'Descrição do projeto' },
+        { name: 'Projeto 2', categoria: 'Back-End', imgSrc: 'path_to_image2', desc: 'Descrição do projeto' },
+        { name: 'Projeto 3', categoria: 'Outros', imgSrc: 'path_to_image3', desc: 'Descrição do projeto' },
     ];
 
-    const filteredProjects = projects.filter(project => filter === 'All' || project.category === filter);
+    const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
+
+    const handleOpenModal = (project) => {
+        setSelectedProject(project);
+        setOpenModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    }
+
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 3,
+            partialVisibilityGutter: 40
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2,
+            partialVisibilityGutter: 30
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1,
+            partialVisibilityGutter: 30
+        }
+    };
 
     return (
-        <section id="projects">
-            <h2>Projects</h2>
-            <div>
-                <button onClick={() => setFilter('All')}>All</button>
-                <button onClick={() => setFilter('Front-End')}>Front-End</button>
-                <button onClick={() => setFilter('Back-End')}>Back-End</button>
-                <button onClick={() => setFilter('Other')}>Other</button>
-            </div>
-            <div className="carousel">
-                {filteredProjects.map(project => (
-                    <div key={project.name} className="carousel-item">
-                        <img src={project.imgSrc} alt={project.name} />
-                        <h3>{project.name}</h3>
-                    </div>
+        <Box className='projects' sx={{ 
+                                        mt: 0, 
+                                        p: 2, 
+                                        display: 'flex', 
+                                        flexDirection: 'column', 
+                                        height: '100vh', 
+                                        position: 'relative' 
+                                    }}>
+            <Typography variant='h2'>Projetos</Typography>
+            <Box>
+                <Button onClick={() => setFilter('Todos')}>Todos</Button>
+                <Button onClick={() => setFilter('Front-End')}>Front-End</Button>
+                <Button onClick={() => setFilter('Back-End')}>Back-End</Button>
+                <Button onClick={() => setFilter('Outros')}>Outros</Button>
+            </Box>
+            <Carousel responsive={responsive} partialVisible infinite centerMode>
+                {projetosFilter.map(project => (
+                    <Box key={project.name} className="carousel-item" onClick={() => handleOpenModal(project)} sx={{ 
+                                                                                                        cursor: 'pointer', 
+                                                                                                        textAlign: 'center' 
+                                                                                                        }}>
+                        <img src={project.imgSrc} alt={project.name} style={{ width: '100%', borderRadius: '8px' }} />
+                        <Typography variant='h6'>{project.name}</Typography>
+                    </Box>
                 ))}
-            </div>
+            </Carousel>
+
+            <Modal open={openModal} onClose={handleCloseModal}>
+                <Card sx={{
+                    width: '80%',
+                    maxWidth: 600,
+                    margin: 'auto',
+                    mt: '10%',
+                    padding: 2,
+                    borderRadius: 4,
+                    boxShadow: 3,
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)'
+                }}>
+                    {selectedProject && (
+                        <>
+                            <CardContent>
+                                <Typography variant="h4">{selectedProject.name}</Typography>
+                                <img src={selectedProject.imgSrc} alt={selectedProject.name} style={{ width: '100%', marginBottom: '20px', borderRadius: '8px' }} />
+                                <Typography variant="body1">{selectedProject.descricao}</Typography>
+                            </CardContent>
+                            <CardActions>
+                                <Button variant="contained" color="primary" href={`#`} target="_blank">
+                                    Acessar Repositório
+                                </Button>
+                                <Button variant="outlined" color="secondary" href={`#`} target="_blank">
+                                    Acessar Site do Projeto
+                                </Button>
+                            </CardActions>
+                        </>
+                    )}
+                </Card>
+            </Modal>
             <Hint tips={tips} />
-        </section>
+        </Box>
     );
 }
 
