@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap, FaDocker, FaGithub, FaFigma } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiVisualstudiocode } from "react-icons/si";
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Fade } from '@mui/material';
 
 const Skills = () => {
 
@@ -79,10 +79,7 @@ const Skills = () => {
         };
       }, []);
 
-    const handleSkillClick = (skillName) => {
-        setClickedSkill(prevSkill => prevSkill === skillName ? null : skillName);
-        
-    };
+    const handleSkillClick = (skillName) => { setClickedSkill(prevSkill => prevSkill === skillName ? null : skillName) };
 
     const handleMouseMove = (e) => {
         const { clientX, clientY, currentTarget } = e;
@@ -95,6 +92,7 @@ const Skills = () => {
     };
 
     return (
+        <Fade in={true} timeout={1000}>
         <Box className='skills' sx={{ 
                                     mt: 0,
                                     p: 2,
@@ -104,66 +102,76 @@ const Skills = () => {
                                     position: 'relative' 
                                 }} onMouseMove={handleMouseMove}>
             <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
-            <Typography variant='h4' sx={{ textAlign: 'left', mb: 4, fontWeight: 'bold', borderBottom: '2px solid #000' }}>Habilidades</Typography>
+                <Typography variant='h4' sx={{ 
+                                            textAlign: 'left', 
+                                            mb: 4, 
+                                            fontWeight: 'bold', 
+                                            borderBottom: '2px solid #000' 
+                                        }}>
+                    Habilidades
+                </Typography>
             </Box>
-            <Box className='skills-carousels'>
-            <Box className='front-end-skills' sx={{ px: 2, textAlign: 'center' }}>
-            <Typography variant='h5'>Front-End</Typography>
-            <Box className='skill-carousel-container'>
-                <Carousel responsive={responsive}>
-                    {skills.frontEnd.map(skill => (
-                        <Box 
-                            key={skill.name} 
-                            className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
-                            onClick={() => handleSkillClick(skill.name)}
-                            sx={{    
-                                borderColor: skill.color,
-                            }}>
-                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
+                <Box className='skills-carousels'>
+                    <Box className='front-end-skills' sx={{ px: 2, textAlign: 'center' }}>
+                        <Typography variant='h5'>Front-End</Typography>
+                            <Box className='skill-carousel-container'>
+                                <Carousel responsive={responsive}>
+                                    {skills.frontEnd.map(skill => (
+                                <Box 
+                                    key={skill.name} 
+                                    className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
+                                    onClick={() => handleSkillClick(skill.name)}
+                                    sx={{    
+                                        borderColor: skill.color,
+                                    }}>
+                                    <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
+                                </Box>
+                            ))}
+                                </Carousel>
+                            </Box>
                         </Box>
-                    ))}
-                </Carousel>
+                    <Box className='back-end-skills' sx={{ px: 2, textAlign: 'center' }}>
+                        <Typography variant='h5'>Back-End</Typography>
+                            <Box className='skill-carousel-container'>
+                                <Carousel responsive={responsive}>
+                                {skills.backEnd.map(skill => (
+                                <Box 
+                                    key={skill.name} 
+                                    className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
+                                    onClick={() => handleSkillClick(skill.name)}
+                                    sx={{   
+                                        borderColor: skill.color,
+                                    }}>
+                                    <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
+                                </Box>
+                            ))}
+                                </Carousel>
+                            </Box>
+                        </Box>
+                    <Box className='tools-skills' sx={{ px: 2, textAlign: 'center' }}>
+                        <Typography variant='h5'>Ferramentas</Typography>
+                            <Box className='skill-carousel-container'>
+                                <Carousel responsive={responsive}>
+                                {skills.ferramentas.map(skill => (
+                                <Box 
+                                    key={skill.name} 
+                                    className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
+                                    onClick={() => handleSkillClick(skill.name)}
+                                    sx={{   
+                                        borderColor: skill.color,
+                                    }}>
+                                    <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
+                                </Box>
+                            ))}
+                                </Carousel>
+                            </Box>
+                    </Box>
                 </Box>
+            <Box className='skills-hint'>
+                <Hint tips={tips} />
             </Box>
-                <Box className='back-end-skills' sx={{ px: 2, textAlign: 'center' }}>
-            <Typography variant='h5'>Back-End</Typography>
-            <Box className='skill-carousel-container'>
-                <Carousel responsive={responsive}>
-                    {skills.backEnd.map(skill => (
-                        <Box 
-                            key={skill.name} 
-                            className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
-                            onClick={() => handleSkillClick(skill.name)}
-                            sx={{   
-                                borderColor: skill.color,
-                            }}>
-                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
-                        </Box>
-                    ))}
-                </Carousel>
-                </Box>
-            </Box>
-            <Box className='tools-skills' sx={{ px: 2, textAlign: 'center' }}>
-            <Typography variant='h5'>Ferramentas</Typography>
-            <Box className='skill-carousel-container'>
-                <Carousel responsive={responsive}>
-                    {skills.ferramentas.map(skill => (
-                        <Box 
-                            key={skill.name} 
-                            className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
-                            onClick={() => handleSkillClick(skill.name)}
-                            sx={{   
-                                borderColor: skill.color,
-                            }}>
-                            <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
-                        </Box>
-                    ))}
-                </Carousel>
-            </Box>
-            </Box>
-            </Box>
-            <Hint tips={tips} />
         </Box>
+        </Fade>
     );
 }
 

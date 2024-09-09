@@ -8,7 +8,7 @@ const SkillDetails = ({ icon: Icon, label, color, bgColor, isSelected }) => {
           <Icon className={`skill-icon ${isSelected ? 'flutuando' : ''}`} style={{ color: color, fontSize: '24px' }} />
         </Box>  
         <Slide direction="up" in={isSelected} mountOnEnter unmountOnExit>
-        <Typography variant="subtitle1" sx={{ mb: 0, mt: 1 }}>{label}</Typography>
+          <Typography variant="subtitle1" sx={{ mb: 0, mt: 1 }}>{label}</Typography>
         </Slide>
       </Box>
     );

@@ -370,6 +370,13 @@ body.dark-mode .sidebar {
   border-color: var(--dark-text-color);
 }
 
+.dark-mode .skills h5,
+.dark-mode .skill-carousel-container {
+  background: linear-gradient(270deg, #420a4b, #231027, #51005d, #d7bdff);
+  background-size: 400% 400%;
+  animation: nebulosa 15s ease infinite;
+}
+
 .dark-mode .hint-container {
   background: var(--dark-sidebar-background);
 }
@@ -377,7 +384,7 @@ body.dark-mode .sidebar {
 .dark-mode .hint-icon {
   color: #ca3600;
   outline: 1px solid #4d0f80;
-  background: radial-gradient(circle, #d58484 0%, #3f1f54 30%, #2a0840 40%);
+  background: radial-gradient(circle, #d58484 0%, #3f1f54 20%, #2a0840 40%);
 }
 
 .dark-mode .hint-icon path {
@@ -595,6 +602,20 @@ body.dark-mode .sidebar {
   animation: rotate 1s ease-in-out forwards;
 }
 
+.skills-carousels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .skill-carousel-container {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.25);
@@ -674,17 +695,6 @@ body.dark-mode .sidebar {
   }
 }
 
-@keyframes drawBorder {
-  from {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-  }
-}
-
 /* HINT */
 
 .hint-container {
@@ -715,7 +725,7 @@ body.dark-mode .sidebar {
   outline: 1px solid #c2c50c;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  background: radial-gradient(circle, #00f2fe 0%, #c2c50c 25%, #ffd700 40%);
+  background: radial-gradient(circle, #e4ffa4 0%, #fbff0e 20%, #ffd700 40%);
 }
 
 .hint-icon path {
