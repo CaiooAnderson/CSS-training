@@ -13,14 +13,30 @@ const Cursos = () => {
                 curso: 'Udemy', duração: '50', year: '2022'
             },
             {   nome: 'HTML: Elementos para a criação de páginas Web',
-                curso: 'Bradesco', duração: '0', year: '2000' }
+                curso: 'Bradesco', duração: '0', year: '2000' 
+            },
+            {   nome: 'HTML e CSS: Responsividade e publicação de projetos',
+                curso: 'Alura', duração: '0', year: '2024'
+            },
+            {   nome: 'HTML - Avançado: Elementos para a criação de páginas Web',
+                curso: 'Bradesco', duração: '0', year: '2024'
+            },
+            {   nome: 'Melhore sua experiência de desenvolvimento com TypeScript',
+                curso: 'Alura', duração: '0', year: '2024'
+            },
+            {   nome: 'React: como os componentes funcionam',
+                curso: 'Alura', duração: '0', year: '2024'
+            },
+            {   nome: 'React: Desenvolvendo com JavaScript',
+                curso: 'Alura', duração: '0', year: '2024'
+            },
         ],
         'Back-End': [
-            {   nome: 'Python: Conhecimento básico ao intermediário', 
+            {   nome: 'Python: Desenvolvimento do básico ao nível intermediário', 
                 curso: 'CVTI', duração: '40', year: '2023' },
             {   nome: 'Desenvolvimento Back-End com JavaScript e MongoDB', 
                 curso: 'Alura', duração: '0', year: '2023' },
-            {   nome: 'Node.js: Foco no back-end', 
+            {   nome: 'Curso de Node.js: Programando em JavaScript com foco no back-end', 
                 curso: 'Alura', duração: '0', year: '2024' }
         ],
         'Outros': [

@@ -25,9 +25,9 @@ const Projects = () => {
     const [openModal, setOpenModal] = useState(false);
 
     const projetos = [
-        { name: 'Projeto 1', categoria: 'Front-End', imgSrc: 'path_to_image1', desc: 'Descrição do projeto' },
-        { name: 'Projeto 2', categoria: 'Back-End', imgSrc: 'path_to_image2', desc: 'Descrição do projeto' },
-        { name: 'Projeto 3', categoria: 'Outros', imgSrc: 'path_to_image3', desc: 'Descrição do projeto' },
+        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'assets/projetos-capa/image.png', imagens: [], desc: 'Descrição do projeto' },
+        { name: 'Projeto 2', categoria: 'Back-End', imagemProjeto: '', imagens: [], desc: 'Descrição do projeto' },
+        { name: 'Projeto 3', categoria: 'Outros', imagemProjeto: '', imagens: [], desc: 'Descrição do projeto' },
     ];
 
     const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -66,27 +66,31 @@ const Projects = () => {
                                         display: 'flex', 
                                         flexDirection: 'column', 
                                         height: '100vh', 
-                                        position: 'relative' 
+                                        position: 'relative',
+                                        overflow: 'hidden'
                                     }}>
-            <Typography variant='h2'>Projetos</Typography>
+            <Typography variant='h4'>Projetos</Typography>
             <Box>
                 <Button onClick={() => setFilter('Todos')}>Todos</Button>
                 <Button onClick={() => setFilter('Front-End')}>Front-End</Button>
                 <Button onClick={() => setFilter('Back-End')}>Back-End</Button>
                 <Button onClick={() => setFilter('Outros')}>Outros</Button>
             </Box>
-            <Carousel responsive={responsive} partialVisible infinite centerMode>
+            <Box sx={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
+            <Carousel responsive={responsive} partialVisible infinite containerClass="carousel-container"
+                itemClass="carousel-item-padding-40-px"
+                renderDotsOutside={false}>
                 {projetosFilter.map(project => (
                     <Box key={project.name} className="carousel-item" onClick={() => handleOpenModal(project)} sx={{ 
                                                                                                         cursor: 'pointer', 
                                                                                                         textAlign: 'center' 
                                                                                                         }}>
-                        <img src={project.imgSrc} alt={project.name} style={{ width: '100%', borderRadius: '8px' }} />
+                        <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', borderRadius: '8px' }} />
                         <Typography variant='h6'>{project.name}</Typography>
                     </Box>
                 ))}
             </Carousel>
-
+            </Box>
             <Modal open={openModal} onClose={handleCloseModal}>
                 <Card sx={{
                     width: '80%',
@@ -102,8 +106,26 @@ const Projects = () => {
                         <>
                             <CardContent>
                                 <Typography variant="h4">{selectedProject.name}</Typography>
-                                <img src={selectedProject.imgSrc} alt={selectedProject.name} style={{ width: '100%', marginBottom: '20px', borderRadius: '8px' }} />
-                                <Typography variant="body1">{selectedProject.descricao}</Typography>
+                                <img src={selectedProject.imagemProjeto} alt={selectedProject.name} style={{ width: '100%', marginBottom: '20px', borderRadius: '8px' }} />
+                                <Typography variant="body1">{selectedProject.desc}</Typography>
+
+                                <Carousel responsive={responsive} partialVisible infinite containerClass="carousel-container"
+                                    itemClass="carousel-item-padding-40-px"
+                                    renderDotsOutside={false}>
+                                    {selectedProject.imagens.map((media, index) => (
+                                        <Box key={index} className="carousel-item" sx={{ cursor: 'pointer', textAlign: 'center' }}>
+                                            {media.includes('.mp4') ? (
+                                                <video controls style={{ width: '100%', borderRadius: '8px' }}>
+                                                    <source src={media} type="video/mp4" />
+                                                    Seu navegador não suporta vídeos.
+                                                </video>
+                                            ) : (
+                                                <img src={media} alt={`Imagem ${index + 1}`} style={{ width: '100%', borderRadius: '8px' }} />
+                                            )}
+                                        </Box>
+                                    ))}
+                                </Carousel>
+
                             </CardContent>
                             <CardActions>
                                 <Button variant="contained" color="primary" href={`#`} target="_blank">
