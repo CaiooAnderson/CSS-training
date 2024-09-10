@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Hint from './Hint';
-import { Box, Modal, Button, Typography, Card, CardContent, CardActions } from '@mui/material';
+import { Box, Button, Typography, Modal, Card, CardContent, CardActions } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import Hint from './Hint'
 
 const Projects = () => {
 
@@ -18,16 +18,16 @@ const Projects = () => {
         'Meu repositório é como um laboratório, o experimento pode explodir, bombar, ou nem funcionar.',
         'Estes projetos destacam minha habilidade em trabalhar com diferentes tecnologias e frameworks.',
         'Bônus: Por que fazer um simples "Hello World" enquanto você pode construir um universo inteiro?'
-    ]
+    ];
 
     const [filter, setFilter] = useState('Todos');
     const [selectedProject, setSelectedProject] = useState(null);
     const [openModal, setOpenModal] = useState(false);
 
     const projetos = [
-        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'assets/projetos-capa/image.png', imagens: [], desc: 'Descrição do projeto' },
-        { name: 'Projeto 2', categoria: 'Back-End', imagemProjeto: '', imagens: [], desc: 'Descrição do projeto' },
-        { name: 'Projeto 3', categoria: 'Outros', imagemProjeto: '', imagens: [], desc: 'Descrição do projeto' },
+        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Projeto 2', categoria: 'Back-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Projeto 3', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
     ];
 
     const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -44,53 +44,43 @@ const Projects = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
-            partialVisibilityGutter: 40
+            items: 1
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2,
-            partialVisibilityGutter: 30
+            items: 2
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1,
-            partialVisibilityGutter: 30
+            items: 1
         }
     };
 
     return (
-        <Box className='projects' sx={{ 
-                                        mt: 0, 
-                                        p: 2, 
-                                        display: 'flex', 
-                                        flexDirection: 'column', 
-                                        height: '100vh', 
-                                        position: 'relative',
-                                        overflow: 'hidden'
-                                    }}>
-            <Typography variant='h4'>Projetos</Typography>
-            <Box>
+        <Box sx={{ mt: 4, p: 2 }}>
+            <Typography variant='h4' mb={2}>Projetos</Typography>
+
+            {/* Filtros */}
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 4 }}>
                 <Button onClick={() => setFilter('Todos')}>Todos</Button>
                 <Button onClick={() => setFilter('Front-End')}>Front-End</Button>
                 <Button onClick={() => setFilter('Back-End')}>Back-End</Button>
                 <Button onClick={() => setFilter('Outros')}>Outros</Button>
             </Box>
-            <Box sx={{ width: '100%', maxWidth: '1200px', margin: '0 auto' }}>
-            <Carousel responsive={responsive} partialVisible infinite containerClass="carousel-container"
-                itemClass="carousel-item-padding-40-px"
-                renderDotsOutside={false}>
-                {projetosFilter.map(project => (
-                    <Box key={project.name} className="carousel-item" onClick={() => handleOpenModal(project)} sx={{ 
-                                                                                                        cursor: 'pointer', 
-                                                                                                        textAlign: 'center' 
-                                                                                                        }}>
-                        <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', borderRadius: '8px' }} />
-                        <Typography variant='h6'>{project.name}</Typography>
-                    </Box>
-                ))}
-            </Carousel>
+
+            {/* Carrossel */}
+            <Box sx={{ maxWidth: '100%', height: '400px', margin: '0 auto' }}>
+                <Carousel responsive={responsive} infinite>
+                    {projetosFilter.map(project => (
+                        <Box key={project.name} onClick={() => handleOpenModal(project)} sx={{ cursor: 'pointer', textAlign: 'center' }}>
+                            <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
+                            <Typography variant='h6'>{project.name}</Typography>
+                        </Box>
+                    ))}
+                </Carousel>
             </Box>
+
+            {/* Modal */}
             <Modal open={openModal} onClose={handleCloseModal}>
                 <Card sx={{
                     width: '80%',
@@ -99,8 +89,7 @@ const Projects = () => {
                     mt: '10%',
                     padding: 2,
                     borderRadius: 4,
-                    boxShadow: 3,
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)'
+                    backgroundColor: '#fff'
                 }}>
                     {selectedProject && (
                         <>
@@ -108,32 +97,10 @@ const Projects = () => {
                                 <Typography variant="h4">{selectedProject.name}</Typography>
                                 <img src={selectedProject.imagemProjeto} alt={selectedProject.name} style={{ width: '100%', marginBottom: '20px', borderRadius: '8px' }} />
                                 <Typography variant="body1">{selectedProject.desc}</Typography>
-
-                                <Carousel responsive={responsive} partialVisible infinite containerClass="carousel-container"
-                                    itemClass="carousel-item-padding-40-px"
-                                    renderDotsOutside={false}>
-                                    {selectedProject.imagens.map((media, index) => (
-                                        <Box key={index} className="carousel-item" sx={{ cursor: 'pointer', textAlign: 'center' }}>
-                                            {media.includes('.mp4') ? (
-                                                <video controls style={{ width: '100%', borderRadius: '8px' }}>
-                                                    <source src={media} type="video/mp4" />
-                                                    Seu navegador não suporta vídeos.
-                                                </video>
-                                            ) : (
-                                                <img src={media} alt={`Imagem ${index + 1}`} style={{ width: '100%', borderRadius: '8px' }} />
-                                            )}
-                                        </Box>
-                                    ))}
-                                </Carousel>
-
                             </CardContent>
                             <CardActions>
-                                <Button variant="contained" color="primary" href={`#`} target="_blank">
-                                    Acessar Repositório
-                                </Button>
-                                <Button variant="outlined" color="secondary" href={`#`} target="_blank">
-                                    Acessar Site do Projeto
-                                </Button>
+                                <Button variant="contained" color="primary">Acessar Repositório</Button>
+                                <Button variant="outlined" color="secondary">Acessar Site</Button>
                             </CardActions>
                         </>
                     )}
