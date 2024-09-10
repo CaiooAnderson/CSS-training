@@ -782,6 +782,69 @@ body.dark-mode .sidebar {
   }
 }
 
+/* PROJECTS */
+
+.projects {
+  margin-top: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+.project-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
+
+.project-title h4 {
+  text-align: left;
+  margin-bottom: 32px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+}
+
+.project-button {
+  background: var(--button-bg-color);
+  color: var(--button-active-text-color);
+}
+
+.project-carousel-container {
+  background-color: #000;
+  margin-bottom: 32px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-carousel-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: max-content;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding: 2px 8px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.carousel ul li {
+  display: flex;
+  margin: 0 20px;
+}
+
+.project-carousel-item {
+  width: 250px;
+  height: 300px;
+}
+
+
 /* HINT */
 
 .hint-container {

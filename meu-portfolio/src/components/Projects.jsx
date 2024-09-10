@@ -26,8 +26,11 @@ const Projects = () => {
 
     const projetos = [
         { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
-        { name: 'Projeto 2', categoria: 'Back-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
-        { name: 'Projeto 3', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto' },
+
     ];
 
     const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -44,11 +47,11 @@ const Projects = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 1
+            items: 3,
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2
+            items: 2,
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -57,34 +60,39 @@ const Projects = () => {
     };
 
     return (
-        <Box sx={{ mt: 4, p: 2 }}>
-            <Typography variant='h4' mb={2}>Projetos</Typography>
-
-            {/* Filtros */}
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, mb: 4 }}>
-                <Button onClick={() => setFilter('Todos')}>Todos</Button>
-                <Button onClick={() => setFilter('Front-End')}>Front-End</Button>
-                <Button onClick={() => setFilter('Back-End')}>Back-End</Button>
-                <Button onClick={() => setFilter('Outros')}>Outros</Button>
+        <Box className='projects'>
+            <Box className='project-title'>
+                <Typography variant='h4'>
+                    Projetos
+                </Typography>
             </Box>
+            <Box className='project-carousel-container'>
+                <Box className='project-carousel-button-container'>
+                    <Button className='project-button' onClick={() => setFilter('Todos')}>Todos</Button>
+                    <Button className='project-button' onClick={() => setFilter('Front-End')}>Front-End</Button>
+                    <Button className='project-button' onClick={() => setFilter('Back-End')}>Back-End</Button>
+                    <Button className='project-button' onClick={() => setFilter('Outros')}>Outros</Button>
+                </Box>
 
-            {/* Carrossel */}
-            <Box sx={{ maxWidth: '100%', height: '400px', margin: '0 auto' }}>
-                <Carousel responsive={responsive} infinite>
-                    {projetosFilter.map(project => (
-                        <Box key={project.name} onClick={() => handleOpenModal(project)} sx={{ cursor: 'pointer', textAlign: 'center' }}>
-                            <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: 'auto', borderRadius: '8px' }} />
-                            <Typography variant='h6'>{project.name}</Typography>
-                        </Box>
-                    ))}
-                </Carousel>
+                <Box className='project-carousel'>
+                    <Box className='carousel' sx={{ width: '700px' }}>
+                    <Carousel responsive={responsive} infinite centerMode>
+                        {projetosFilter.map(project => (
+                            <Box className='project-carousel-item' key={project.name} onClick={() => handleOpenModal(project)} sx={{ backgroundColor: '#fff', cursor: 'pointer', textAlign: 'center' }}>
+                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '300px', height: '200px', borderRadius: '8px' }} />
+                                <Typography variant='h6'>{project.name}</Typography>
+                            </Box>
+                        ))}
+                    </Carousel>
+                    </Box>
+                </Box>
             </Box>
 
             {/* Modal */}
             <Modal open={openModal} onClose={handleCloseModal}>
                 <Card sx={{
                     width: '80%',
-                    maxWidth: 600,
+                    maxWidth: '400px',
                     margin: 'auto',
                     mt: '10%',
                     padding: 2,

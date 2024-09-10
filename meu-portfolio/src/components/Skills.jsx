@@ -95,7 +95,7 @@ const Skills = () => {
     return (
         <Fade in={true} timeout={1000}>
         <Box className='skills' sx={{ 
-                                    mt: 0,
+                                    mt: 0,  
                                     p: 2,
                                     display: 'flex',
                                     flexDirection: 'column',
