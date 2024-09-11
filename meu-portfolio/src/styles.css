@@ -794,6 +794,14 @@ body.dark-mode .sidebar {
   position: relative;
 }
 
+.projects h4 {
+  color: var(--sidebar-text-hover-color);
+  border-color: var(--button-bg-color);
+  border-width: 4px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 4px;
+}
+
 .project-title {
   width: 100%;
   display: flex;
@@ -801,21 +809,10 @@ body.dark-mode .sidebar {
   justify-content: left;
 }
 
-.project-title h4 {
-  text-align: left;
-  margin-bottom: 32px;
-  font-weight: bold;
-  border-bottom: 2px solid #000;
-}
-
-.project-button {
-  background: var(--button-bg-color);
-  color: var(--button-active-text-color);
-}
-
 .project-carousel-container {
   background-color: #000;
   margin-bottom: 32px;
+  border-radius: 16px;
   height: 480px;
   display: flex;
   flex-direction: column;
@@ -840,8 +837,7 @@ body.dark-mode .sidebar {
 }
 
 .project-carousel-item {
-  width: 250px;
-  height: 300px;
+  height: 200px;
 }
 
 
