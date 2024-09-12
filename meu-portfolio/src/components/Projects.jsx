@@ -59,10 +59,12 @@ const Projects = () => {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 3,
+            partialVisibilityGutter: 40
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 2,
+            partialVisibilityGutter: 30
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -80,14 +82,14 @@ const Projects = () => {
 
             <Box className='project-carousel-container' onMouseMove={handleMouseMove} 
                 sx={{
-                    background: `radial-gradient(circle at var(--x) var(--y), #e0f7fa, #004d40)`,
-                    transition: 'background 0.3s ease'
+                    background: `radial-gradient(circle at var(--x) var(--y), #d4b0ff, #8e44ad)`,
+                    transition: 'none'
                 }}>
                 <Box className='project-carousel-button-container' 
                     sx={{
                         position: 'relative',
                         overflow: 'hidden',
-                        background: 'linear-gradient(45deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 50%), radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%)',
+                        background: 'linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%), radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 70%)',
                         padding: 2,
                         borderRadius: 4,
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
@@ -98,7 +100,7 @@ const Projects = () => {
                             left: '-50%',
                             width: '200%',
                             height: '200%',
-                            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 100%)',
+                            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
                             transform: 'rotate(30deg)',
                             opacity: 0.5,
                             pointerEvents: 'none',
@@ -106,33 +108,33 @@ const Projects = () => {
                     }}>
                     <Button className='project-button' onClick={() => setFilter('Todos')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
+                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
                         }}>
                             Todos
                     </Button>
                     <Button className='project-button' onClick={() => setFilter('Front-End')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
+                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
                         }}>
                             Front-End
                     </Button>
                     <Button className='project-button' onClick={() => setFilter('Back-End')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
+                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
                         }}>
                             Back-End
                     </Button>
                     <Button className='project-button' onClick={() => setFilter('Outros')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
+                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(0, 128, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
                         }}>
                             Outros
                     </Button>
@@ -141,7 +143,7 @@ const Projects = () => {
                 <Box className='project-carousel'>
                     <Box className='carousel' 
                         sx={{ 
-                            width: '700px', 
+                            width: '1000px', 
                             margin: '0 auto' 
                         }}>
                     <Carousel 
@@ -153,13 +155,18 @@ const Projects = () => {
                         transitionDuration={500}
                         renderDotsOutside={true}
                         >
-                        {projetosFilter.map(project => (
-                            <Box className='project-carousel-item' key={project.name} onClick={() => handleOpenModal(project)} sx={{ 
+                        {projetosFilter.map((project, index) => (
+                            <Box key={project.name} 
+                            className={`carousel-item ${index === 1 ? 'focused' : ''}`} onClick={() => handleOpenModal(project)} sx={{ 
+                                opacity: index === 1 ? 1 : 0.5,
+                                transition: 'opacity 0.5s ease transform 0.5s',
+                                padding: '10px',
+                                width: '300px',
+                                height: '200px',
                                 backgroundColor: '#fff', 
                                 cursor: 'pointer', 
-                                textAlign: 'center', 
+                                textAlign: 'center',
                                 position: 'relative', 
-                                transition: 'transform 0.3s ease', 
                                 '&:hover': { transform: 'scale(1.05)', 
                                 boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)' } 
                             }}>
