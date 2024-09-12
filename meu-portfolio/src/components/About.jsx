@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade, Box, Typography, Zoom } from '@mui/material';
+import { Fade, Box, Typography, Zoom, Grid } from '@mui/material';
 import Graduacao from './Graduacao';
 import Cursos from './Cursos';
 import Hint from './Hint';
@@ -34,24 +34,24 @@ const About = () => {
                                             position: 'relative'
                                         }}>
             <Zoom in={true} timeout={1750}>
-                <Box className='about-title' sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
-                    <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
+                <Box className='about-title' sx={{ width: '100%', display: 'flex', justifyContent: 'left' }}>
+                    <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '4px solid #4a148c', color: '#003366' }}>
                         Sobre
                     </Typography>
                 </Box>
             </Zoom>
-            <Box className='about-center' sx={{ display: 'flex', flexDirection: 'row', width: '100%', justifyContent: 'space-around', alignItems: 'center' }}>
+            <Grid container className='about-center' sx={{ width: '100%', justifyContent: 'space-evenly', alignItems: 'center' }}>
                 <Fade in={true} timeout={2000}>
-                    <Box className='about-container' sx={{ maxWidth: 'max-content', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '100%', overflow: 'hidden' }}>
+                    <Grid item className='about-container' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
                         <Graduacao />
-                    </Box>
+                    </Grid>
                 </Fade>
                 <Fade in={true} timeout={2000}>
-                    <Box className='about-container' sx={{ maxWidth: 'max-content', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '100%', overflow: 'hidden' }}>
+                    <Grid item className='about-container' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
                         <Cursos />
-                    </Box>
+                    </Grid>
                 </Fade>
-            </Box>
+            </Grid>
                 <Fade in={true} timeout={3000}>
                     <Box className='about-hint'>
                         <Hint tips={tips} />

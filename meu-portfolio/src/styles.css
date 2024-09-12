@@ -836,10 +836,7 @@ body.dark-mode .sidebar {
   margin: 0 20px;
 }
 
-
-
 /* HINT */
-
 .hint-container {
   width: 300px;
   height: 150px;
@@ -897,8 +894,6 @@ body.dark-mode .sidebar {
 
 .about-hint {
   height: 200px;
-  margin-bottom: 20px;
-  margin-right: 40px;
   display: flex;
   justify-content: center;
   width: 100%;
