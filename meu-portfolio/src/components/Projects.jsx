@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Button, Typography, Modal, Card, CardContent, CardActions } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -35,7 +35,7 @@ const Projects = () => {
     ];
 
     const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
-
+    
     const handleOpenModal = (project) => {
         setSelectedProject(project);
         setOpenModal(true);
@@ -59,12 +59,10 @@ const Projects = () => {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
             items: 3,
-            partialVisibilityGutter: 40
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
             items: 2,
-            partialVisibilityGutter: 30
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
@@ -143,37 +141,46 @@ const Projects = () => {
                 <Box className='project-carousel'>
                     <Box className='carousel' 
                         sx={{ 
-                            width: '1000px', 
+                            width: '1000px',
+                            maxWidth: '1200px', 
                             margin: '0 auto' 
                         }}>
                     <Carousel 
                         responsive={responsive} 
                         infinite 
                         centerMode 
-                        itemClass="carousel-item-padding-40-px"
-                        containerClass="carousel-container"
                         transitionDuration={500}
                         renderDotsOutside={true}
                         >
-                        {projetosFilter.map((project, index) => (
-                            <Box key={project.name} 
-                            className={`carousel-item ${index === 1 ? 'focused' : ''}`} onClick={() => handleOpenModal(project)} sx={{ 
-                                opacity: index === 1 ? 1 : 0.5,
-                                transition: 'opacity 0.5s ease transform 0.5s',
+                        {projetosFilter.map((project) => (
+                            <Box key={project.name} onClick={() => handleOpenModal(project)} 
+                                sx={{ 
                                 padding: '10px',
                                 width: '300px',
-                                height: '200px',
+                                height: '220px',
                                 backgroundColor: '#fff', 
-                                cursor: 'pointer', 
+                                cursor: 'pointer',
                                 textAlign: 'center',
-                                position: 'relative', 
-                                '&:hover': { transform: 'scale(1.05)', 
-                                boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)' } 
+                                position: 'relative',
+                                transition: 'transform 0.5s, opacity 0.5s',
+                                '&:hover': { 
+                                    transform: 'scale(1.05)', 
+                                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+                                    zIndex: 10,
+                                },
+                                '&.react-multi-carousel-item': {
+                                    opacity: 0.5,
+                                    transition: 'opacity 0.5s',
+                                },
+                                '&.react-multi-carousel-item-active': {
+                                    opacity: 1,
+                                }
                             }}>
                                 <img src={project.imagemProjeto} alt={project.name} style={{ width: '300px', height: '200px', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
                                 <Typography variant='h6' sx={{ mt: 2 }}>{project.name}</Typography>
                             </Box>
                         ))}
+                    
                     </Carousel>
                     </Box>
                 </Box>
