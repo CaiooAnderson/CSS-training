@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Box, Button, Typography, Modal, Card, CardContent, CardActions } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -25,6 +25,7 @@ const Projects = () => {
     const [filter, setFilter] = useState('Todos');
     const [selectedProject, setSelectedProject] = useState(null);
     const [openModal, setOpenModal] = useState(false);
+    const carouselRef = useRef(null);
 
     const projetos = [
         { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
@@ -34,8 +35,15 @@ const Projects = () => {
         { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
     ];
 
-    const projetosFilter = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
+    const projetosFiltrados = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
     
+    const handleFilterChange = (newFilter) => {
+        setFilter(newFilter);
+        if (carouselRef.current) {
+            carouselRef.current.goToSlide(0);
+        }
+    };
+
     const handleOpenModal = (project) => {
         setSelectedProject(project);
         setOpenModal(true);
@@ -58,7 +66,8 @@ const Projects = () => {
     const responsive = {
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 3,
+            items: 2,
+            slidesToSlide: 2
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
@@ -71,7 +80,7 @@ const Projects = () => {
     };
 
     return (
-        <Box className='projects'>
+        <Box className='projects' sx={{ mb: 4, borderBottom: '2px solid #000' }}>
             <Box className='project-title'>
                 <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
                     Projetos
@@ -104,7 +113,7 @@ const Projects = () => {
                             pointerEvents: 'none',
                         }
                     }}>
-                    <Button className='project-button' onClick={() => setFilter('Todos')} 
+                    <Button className='project-button' onClick={() => handleFilterChange('Todos')} 
                     sx={{ 
                         background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
@@ -112,7 +121,7 @@ const Projects = () => {
                         }}>
                             Todos
                     </Button>
-                    <Button className='project-button' onClick={() => setFilter('Front-End')} 
+                    <Button className='project-button' onClick={() => handleFilterChange('Front-End')} 
                     sx={{ 
                         background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
@@ -120,7 +129,7 @@ const Projects = () => {
                         }}>
                             Front-End
                     </Button>
-                    <Button className='project-button' onClick={() => setFilter('Back-End')} 
+                    <Button className='project-button' onClick={() => handleFilterChange('Back-End')} 
                     sx={{ 
                         background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
@@ -128,7 +137,7 @@ const Projects = () => {
                         }}>
                             Back-End
                     </Button>
-                    <Button className='project-button' onClick={() => setFilter('Outros')} 
+                    <Button className='project-button' onClick={() => handleFilterChange('Outros')} 
                     sx={{ 
                         background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
                         color: '#fff', 
@@ -142,21 +151,27 @@ const Projects = () => {
                     <Box className='carousel' 
                         sx={{ 
                             width: '1000px',
-                            maxWidth: '1200px', 
-                            margin: '0 auto' 
+                            margin: '0 auto',
+                            p: 0 
                         }}>
+                    <Box classname='carousel-container' sx={{ width: '600px', display: 'flex', flexDirection: 'column', margin: '0 auto' }}>
                     <Carousel 
+                        ref={carouselRef}
                         responsive={responsive} 
-                        infinite 
-                        centerMode 
+                        infinite
+                        showDots={false}
+                        customTransition="transform 500ms ease-in-out"
+                        itemClass="carousel-item-padding-40-px"
                         transitionDuration={500}
                         renderDotsOutside={true}
+                        arrow={true}
+                        containerClass="carousel-container"
                         >
-                        {projetosFilter.map((project) => (
+                        {projetosFiltrados.map((project) => (
                             <Box key={project.name} onClick={() => handleOpenModal(project)} 
                                 sx={{ 
-                                padding: '10px',
-                                width: '300px',
+                                margin: '0 40px',
+                                width: '220px',
                                 height: '220px',
                                 backgroundColor: '#fff', 
                                 cursor: 'pointer',
@@ -168,20 +183,13 @@ const Projects = () => {
                                     boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
                                     zIndex: 10,
                                 },
-                                '&.react-multi-carousel-item': {
-                                    opacity: 0.5,
-                                    transition: 'opacity 0.5s',
-                                },
-                                '&.react-multi-carousel-item-active': {
-                                    opacity: 1,
-                                }
                             }}>
-                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '300px', height: '200px', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
+                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: '200px', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
                                 <Typography variant='h6' sx={{ mt: 2 }}>{project.name}</Typography>
                             </Box>
                         ))}
-                    
                     </Carousel>
+                    </Box>
                     </Box>
                 </Box>
             </Box>
@@ -189,8 +197,7 @@ const Projects = () => {
             {/* Modal */}
             <Modal open={openModal} onClose={handleCloseModal}>
                 <Card sx={{
-                    width: '80%',
-                    maxWidth: '400px',
+                    width: '400px',
                     margin: 'auto',
                     mt: '10%',
                     padding: 2,
