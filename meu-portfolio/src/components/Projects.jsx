@@ -89,8 +89,8 @@ const Projects = () => {
 
             <Box className='project-carousel-container' onMouseMove={handleMouseMove} 
                 sx={{
-                    background: `radial-gradient(circle at var(--x) var(--y), #d4b0ff, #8e44ad)`,
-                    transition: 'none'
+                    background: 'radial-gradient(circle at 50% 50%, #4b0082, #311b92)',
+                    transition: 'transition: "background 0.3s ease-in-out"'
                 }}>
                 <Box className='project-carousel-button-container' 
                     sx={{
@@ -184,7 +184,7 @@ const Projects = () => {
                                     zIndex: 10,
                                 },
                             }}>
-                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: '200px', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
+                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: 'auto', minHeight: '200px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
                                 <Typography variant='h6' sx={{ mt: 2 }}>{project.name}</Typography>
                             </Box>
                         ))}
