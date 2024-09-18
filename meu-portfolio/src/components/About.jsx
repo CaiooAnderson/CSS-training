@@ -52,7 +52,7 @@ const About = () => {
                     </Grid>
                 </Fade>
             </Grid>
-                <Fade in={true} timeout={3000}>
+                <Fade in={true} timeout={4500}>
                     <Box className='about-hint'>
                         <Hint tips={tips} />
                     </Box>

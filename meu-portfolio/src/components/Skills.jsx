@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap, FaDocker, FaGithub, FaFigma } from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiVisualstudiocode, SiMui } from "react-icons/si";
-import { Box, Typography, Fade } from '@mui/material';
+import { Box, Typography, Fade, Zoom } from '@mui/material';
 
 const Skills = () => {
 
@@ -102,7 +102,8 @@ const Skills = () => {
                                     height: '100vh',
                                     position: 'relative' 
                                 }} onMouseMove={handleMouseMove}>
-            <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
+                <Zoom in={true} timeout={1750}>
+                <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
                 <Typography variant='h4' sx={{ 
                                             textAlign: 'left', 
                                             mb: 4, 
@@ -112,6 +113,7 @@ const Skills = () => {
                     Habilidades
                 </Typography>
             </Box>
+                </Zoom>
                 <Box className='skills-carousels'>
                     <Box className='front-end-skills' sx={{ px: 2, textAlign: 'center' }}>
                         <Typography variant='h5'>Front-End</Typography>
@@ -168,10 +170,12 @@ const Skills = () => {
                             </Box>
                     </Box>
                 </Box>
-            <Box className='skills-hint'>
-                <Hint tips={tips} />
+                <Fade in={true} timeout={4500}>
+                    <Box className='skills-hint'>
+                    <Hint tips={tips} />
+                    </Box>
+                </Fade>
             </Box>
-        </Box>
         </Fade>
     );
 }

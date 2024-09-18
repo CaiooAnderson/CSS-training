@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
-import { Box, Button, Typography, Modal, Card, CardContent, CardActions } from '@mui/material';
+import { Box, Button, Typography, Modal, Card, CardContent, CardActions, Fade, Zoom } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap} from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiMui } from "react-icons/si";
-import Hint from './Hint'
+import Hint from './Hint';
 
 const Projects = () => {
 
@@ -27,12 +27,16 @@ const Projects = () => {
     const [openModal, setOpenModal] = useState(false);
     const carouselRef = useRef(null);
 
+    // Importação das capas
+    const importAll = (r) => r.keys().map(r);
+    const capas = importAll(require.context('../assets/projetos-capa', false, /\.(gif)$/));
+
     const projetos = [
-        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
-        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaPython />] },
-        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: 'https://via.placeholder.com/300x200', desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
+        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: capas[0], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
+        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: capas[1], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
+        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: capas[2], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
+        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: capas[3], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaPython />] },
+        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: capas[4], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
     ];
 
     const projetosFiltrados = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -81,12 +85,14 @@ const Projects = () => {
 
     return (
         <Box className='projects' sx={{ mb: 4, borderBottom: '2px solid #000' }}>
+            <Zoom in={true} timeout={1750}>
             <Box className='project-title'>
                 <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
                     Projetos
                 </Typography>
             </Box>
-
+            </Zoom>
+            <Fade in={true} timeout={2000}>
             <Box className='project-carousel-container' onMouseMove={handleMouseMove} 
                 sx={{
                     background: 'radial-gradient(circle at 50% 50%, #4b0082, #311b92)',
@@ -146,7 +152,7 @@ const Projects = () => {
                             Outros
                     </Button>
                 </Box>
-
+                <Fade in={true} timeout={3000}>
                 <Box className='project-carousel'>
                     <Box className='carousel' 
                         sx={{ 
@@ -158,7 +164,7 @@ const Projects = () => {
                     <Carousel 
                         ref={carouselRef}
                         responsive={responsive} 
-                        infinite
+                        infinite={filter === 'Todos'}
                         showDots={false}
                         customTransition="transform 500ms ease-in-out"
                         itemClass="carousel-item-padding-40-px"
@@ -192,7 +198,9 @@ const Projects = () => {
                     </Box>
                     </Box>
                 </Box>
+            </Fade>
             </Box>
+            </Fade>
 
             {/* Modal */}
             <Modal open={openModal} onClose={handleCloseModal}>
@@ -249,7 +257,11 @@ const Projects = () => {
                     )}
                 </Card>
             </Modal>
-            <Hint tips={tips} />
+            <Fade in={true} timeout={4500}>
+                <Box className='project-hint'>
+                    <Hint tips={tips} />
+                </Box>
+            </Fade>
         </Box>
     );
 }
