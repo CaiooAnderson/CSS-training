@@ -114,6 +114,7 @@ const Skills = () => {
                 </Typography>
             </Box>
                 </Zoom>
+                <Box className='skill-container' sx={{ margin: 'auto' }}>
                 <Box className='skills-carousels'>
                     <Box className='front-end-skills' sx={{ px: 2, textAlign: 'center' }}>
                         <Typography variant='h5'>Front-End</Typography>
@@ -170,12 +171,13 @@ const Skills = () => {
                             </Box>
                     </Box>
                 </Box>
+            </Box>
                 <Fade in={true} timeout={4500}>
                     <Box className='skills-hint'>
                     <Hint tips={tips} />
                     </Box>
                 </Fade>
-            </Box>
+        </Box>
         </Fade>
     );
 }

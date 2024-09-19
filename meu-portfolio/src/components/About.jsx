@@ -40,18 +40,20 @@ const About = () => {
                     </Typography>
                 </Box>
             </Zoom>
-            <Grid container className='about-center' sx={{ width: '100%', justifyContent: 'space-evenly', alignItems: 'center' }}>
+            <Box className='about-container' sx={{ margin: 'auto 0' }}>
+            <Grid container className='about-center' sx={{ width: '100%', gap: 16, justifyContent: 'space-evenly', alignItems: 'center' }}>
                 <Fade in={true} timeout={2000}>
-                    <Grid item className='about-container' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
+                    <Grid item className='about-info' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
                         <Graduacao />
                     </Grid>
                 </Fade>
                 <Fade in={true} timeout={2000}>
-                    <Grid item className='about-container' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
+                    <Grid item className='about-info' sx={{ width: '400px', backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
                         <Cursos />
                     </Grid>
                 </Fade>
             </Grid>
+            </Box>
                 <Fade in={true} timeout={4500}>
                     <Box className='about-hint'>
                         <Hint tips={tips} />

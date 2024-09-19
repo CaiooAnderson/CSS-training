@@ -84,7 +84,7 @@ const Projects = () => {
     };
 
     return (
-        <Box className='projects' sx={{ mb: 4, borderBottom: '2px solid #000' }}>
+        <Box className='projects' sx={{ mb: 4 }}>
             <Zoom in={true} timeout={1750}>
             <Box className='project-title'>
                 <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
@@ -93,61 +93,84 @@ const Projects = () => {
             </Box>
             </Zoom>
             <Fade in={true} timeout={2000}>
-            <Box className='project-carousel-container' onMouseMove={handleMouseMove} 
-                sx={{
-                    background: 'radial-gradient(circle at 50% 50%, #4b0082, #311b92)',
-                    transition: 'transition: "background 0.3s ease-in-out"'
-                }}>
+        <Box className='project-container' sx={{ margin: 'auto' }}>
+            <Box className='project-carousel-container' onMouseMove={handleMouseMove}>
                 <Box className='project-carousel-button-container' 
                     sx={{
                         position: 'relative',
                         overflow: 'hidden',
-                        background: 'linear-gradient(45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 50%), radial-gradient(circle, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0) 70%)',
                         padding: 2,
                         borderRadius: 4,
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                         '&::before': {
-                            content: '""',
-                            position: 'absolute',
-                            top: '-50%',
-                            left: '-50%',
-                            width: '200%',
-                            height: '200%',
-                            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0) 100%)',
-                            transform: 'rotate(30deg)',
-                            opacity: 0.5,
-                            pointerEvents: 'none',
-                        }
+                        content: '""',
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'linear-gradient(135deg, #87CEEB 25%, #4682B4 50%, #1E90FF 75%)',
+                        opacity: 0.5, 
+                        zIndex: -1,
+                        },
                     }}>
                     <Button className='project-button' onClick={() => handleFilterChange('Todos')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
-                        color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        background: filter === 'Todos' 
+                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
+                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
+                        color: '#fff',
+                        transition: 'background 0.3s ease-in-out',
+                        '&:hover': { 
+                            background: filter === 'Todos' 
+                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
+                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
+                        }
                         }}>
                             Todos
                     </Button>
                     <Button className='project-button' onClick={() => handleFilterChange('Front-End')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
-                        color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        background: filter === 'Front-End' 
+                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
+                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
+                        color: '#fff',
+                        transition: 'background 0.3s ease-in-out',
+                        '&:hover': { 
+                            background: filter === 'Front-End' 
+                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
+                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
+                        }
                         }}>
                             Front-End
                     </Button>
                     <Button className='project-button' onClick={() => handleFilterChange('Back-End')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
-                        color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        background: filter === 'Back-End' 
+                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
+                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
+                        color: '#fff',
+                        transition: 'background 0.3s ease-in-out',
+                        '&:hover': { 
+                            background: filter === 'Back-End' 
+                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
+                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
+                        }
                         }}>
                             Back-End
                     </Button>
                     <Button className='project-button' onClick={() => handleFilterChange('Outros')} 
                     sx={{ 
-                        background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 1) 100%)', 
-                        color: '#fff', 
-                        '&:hover': { background: 'linear-gradient(90deg, rgba(128, 0, 255, 1) 0%, rgba(138, 43, 226, 0.6) 100%)' } 
+                        background: filter === 'Outros' 
+                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
+                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
+                        color: '#fff',
+                        transition: 'background 0.3s ease-in-out',
+                        '&:hover': { 
+                            background: filter === 'Outros' 
+                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
+                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
+                        }
                         }}>
                             Outros
                     </Button>
@@ -178,20 +201,18 @@ const Projects = () => {
                                 sx={{ 
                                 margin: '0 40px',
                                 width: '220px',
-                                height: '220px',
+                                height: '250px',
                                 backgroundColor: '#fff', 
                                 cursor: 'pointer',
                                 textAlign: 'center',
                                 position: 'relative',
                                 transition: 'transform 0.5s, opacity 0.5s',
                                 '&:hover': { 
-                                    transform: 'scale(1.05)', 
-                                    boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)',
+                                    transform: 'scale(0.95)', 
                                     zIndex: 10,
                                 },
                             }}>
-                                <img src={project.imagemProjeto} alt={project.name} style={{ width: '100%', height: 'auto', minHeight: '200px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)' }} />
-                                <Typography variant='h6' sx={{ mt: 2 }}>{project.name}</Typography>
+                                <img src={project.imagemProjeto} alt={''} style={{ width: '100%', height: 'auto', border: '3px solid #8a2be2', minHeight: '220px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)' }} />
                             </Box>
                         ))}
                     </Carousel>
@@ -200,6 +221,7 @@ const Projects = () => {
                 </Box>
             </Fade>
             </Box>
+        </Box>
             </Fade>
 
             {/* Modal */}
