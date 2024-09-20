@@ -114,65 +114,17 @@ const Projects = () => {
                         zIndex: -1,
                         },
                     }}>
-                    <Button className='project-button' onClick={() => handleFilterChange('Todos')} 
-                    sx={{ 
-                        background: filter === 'Todos' 
-                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
-                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
-                        color: '#fff',
-                        transition: 'background 0.3s ease-in-out',
-                        '&:hover': { 
-                            background: filter === 'Todos' 
-                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
-                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
-                        }
-                        }}>
-                            Todos
+                    <Button className={`project-button ${filter === 'Todos' ? 'active' : 'desativado'}`} variant={filter === 'Todos' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Todos')}>
+                        Todos
                     </Button>
-                    <Button className='project-button' onClick={() => handleFilterChange('Front-End')} 
-                    sx={{ 
-                        background: filter === 'Front-End' 
-                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
-                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
-                        color: '#fff',
-                        transition: 'background 0.3s ease-in-out',
-                        '&:hover': { 
-                            background: filter === 'Front-End' 
-                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
-                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
-                        }
-                        }}>
-                            Front-End
+                    <Button className={`project-button ${filter === 'Front-End' ? 'active' : 'desativado'}`} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
+                        Front-End
                     </Button>
-                    <Button className='project-button' onClick={() => handleFilterChange('Back-End')} 
-                    sx={{ 
-                        background: filter === 'Back-End' 
-                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
-                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
-                        color: '#fff',
-                        transition: 'background 0.3s ease-in-out',
-                        '&:hover': { 
-                            background: filter === 'Back-End' 
-                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
-                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
-                        }
-                        }}>
-                            Back-End
+                    <Button className={`project-button ${filter === 'Back-End' ? 'active' : 'desativado'}`} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
+                        Back-End
                     </Button>
-                    <Button className='project-button' onClick={() => handleFilterChange('Outros')} 
-                    sx={{ 
-                        background: filter === 'Outros' 
-                            ? 'linear-gradient(90deg, #1E90FF 0%, #00BFFF 100%)'  
-                            : 'linear-gradient(90deg, #4682B4 0%, #87CEEB 100%)', 
-                        color: '#fff',
-                        transition: 'background 0.3s ease-in-out',
-                        '&:hover': { 
-                            background: filter === 'Outros' 
-                                ? 'linear-gradient(90deg, #00BFFF 0%, #1E90FF 100%)'
-                                : 'linear-gradient(90deg, #00BFFF 0%, #4682B4 100%)',
-                        }
-                        }}>
-                            Outros
+                    <Button className={`project-button ${filter === 'Outros' ? 'active' : 'desativado'}`} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
+                        Outros
                     </Button>
                 </Box>
                 <Fade in={true} timeout={3000}>
