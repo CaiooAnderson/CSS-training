@@ -106,7 +106,7 @@ const Skills = () => {
                 <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
                 <Typography variant='h4' sx={{ 
                                             textAlign: 'left', 
-                                            mb: 4, 
+                                            mb: -4, 
                                             fontWeight: 'bold', 
                                             borderBottom: '2px solid #000' 
                                         }}>

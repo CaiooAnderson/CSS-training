@@ -67,7 +67,7 @@
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
   background: url('../src/assets/home.svg');
   background-repeat: no-repeat;
@@ -858,7 +858,7 @@ body.dark-mode .sidebar {
   backdrop-filter: blur(10px);
   margin-bottom: 32px;
   border-radius: 16px;
-  height: 480px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -936,7 +936,6 @@ body.dark-mode .sidebar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
 .hint-container .hint-icon {
