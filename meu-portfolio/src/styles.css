@@ -360,7 +360,7 @@ body.dark-mode .sidebar {
   background: var(--dark-home-background);
 }
 
-.dark-mode .curso button {
+.dark-mode .curso button.desativado {
   background: var(--dark-button-bg-color);
   color: var(--dark-home-h6-color);
   border: 1px solid #000;
@@ -371,6 +371,15 @@ body.dark-mode .sidebar {
   color: var(--dark-button-active-text-color);
   border: 1px solid var(--dark-button-active-bg-color);
   box-shadow: 0 0 2px #ffffff1a;
+}
+
+.dark-mode .curso-carousel button {
+  background: var(--dark-home-button-color);
+  border: 2px solid #fff;
+}
+
+.dark-mode .curso-carousel button:hover {
+  background: var(--dark-home-button-hover-color);
 }
 
 .dark-mode .curso-container {
@@ -451,15 +460,36 @@ body.dark-mode .sidebar {
   background: var(--dark-home-background);
 }
 
-.dark-mode .project-button {
-  background: var(--dark-button-hover-bg-color);
-  color: var(--dark-home-h6-color);
-}
-
-.project-carousel button {
-  background-color: var(--dark-home-button-color);
+.dark-mode .project-carousel button {
+  background: var(--dark-home-button-color);
   border: 2px solid #fff;
   margin: 0 -25px;
+}
+
+.dark-mode .project-carousel button:hover {
+  background: var(--dark-home-button-hover-color);
+  filter: drop-shadow(0px 0px 2px #fff);
+}
+
+.dark-mode .project-button.desativado {
+  background: var(--dark-button-bg-color);
+  color: var(--dark-home-h6-color);
+  border: 1px solid #000;
+}
+
+.dark-mode .project-button:hover {
+  filter: brightness(1.2);
+}
+
+.dark-mode .project-button.active {
+  background: var(--dark-home-button-hover-color);
+  color: var(--dark-button-active-text-color);
+  border: 1px solid var(--dark-button-active-bg-color);
+  box-shadow: 0 0 2px #ffffff1a;
+}
+
+.dark-mode .project-button.active:hover {
+  background: var(--dark-home-button-hover-color);
 }
 
 .dark-mode .hint-container {
@@ -621,14 +651,14 @@ body.dark-mode .sidebar {
   background-color: #b4bfff;
 }
 
-.curso button {
+.curso button.desativado {
   background: var(--button-bg-color);
   color: var(--sidebar-button-text-color);
   border: 1px solid var(--button-active-bg-color);
 }
 
 .curso button:hover {
-  opacity: 0.75;
+  opacity: 1;
   filter: brightness(1.2);
 }
 
@@ -656,7 +686,14 @@ body.dark-mode .sidebar {
 }
 
 .curso-carousel button {
+  background: var(--home-button-color);
+  border: 2px solid #000;
+  opacity: 0.75;
   margin: 0 -12px;
+}
+
+.curso-carousel button:hover {
+  background: var(--home-button-hover-color);
 }
 
 .lista {
@@ -862,7 +899,7 @@ body.dark-mode .sidebar {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: waveAnimation 10s infinite ease-in-out;
+  animation: waveAnimation 20s infinite ease-in-out;
 }
 
 @keyframes waveAnimation {
@@ -882,7 +919,7 @@ body.dark-mode .sidebar {
   margin-bottom: 32px;
   padding: 2px 8px;
   border-radius: 8px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
   background-size: 200% auto;
   animation: shine 5s infinite ease-in-out;
 }
@@ -904,19 +941,43 @@ body.dark-mode .sidebar {
   margin: 0 -25px;
 }
 
+.project-carousel button:hover {
+  background-color: var(--home-button-hover-color);
+  filter: drop-shadow(0px 0px 2px #fff);
+}
+
 .project-button.desativado {
   background: var(--button-bg-color);
-  color: #fff;
-  transition: background 0.3s ease-in-out;
+  color: var(--sidebar-button-text-color);
+  border: 1px solid var(--button-active-bg-color);
 }
 
 .project-button:hover {
-  background: var(--button-hover-bg-color);
+  filter: brightness(1.2);
 }
 
 .project-button.active {
   background: var(--button-active-bg-color);
-  color: #fff
+  color: var(--button-active-text-color);
+  border: 1px solid #fff;
+  box-shadow: 0 0 2px #0000001a;
+}
+
+.project-button.active:hover {
+  background: var(--button-active-bg-color);
+}
+
+/* CONTACT */
+
+.words-container {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.portal-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* HINT */

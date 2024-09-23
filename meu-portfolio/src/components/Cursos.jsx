@@ -90,13 +90,13 @@ const Cursos = () => {
             }}>
             <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080' }}>Cursos Adicionais</Typography>
             <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 1 }}>
-                <Button className={filter === 'Front-End' ? 'active' : ''} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
+                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
                     Front-End
                 </Button>
-                <Button className={filter === 'Back-End' ? 'active' : ''} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
+                <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
                     Back-End
                 </Button>
-                <Button className={filter === 'Outros' ? 'active' : ''} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
+                <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
                     Outros
                 </Button>
             </Box>

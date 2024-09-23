@@ -112,7 +112,7 @@ const Skills = () => {
                                         }}>
                     Habilidades
                 </Typography>
-            </Box>
+                </Box>
                 </Zoom>
                 <Box className='skill-container' sx={{ margin: 'auto' }}>
                 <Box className='skills-carousels'>
