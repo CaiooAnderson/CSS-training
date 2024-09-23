@@ -173,7 +173,7 @@ const Skills = () => {
                 </Box>
             </Box>
                 <Fade in={true} timeout={4500}>
-                    <Box className='skills-hint'>
+                    <Box className='hint-box'>
                     <Hint tips={tips} />
                     </Box>
                 </Fade>

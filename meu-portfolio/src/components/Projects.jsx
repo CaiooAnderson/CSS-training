@@ -27,7 +27,6 @@ const Projects = () => {
     const [openModal, setOpenModal] = useState(false);
     const carouselRef = useRef(null);
 
-    // Importação das capas
     const importAll = (r) => r.keys().map(r);
     const capas = importAll(require.context('../assets/projetos-capa', false, /\.(gif)$/));
 
@@ -135,7 +134,7 @@ const Projects = () => {
                             margin: '0 auto',
                             p: 0 
                         }}>
-                    <Box classname='carousel-container' sx={{ width: '600px', display: 'flex', flexDirection: 'column', margin: '0 auto' }}>
+                    <Box className='carousel-container' sx={{ width: '600px', display: 'flex', flexDirection: 'column', margin: '0 auto' }}>
                     <Carousel 
                         ref={carouselRef}
                         responsive={responsive} 
@@ -232,7 +231,7 @@ const Projects = () => {
                 </Card>
             </Modal>
             <Fade in={true} timeout={4500}>
-                <Box className='project-hint'>
+                <Box className='hint-box'>
                     <Hint tips={tips} />
                 </Box>
             </Fade>

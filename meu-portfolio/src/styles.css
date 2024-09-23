@@ -237,11 +237,11 @@ body.dark-mode {
 }
 
 body.dark-mode a {
-  color: var(--dark-link-color);
+  color: var(--dark-icon-color);
 }
 
 body.dark-mode a:hover {
-  color: var(--dark-link-hover-color);
+  color: var(--dark-sidebar-icon-hover-color);
 }
 
 body.dark-mode .sidebar {
@@ -490,6 +490,23 @@ body.dark-mode .sidebar {
 
 .dark-mode .project-button.active:hover {
   background: var(--dark-home-button-hover-color);
+}
+
+.dark-mode .contact p {
+  color: var(--dark-text-color);
+}
+
+.dark-mode .contact-title h4 {
+  color: var(--dark-sidebar-text-hover-color);
+  border-color: var(--dark-text-color);
+}
+
+.dark-mode .contact-socials a:hover {
+  filter: drop-shadow(0px 0px 10px #000);
+}
+
+.dark-mode .hint-text p {
+  color: var(--text-color);
 }
 
 .dark-mode .hint-container {
@@ -770,13 +787,6 @@ body.dark-mode .sidebar {
   justify-content: center;
 }
 
-.skills-hint {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .skill-carousel-container {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.25);
@@ -968,6 +978,21 @@ body.dark-mode .sidebar {
 }
 
 /* CONTACT */
+.contact-title h4 {
+  color: var(--sidebar-text-hover-color);
+  border-color: var(--button-bg-color);
+  border-width: 4px;
+  font-weight: bold;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 4px;
+}
+
+.contact-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+}
 
 .words-container {
   display: inline-block;
@@ -978,6 +1003,31 @@ body.dark-mode .sidebar {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contact-socials {
+  display: flex;
+  height: 40%;
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.contact-socials a {
+  color: var(--button-active-text-color);
+}
+
+.contact-socials a:hover {
+  color: var(--home-button-hover-color);
+  filter: drop-shadow(0px 0px 10px #fff);
+}
+
+.contact-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* HINT */
@@ -1041,4 +1091,11 @@ body.dark-mode .sidebar {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+.hint-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
