@@ -83,6 +83,7 @@ const Projects = () => {
     };
 
     return (
+        <Fade in={true} timeout={1000}>
         <Box className='projects' sx={{ mb: 4 }}>
             <Zoom in={true} timeout={1750}>
             <Box className='project-title'>
@@ -163,7 +164,7 @@ const Projects = () => {
                                     zIndex: 10,
                                 },
                             }}>
-                                <img src={project.imagemProjeto} alt={''} style={{ width: '100%', height: 'auto', border: '3px solid #8a2be2', minHeight: '220px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)' }} />
+                                <img src={project.imagemProjeto} alt={''} style={{ width: '100%', height: '100%', border: '3px solid #8a2be2', minHeight: '220px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)' }} />
                             </Box>
                         ))}
                     </Carousel>
@@ -236,6 +237,7 @@ const Projects = () => {
                 </Box>
             </Fade>
         </Box>
+        </Fade>
     );
 }
 

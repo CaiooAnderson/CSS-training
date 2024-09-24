@@ -22,29 +22,37 @@ const Contact = () => {
     ]
 
     const palavras = [
-        ' Desenvolvedor Front-End ',
-        ' Desenvolvedor Back-End ',
-        ' Desenvolvedor Web ',
+        '< Desenvolvedor Front-End />',
+        '< Desenvolvedor Back-End />',
+        '< Desenvolvedor Web />',
     ];
 
     const [index, setIndex] = useState(0);
     const [slideIn, setSlideIn] = useState(true);
-    const [portalColor, setPortalColor] = useState('#000');
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        const handleSlide = () => {
+            setIsActive(true);
             setSlideIn(false);
+
             setTimeout(() => {
                 setIndex((prevIndex) => (prevIndex + 1) % palavras.length);
                 setSlideIn(true);
-                setPortalColor('#800080');
             }, 500); 
-        }, 2500); 
+
+            setTimeout(() => {
+                setIsActive(false);
+            }, 1500);
+        };
+
+        const intervalId = setInterval(handleSlide, 5000);
 
         return () => clearInterval(intervalId);
     }, [palavras.length]);
 
     return (
+        <Fade in={true} timeout={1000}>
         <Box className='contact' sx={{
                                     mt: 0,
                                     p: 2,
@@ -66,7 +74,7 @@ const Contact = () => {
             </Box>
             </Zoom>
             <Fade in={true} timeout={2500}>
-                <Box className='contact' sx={{ margin: 'auto', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                <Box className='contact-info-container' sx={{ margin: 'auto', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Box className='contact-info'>
                         <Typography variant='h3'>
                             Caio Anderson
@@ -74,7 +82,7 @@ const Contact = () => {
                             <Box className='contact-container' sx={{ display: 'flex', alignItems: 'center' }}>
                                 <Box className='words-container' sx={{
                                                                     position: 'relative',
-                                                                    width: '600px',  
+                                                                    width: '400px',  
                                                                     overflow: 'hidden',
                                                                     display: 'flex',
                                                                     alignItems: 'center'
@@ -87,14 +95,14 @@ const Contact = () => {
                                         </Typography>
                                     </Slide>
                                 </Box>
-                                <Box className='portal-icon' style={{
-                                                                    backgroundColor: portalColor,
+                                <Box className={`portal-icon ${isActive ? 'active' : ''}`} style={{
+                                                                    borderTopRightRadius: '10%',
+                                                                    borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',
                                                                     padding: '10px',
                                                                     marginLeft: '0px',
-                                                                    transition: 'background-color 0.5s ease'
                                                                    }}>
-                                    <GiPortal size={48} color='#fff' />
+                                    <GiPortal size={48} className='portal-icon-svg' />
                                 </Box>
                             </Box>
                     </Box>
@@ -123,6 +131,7 @@ const Contact = () => {
             </Box>
             </Fade>
         </Box>
+        </Fade>
     );
 }
 
