@@ -105,6 +105,17 @@ main {
   z-index: 1000;
   display: flex;
   flex-direction: column;
+  transition: width 0.3s ease;
+}
+
+.menu-button {
+  margin: auto;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  display: none;
 }
 
 .sidebar .titulo {
@@ -1188,4 +1199,52 @@ body.dark-mode .sidebar {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar.closed {
+    width: 80px;
+  }
+
+  .sidebar.open {
+    width: 100%; 
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  .sidebar .titulo {
+    margin-top: 10px;
+  }
+
+  .sidebar nav ul {
+    margin: 0;
+  }
+
+  .sidebar nav ul li {
+    margin: 10px 0;
+  }
+
+  button p {
+    display: none; 
+  }
+
+  .sidebar.open button p {
+    display: inline; 
+  }
+
+  .footer-sidebar p {
+    display: none;
+  }
+
+  .sidebar.open .footer-sidebar p {
+    display: block;
+  }
 }
