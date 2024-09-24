@@ -439,6 +439,14 @@ body.dark-mode .sidebar {
   background-size: 400% 400%;
 }
 
+.dark-mode .skill-carousel-container button {
+  background: var(--dark-home-button-color);
+}
+
+.dark-mode .skill-carousel-container button:hover {
+  background: var(--dark-home-button-color);
+}
+
 .dark-mode .skill-item.selecionado .skill-icon {
   filter: drop-shadow(0px 12px 4px rgba(255, 255, 255, 0.2));
 }
@@ -862,7 +870,16 @@ body.dark-mode .sidebar {
 }
 
 .skill-carousel-container button {
+  border: 2px solid #fff;
+  background: var(--home-button-color);
+  opacity: 0.75;
   margin: -20px;
+}
+
+.skill-carousel-container button:hover {
+  background: var(--home-button-color);
+  opacity: 1;
+  filter: brightness(1.2);
 }
 
 .skill-item {
@@ -1203,16 +1220,39 @@ body.dark-mode .sidebar {
 
 
 @media (max-width: 768px) {
+  main {
+    margin-left: 80px;
+    transition: margin-left 0.3s ease;
+  }
+
+  .sidebar.closed + main {
+    margin-left: 80px;
+  }
+
   .sidebar.closed {
     width: 80px;
   }
 
   .sidebar.open {
     width: 100%; 
+    border: none;
+  }
+
+  .sidebar.open + main {
+    margin-left: 300px;
   }
 
   .menu-button {
     display: block;
+    color: var(--sidebar-active-icon-color);
+  }
+
+  .dark-mode .menu-button {
+    color: var(--dark-sidebar-active-icon-color);
+  }
+
+  .profile-section {
+    margin-bottom: 10px;
   }
 
   .profile-pic {
@@ -1222,6 +1262,10 @@ body.dark-mode .sidebar {
 
   .sidebar .titulo {
     margin-top: 10px;
+  }
+
+  .sidebar .subtitulo {
+    margin-bottom: 8px;
   }
 
   .sidebar nav ul {
@@ -1240,11 +1284,63 @@ body.dark-mode .sidebar {
     display: inline; 
   }
 
+  .switch {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar.open .switch {
+    flex-direction: row;
+  }
+
+  .theme-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 5px;
+  }
+
   .footer-sidebar p {
     display: none;
   }
 
   .sidebar.open .footer-sidebar p {
     display: block;
+  }
+}
+
+@media (max-width: 428px) {
+  html {
+    font-size: 90%;
+  }
+
+  .sidebar.open {
+    width: 100%; 
+    border: none;
+  }
+
+  body .about {
+    height: 100%;
+    background: var(--about-background);
+  }
+  
+  .about-container .about-info {
+    width: 200px;
+    height: 375px;
+  }
+
+  .graduacao li {
+    margin: 10px 0;
+  }
+
+  .about-center {
+    margin: 0;
+  }
+
+  .about-center .about-info {
+    margin-bottom: 20px;
+  }
+
+  .about-container .about-center {
+    gap: 0;
   }
 }

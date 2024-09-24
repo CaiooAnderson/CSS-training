@@ -55,7 +55,7 @@ const Skills = () => {
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 1,
+          items: 3,
           slidesToSlide: 1
         },
         mobile: {

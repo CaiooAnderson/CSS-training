@@ -30,7 +30,6 @@ const About = () => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             height: '100vh',
-                                            backgroundImage: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
                                             position: 'relative'
                                         }}>
             <Zoom in={true} timeout={1750}>
