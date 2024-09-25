@@ -791,7 +791,7 @@ body.dark-mode .sidebar {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 2;
+  gap: 0.5rem;
   background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), #4a7bac80 0%, #4a7bac80 10%, #3d9eff 80%);
   transition: background 0.5s ease;
 }
@@ -1219,7 +1219,7 @@ body.dark-mode .sidebar {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   main {
     margin-left: 80px;
     transition: margin-left 0.3s ease;
@@ -1306,13 +1306,43 @@ body.dark-mode .sidebar {
   .sidebar.open .footer-sidebar p {
     display: block;
   }
+
+  .about-title h4 {
+    margin-bottom: 0px;
+  }
+
+  .graduacao li {
+    margin: 10px 0;
+  }
+  
+  .curso-carousel .curso-container {
+    height: 200px;
+    max-width: 200px;
+  }
+
+  .about-center .about-info {
+    height: 320px;
+  }
+
+  .project-carousel .carousel {
+    width: 500px;
+  }
+
+  .carousel-container {
+    width: 400px;
+    align-items: center;
+  }
+
+  .carousel .carousel-container .react-multiple-carousel__arrow--right  {
+    margin-right: 90px;
+  }
+
+  .carousel .carousel-container .react-multiple-carousel__arrow--left  {
+    margin-left: -10px;
+  }
 }
 
 @media (max-width: 428px) {
-  html {
-    font-size: 90%;
-  }
-
   .sidebar.open {
     width: 100%; 
     border: none;
@@ -1324,7 +1354,7 @@ body.dark-mode .sidebar {
   }
   
   .about-container .about-info {
-    width: 200px;
+    width: 220px;
     height: 375px;
   }
 
@@ -1342,5 +1372,11 @@ body.dark-mode .sidebar {
 
   .about-container .about-center {
     gap: 0;
+  }
+
+  .front-end-skills,
+  .back-end-skills,
+  .tools-skills {
+    width: 400px;
   }
 }
