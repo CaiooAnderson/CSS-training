@@ -59,7 +59,7 @@ const Contact = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: '100vh',
-                                    position: 'relative'
+                                    position: 'relative',
                                     }}>
             <Zoom in={true} timeout={1750}>
             <Box className='contact-title' sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
@@ -67,6 +67,7 @@ const Contact = () => {
                                         textAlign: 'left',
                                         mb: -4,
                                         fontWeight: 'bold',
+                                        fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
                                         borderBottom: '2px solid #000'
                                         }}>
                 Contato
@@ -76,19 +77,19 @@ const Contact = () => {
             <Fade in={true} timeout={2500}>
                 <Box className='contact-info-container' sx={{ margin: 'auto', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Box className='contact-info'>
-                        <Typography variant='h3'>
+                        <Typography variant='h3' sx={{ fontSize: { xs: '1.25rem', sm: '2rem', md: '3rem' } }}>
                             Caio Anderson
                         </Typography>
                             <Box className='contact-container' sx={{ display: 'flex', alignItems: 'center' }}>
                                 <Box className='words-container' sx={{
                                                                     position: 'relative',
-                                                                    width: '400px',  
+                                                                    width: { xs: '250px', sm: '350px', md: '400px' },  
                                                                     overflow: 'hidden',
                                                                     display: 'flex',
                                                                     alignItems: 'center'
                                                                     }}>
                                     <Slide direction='left' in={slideIn} timeout={500}>
-                                        <Typography variant='h5'>
+                                        <Typography variant='h5' sx={{ fontSize: { xs: '0.75rem', sm: '1.25rem', md: '1.5rem' } }}>
                                         <span className='words-container' style={{ whiteSpace: 'nowrap' }}>
                                             {palavras[index]}
                                         </span>
@@ -100,13 +101,17 @@ const Contact = () => {
                                                                     borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',
                                                                     padding: '10px',
-                                                                    marginLeft: '0px',
+                                                                    marginLeft: '0px'
                                                                    }}>
                                     <GiPortal size={48} className='portal-icon-svg' />
                                 </Box>
                             </Box>
                     </Box>
-                    <Box className='contact-socials'>
+                    <Box className='contact-socials' sx={{
+                                                    display: 'flex', 
+                                                    justifyContent: 'center', 
+                                                    gap: { xs: 1, sm: 2 },  
+                                                    }}>
                         <a href='https://linkedin.com/in/caioandersongoes' target='_blank' rel='noreferrer'>
                             <FaLinkedin size={32}></FaLinkedin>
                         </a>
@@ -126,7 +131,10 @@ const Contact = () => {
                 </Box>
             </Fade>
             <Fade in={true} timeout={4500}>
-            <Box className='hint-box'>
+            <Box className='hint-box' sx={{
+                                            fontSize: { xs: '0.75rem', sm: '1rem' },
+                                            textAlign: 'center'
+                                            }}>
                 <Hint tips={tips} />
             </Box>
             </Fade>

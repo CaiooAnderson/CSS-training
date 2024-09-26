@@ -30,11 +30,17 @@ const About = () => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             height: '100vh',
-                                            position: 'relative'
+                                            position: 'relative',
                                         }}>
             <Zoom in={true} timeout={1750}>
                 <Box className='about-title' sx={{ width: '100%', display: 'flex', justifyContent: 'left' }}>
-                    <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '4px solid #4a148c', color: '#003366' }}>
+                    <Typography variant='h4' sx={{ 
+                                                fontWeight: 'bold', 
+                                                mb: 4, 
+                                                borderBottom: '4px solid #4a148c', 
+                                                color: '#003366', 
+                                                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' } 
+                                                }}>
                         Sobre
                     </Typography>
                 </Box>
@@ -42,7 +48,14 @@ const About = () => {
             <Box className='about-container' sx={{ margin: 'auto 0' }}>
             <Grid container className='about-center' sx={{ width: '100%', gap: { xs: 2, sm: 4, md: 8, lg: 12}, justifyContent: { xs: 'center', md: 'space-evenly' }, alignItems: 'center', flexDirection: { xs: 'column', md: 'row' } }}>
                 <Fade in={true} timeout={2000}>
-                    <Grid item className='about-info' sx={{ width: { xs: '100%', md: '400px' }, backgroundColor: '#b4bfff', borderRadius: '8px', filter: 'drop-shadow(0 0 5px #000)', height: '400px', overflow: 'hidden' }}>
+                    <Grid item className='about-info' sx={{ 
+                                                            width: { xs: '100%', md: '400px' }, 
+                                                            backgroundColor: '#b4bfff', 
+                                                            borderRadius: '8px', 
+                                                            filter: 'drop-shadow(0 0 5px #000)', 
+                                                            height: { xs: '100%', md: '400px' }, 
+                                                            overflow: 'hidden' 
+                                                        }}>
                         <Graduacao />
                     </Grid>
                 </Fade>

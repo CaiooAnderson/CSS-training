@@ -874,6 +874,7 @@ body.dark-mode .sidebar {
   background: var(--home-button-color);
   opacity: 0.75;
   margin: -20px;
+  z-index: 10;
 }
 
 .skill-carousel-container button:hover {
@@ -1218,6 +1219,13 @@ body.dark-mode .sidebar {
   justify-content: center;
 }
 
+/* RESPONSIVIDADE */
+
+@media (max-width: 1280px) {
+  .project-carousel .carousel {
+    width: 900px;
+  }
+}
 
 @media (max-width: 1024px) {
   main {
@@ -1325,27 +1333,79 @@ body.dark-mode .sidebar {
   }
 
   .project-carousel .carousel {
-    width: 500px;
+    width: 600px;
   }
 
   .carousel-container {
-    width: 400px;
+    width: 300px;
     align-items: center;
   }
 
-  .carousel .carousel-container .react-multiple-carousel__arrow--right  {
-    margin-right: 90px;
-  }
-
-  .carousel .carousel-container .react-multiple-carousel__arrow--left  {
-    margin-left: -10px;
+  .carousel .carousel-container .react-multiple-carousel__arrow--right,
+  .carousel .carousel-container .react-multiple-carousel__arrow--left {
+    margin: -10px;
   }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 430px) {
+  .menu-button {
+    margin-bottom: 10px;
+  }
+
   .sidebar.open {
-    width: 100%; 
+    width: 101%; 
     border: none;
+    padding-top: 10px;
+  }
+
+  .sidebar.closed nav {
+    justify-content: space-around;
+  }
+
+  .sidebar.closed nav ul li {
+    margin: 10px 0;
+    padding: 3px 0;
+  }
+
+  .sidebar.closed .profile-section {
+    display: none;
+  }
+
+  .profile-section {
+    margin-bottom: 0;
+  }
+
+  .sidebar nav ul li {
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  .theme-toggle {
+    margin-bottom: 0;
+    height: 30px;
+  }
+
+  .sidebar .profile-section img {
+    margin-bottom: 10px;
+  }
+
+  .sidebar .profile-section h2.titulo {
+    font-size: 1.2rem;
+    margin: 4px 0;
+  }
+
+  .sidebar .profile-section p.subtitulo {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .sidebar nav ul li button p {
+    font-size: 1rem;
+  }
+
+  .sidebar .footer-sidebar p {
+    font-size: 0.8rem;
+    margin-bottom: 0px;
   }
 
   body .about {
@@ -1378,5 +1438,30 @@ body.dark-mode .sidebar {
   .back-end-skills,
   .tools-skills {
     width: 400px;
+    padding: auto 0;
   }
+  
+  .skill-carousel-container {
+    height: 80px;
+    width: 300px;
+  }
+
+  .skill-item {
+    margin: auto 8px;
+  }
+
+  .skill-carousel-container .skill-item {
+    height: 60px;
+  }
+
+  .skill-icon-container svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  .skill-icon-container {
+    height: 30px;
+  }
+
+
 }

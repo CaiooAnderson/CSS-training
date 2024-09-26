@@ -100,7 +100,8 @@ const Skills = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: '100vh',
-                                    position: 'relative' 
+                                    position: 'relative',
+                                    overflowY: 'auto' 
                                 }} onMouseMove={handleMouseMove}>
                 <Zoom in={true} timeout={1750}>
                 <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
@@ -108,16 +109,17 @@ const Skills = () => {
                                             textAlign: 'left', 
                                             mb: -4, 
                                             fontWeight: 'bold', 
-                                            borderBottom: '2px solid #000' 
+                                            borderBottom: '2px solid #000',
+                                            fontSize: { xs: '1.5rem', sm: '2rem' } 
                                         }}>
                     Habilidades
                 </Typography>
                 </Box>
                 </Zoom>
-                <Box className='skill-container' sx={{ margin: 'auto' }}>
+                <Box className='skill-container' sx={{ margin: 'auto', width: '100%', px: { xs: 1, sm: 2 } }}>
                 <Box className='skills-carousels'>
-                    <Box className='front-end-skills' sx={{ px: 2, textAlign: 'center' }}>
-                        <Typography variant='h5'>Front-End</Typography>
+                    <Box className='front-end-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                        <Typography variant='h5' sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>Front-End</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
                                     {skills.frontEnd.map(skill => (
@@ -134,8 +136,8 @@ const Skills = () => {
                                 </Carousel>
                             </Box>
                         </Box>
-                    <Box className='back-end-skills' sx={{ px: 2, textAlign: 'center' }}>
-                        <Typography variant='h5'>Back-End</Typography>
+                    <Box className='back-end-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Back-End</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
                                 {skills.backEnd.map(skill => (
@@ -152,8 +154,8 @@ const Skills = () => {
                                 </Carousel>
                             </Box>
                         </Box>
-                    <Box className='tools-skills' sx={{ px: 2, textAlign: 'center' }}>
-                        <Typography variant='h5'>Ferramentas</Typography>
+                    <Box className='tools-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Ferramentas</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
                                 {skills.ferramentas.map(skill => (
