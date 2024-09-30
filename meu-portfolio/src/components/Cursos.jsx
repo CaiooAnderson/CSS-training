@@ -80,7 +80,6 @@ const Cursos = () => {
 
     return (
         <Box className='curso' sx={{ 
-            width: '400px', 
             display: 'flex', 
             alignItems: 'center', 
             justifyContent: 'center', 
@@ -89,12 +88,12 @@ const Cursos = () => {
             padding: '8px 0'
             }}>
             <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080' }}>Cursos Adicionais</Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2, mb: 1 }}>
+            <Box className='curso-buttons' sx={{ display: 'flex', flexDirection: 'row', gap: { xs: 1, md: 2}, mb: { xs: 0, md: 1 } }}>
                 <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
-                    Front-End
+                    Front End
                 </Button>
                 <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
-                    Back-End
+                    Back End
                 </Button>
                 <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
                     Outros

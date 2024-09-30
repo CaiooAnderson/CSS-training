@@ -60,7 +60,7 @@ const Skills = () => {
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
-          items: 1,
+          items: 2,
           slidesToSlide: 1
         }
     };
@@ -119,7 +119,7 @@ const Skills = () => {
                 <Box className='skill-container' sx={{ margin: 'auto', width: '100%', px: { xs: 1, sm: 2 } }}>
                 <Box className='skills-carousels'>
                     <Box className='front-end-skills' sx={{ mt: 2 , textAlign: 'center' }}>
-                        <Typography variant='h5' sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>Front-End</Typography>
+                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Front-End</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
                                     {skills.frontEnd.map(skill => (

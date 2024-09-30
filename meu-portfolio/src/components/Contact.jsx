@@ -67,7 +67,7 @@ const Contact = () => {
                                         textAlign: 'left',
                                         mb: -4,
                                         fontWeight: 'bold',
-                                        fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                                        fontSize: { xs: '1.5rem', sm: '2rem' },
                                         borderBottom: '2px solid #000'
                                         }}>
                 Contato

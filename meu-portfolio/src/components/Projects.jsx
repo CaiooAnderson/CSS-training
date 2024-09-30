@@ -31,11 +31,11 @@ const Projects = () => {
     const capas = importAll(require.context('../assets/projetos-capa', false, /\.(gif)$/));
 
     const projetos = [
-        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: capas[0], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
-        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: capas[1], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: capas[2], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: capas[3], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaPython />] },
-        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: capas[4], imagensDemonstracao: [capas[1], capas[2]], desc: 'Descrição do projeto', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
+        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: capas[0], imagensDemonstracao: [capas[1], capas[2]], desc: 'Experiência visual interativa com cartas em 3D e animações dinâmicas.', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
+        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: capas[1], imagensDemonstracao: [capas[1], capas[2]], desc: 'Tabela com a temática de Pokémon para criação e gerenciamento de novos usuários.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
+        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: capas[2], imagensDemonstracao: [capas[1], capas[2]], desc: 'Ferramenta de produtividade com ciclos personalizáveis para foco e descanso.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
+        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: capas[3], imagensDemonstracao: [capas[1], capas[2]], desc: 'Calculadora intuitiva para estimar o imposto de renda com base em rendimentos.', linguagens: [<FaPython />] },
+        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: capas[4], imagensDemonstracao: [capas[1], capas[2]], desc: 'Aplicação para criar e gerenciar times, distribuindo equipes.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
     ];
 
     const projetosFiltrados = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -87,7 +87,7 @@ const Projects = () => {
         <Box className='projects' sx={{ mb: 4 }}>
             <Zoom in={true} timeout={1750}>
             <Box className='project-title'>
-                <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000' }}>
+                <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000', fontSize: { xs: '1.5rem', sm: '2rem' } }}>
                     Projetos
                 </Typography>
             </Box>
