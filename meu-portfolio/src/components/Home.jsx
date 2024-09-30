@@ -39,10 +39,9 @@ const Home = () => {
                                           mt: 4, 
                                           backgroundColor: '#000', 
                                           color: '#fff',
-                                          fontSize: { xs: '0.75rem', sm: '1rem' },
                                           px: { xs: 1, sm: 2 }
                                           }} onClick={() => window.open('https://drive.google.com/file/d/1-kefFziEzV0tSfeXT-mnJeBTAiazRds4/view?usp=sharing', '_blank')}>
-            <Typography className='home-button-text' variant='subtitle2'>
+            <Typography sx= {{ fontSize: { xs: '0.8rem', sm: '0.9rem', md: '1rem', lg: '1.1rem', xl: '1.2rem' } }} className='home-button-text' variant='subtitle2'>
               Currículo
             </Typography>
             <OpenInNewOutlinedIcon className='home-button-icon' sx={{ fontSize: { xs: '1rem', sm: '1.5rem' }}} />

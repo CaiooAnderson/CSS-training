@@ -84,7 +84,15 @@ const Projects = () => {
 
     return (
         <Fade in={true} timeout={1000}>
-        <Box className='projects' sx={{ mb: 4 }}>
+        <Box className='projects' sx={{ 
+                                        mt: 0,  
+                                        p: { xs: 0, md: 2 },
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        height: { xs: '100%', sm: '100vh' },
+                                        position: 'relative',
+                                        width: { xs: 'calc(100vw - 80px)', md: '100%' }
+                                    }}>
             <Zoom in={true} timeout={1750}>
             <Box className='project-title' sx= {{ 
                                                     width: '100%',
@@ -95,7 +103,7 @@ const Projects = () => {
                                                 }}>
                 <Typography variant='h4' sx={{ 
                                                 fontWeight: 'bold', 
-                                                mb: 4, 
+                                                mb: { xs: 2, sm: 0 },
                                                 borderBottom: '2px solid #000', 
                                                 fontSize: { xs: '1.5rem', sm: '2rem' } 
                                             }}>
@@ -105,13 +113,22 @@ const Projects = () => {
             </Zoom>
             <Fade in={true} timeout={2000}>
         <Box className='project-container' sx={{ margin: 'auto' }}>
-            <Box className='project-carousel-container' onMouseMove={handleMouseMove}>
+            <Box className='project-carousel-container' onMouseMove={handleMouseMove} sx={{ 
+                                                                                        width: { xs: '500px', sm: '500px' },
+                                                                                        borderRadius: { xs: 0, sm: 1 },
+                                                                                        'button': {
+                                                                                            padding: { xs: '0px 4px', sm: '5px 15px' }
+                                                                                        },
+                                                                                        '.project-carousel-button-container': {
+                                                                                            mb: { xs: 1, sm: 2 },
+                                                                                        }
+                                                                                        }}>
                 <Box className='project-carousel-button-container' 
                     sx={{
                         position: 'relative',
                         overflow: 'hidden',
-                        padding: 2,
-                        borderRadius: 4,
+                        padding: { xs: 0.25, sm: 2},
+                        borderRadius: { xs: 2, sm: 4},
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                         '&::before': {
                         content: '""',

@@ -947,14 +947,11 @@ body.dark-mode .sidebar {
 
 .projects {
   background: var(--home-background);
-  background-size: cover;
+  /* background-size: cover; */
   margin-top: 0;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   height: 100vh;
-  position: relative;
+  /* position: relative; */
 }
 
 .projects h4 {
@@ -1411,7 +1408,7 @@ body.dark-mode .sidebar {
   }
 
   .graduacao li {
-    margin: 0;
+    margin: 0 0.5rem;
     padding: 0.5rem;
   }
 
@@ -1449,22 +1446,12 @@ body.dark-mode .sidebar {
   .front-end-skills,
   .back-end-skills,
   .tools-skills {
-    width: 400px;
+    width: 250px;
     padding: auto 0;
   }
   
   .skills .skill-container {
     padding: 0;
-  }
-
-  .skills-carousels {
-    width: 250px;
-  }
-
-  .front-end-skills,
-  .back-end-skills,
-  .tools-skills {
-    width: 250px;
   }
 
   .skills h4 {
@@ -1473,7 +1460,7 @@ body.dark-mode .sidebar {
 
   .skill-carousel-container {
     height: 100px;
-    width: 250px;
+    width: calc(100vw - 80px);
   }
 
   .skill-item {

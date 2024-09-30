@@ -104,7 +104,7 @@ const Cursos = () => {
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
-                            width: '90%', 
+                            width: { xs: '75%', md: '90%'}, 
                             maxWidth: '350px', 
                             height: '250px', 
                             display: 'flex', 
@@ -119,12 +119,12 @@ const Cursos = () => {
                                 flexDirection: 'column',
                                 justifyContent: 'flex-start',
                                 flexGrow: 1,
-                                m: 1
+                                m: { xs: 0, md: 1},
                                 }}>    
                                 <Typography variant="subtitle2" sx={{ 
                                     fontWeight: 'bold',
                                     textAlign: 'center',
-                                    mb: 2,
+                                    mb: { xs: 0.25, md: 2},
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis'
                                     }}>
@@ -135,8 +135,8 @@ const Cursos = () => {
                                 position: 'absolute',
                                 bottom: 0,
                                 left: 0,
-                                paddingBottom: '10px',
-                                paddingLeft: '10px',
+                                paddingBottom: { xs: 0.5, md: 0.75},
+                                paddingLeft: { xs: 0.5, md: 0.75},
                                 display: 'flex',
                                 flexDirection: 'column',
                                 width: '100%'
