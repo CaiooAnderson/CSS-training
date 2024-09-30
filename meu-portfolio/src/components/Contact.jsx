@@ -62,10 +62,16 @@ const Contact = () => {
                                     position: 'relative',
                                     }}>
             <Zoom in={true} timeout={1750}>
-            <Box className='contact-title' sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
+            <Box className='contact-title' sx={{ 
+                                                width: '100%', 
+                                                display: 'flex', 
+                                                justifyContent: 'left', 
+                                                pl: { xs: 1, sm: 0.75, md: 0.5 }, 
+                                                pt: { xs: 1, sm: 0.75, md: 0.5 }
+                                            }}>
             <Typography variant='h4' sx={{
                                         textAlign: 'left',
-                                        mb: -4,
+                                        mb: { xs: 2, sm: 0 },
                                         fontWeight: 'bold',
                                         fontSize: { xs: '1.5rem', sm: '2rem' },
                                         borderBottom: '2px solid #000'

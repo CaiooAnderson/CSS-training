@@ -32,33 +32,33 @@
                                             justifyContent: 'center',
                                             height: '100vh',
                                             position: 'relative',
-                                            width: { xs: 'calc(100vw - 80px)' }
+                                            width: { xs: 'calc(100vw - 80px)', md: '100%' }
                                             }}>
                 <Zoom in={true} timeout={1750}>
                     <Box className='about-title' sx={{ 
                                                     width: '100%', 
-                                                    display: 'flex', 
+                                                    display: 'flex',
                                                     justifyContent: 'left', 
-                                                    pl: { xs: 1, sm: 0 }, 
-                                                    pt: { xs: 1, sm: 0 } 
+                                                    pl: { xs: 1, sm: 0.75, md: 0.5 }, 
+                                                    pt: { xs: 1, sm: 0.75, md: 0.5 } 
                                                     }}>
                         <Typography variant='h4' sx={{ 
                                                     fontWeight: 'bold', 
                                                     borderBottom: '4px solid #4a148c', 
-                                                    color: '#003366', 
+                                                    color: '#003366',
                                                     fontSize: { xs: '1.5rem', sm: '2rem' },
-                                                    mb: { xs: 2, sm: 4 }
+                                                    mb: { xs: 2, sm: 0 }
                                                     }}>
                             Sobre
                         </Typography>
                     </Box>
                 </Zoom>
                 <Box className='about-container' sx={{ margin: 'auto 0', width: '100%' }}>
-                <Grid container className='about-center' sx={{ width: '100%', gap: { xs: 2, sm: 4, md: 8, lg: 12}, flexDirection: { xs: 'column', md: 'row' }, margin: '0 auto' }}>
+                <Grid container className='about-center' sx={{ width: '100%', gap: { xs: 2, sm: 4, md: 6, lg: 8}, flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-evenly', margin: '0 auto' }}>
                     <Fade in={true} timeout={2000}>
                         <Grid item className='about-info' sx={{ 
-                                                                width: '100%',
-                                                                backgroundColor: '#b4bfff', 
+                                                                width: { xs: '100%', md: '400px' },
+                                                                backgroundColor: '#b4bfff',
                                                                 borderRadius: { xs: 0, md: '8px'},
                                                                 filter: 'drop-shadow(0 0 5px #000)', 
                                                                 height: { xs: 'auto', md: '400px' }, 
@@ -69,7 +69,7 @@
                     </Fade>
                     <Fade in={true} timeout={2000}>
                         <Grid item className='about-info' sx={{ 
-                                                                width: '100%',
+                                                                width: { xs: '100%', md: '400px' },
                                                                 backgroundColor: '#b4bfff', 
                                                                 borderRadius: { xs: 0, md: '8px'}, 
                                                                 filter: 'drop-shadow(0 0 5px #000)', 

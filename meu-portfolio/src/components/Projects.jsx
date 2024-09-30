@@ -86,8 +86,19 @@ const Projects = () => {
         <Fade in={true} timeout={1000}>
         <Box className='projects' sx={{ mb: 4 }}>
             <Zoom in={true} timeout={1750}>
-            <Box className='project-title'>
-                <Typography variant='h4' sx={{ fontWeight: 'bold', mb: 4, borderBottom: '2px solid #000', fontSize: { xs: '1.5rem', sm: '2rem' } }}>
+            <Box className='project-title' sx= {{ 
+                                                    width: '100%',
+                                                    display: 'flex',
+                                                    justifyContent: 'left',
+                                                    pl: { xs: 1, sm: 0.75, md: 0.5 }, 
+                                                    pt: { xs: 1, sm: 0.75, md: 0.5 }
+                                                }}>
+                <Typography variant='h4' sx={{ 
+                                                fontWeight: 'bold', 
+                                                mb: 4, 
+                                                borderBottom: '2px solid #000', 
+                                                fontSize: { xs: '1.5rem', sm: '2rem' } 
+                                            }}>
                     Projetos
                 </Typography>
             </Box>

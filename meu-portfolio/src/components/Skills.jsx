@@ -104,21 +104,26 @@ const Skills = () => {
                                     overflowY: 'auto' 
                                 }} onMouseMove={handleMouseMove}>
                 <Zoom in={true} timeout={1750}>
-                <Box sx={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'left' }}>
+                <Box sx={{ 
+                            width: '100%', 
+                            display: 'flex', 
+                            justifyContent: 'left',
+                            pl: { xs: 1, sm: 0.75, md: 0.5 }, 
+                            pt: { xs: 1, sm: 0.75, md: 0.5 }
+                        }}>
                 <Typography variant='h4' sx={{ 
-                                            textAlign: 'left', 
-                                            mb: -4, 
+                                            mb: { xs: 2, sm: 0 }, 
                                             fontWeight: 'bold', 
                                             borderBottom: '2px solid #000',
-                                            fontSize: { xs: '1.5rem', sm: '2rem' } 
-                                        }}>
+                                            fontSize: { xs: '1.5rem', sm: '2rem' },
+                                            }}>
                     Habilidades
                 </Typography>
                 </Box>
                 </Zoom>
                 <Box className='skill-container' sx={{ margin: 'auto', width: '100%', px: { xs: 1, sm: 2 } }}>
                 <Box className='skills-carousels'>
-                    <Box className='front-end-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                    <Box className='front-end-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center' }}>
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Front-End</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
@@ -136,7 +141,7 @@ const Skills = () => {
                                 </Carousel>
                             </Box>
                         </Box>
-                    <Box className='back-end-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                    <Box className='back-end-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center' }}>
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Back-End</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>
@@ -154,7 +159,7 @@ const Skills = () => {
                                 </Carousel>
                             </Box>
                         </Box>
-                    <Box className='tools-skills' sx={{ mt: 2 , textAlign: 'center' }}>
+                    <Box className='tools-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center' }}>
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Ferramentas</Typography>
                             <Box className='skill-carousel-container'>
                                 <Carousel responsive={responsive}>

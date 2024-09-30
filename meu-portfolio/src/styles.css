@@ -966,13 +966,6 @@ body.dark-mode .sidebar {
   border-bottom-right-radius: 4px;
 }
 
-.project-title {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-}
-
 .project-carousel-container {
   position: relative;
   overflow: hidden;
@@ -1222,6 +1215,10 @@ body.dark-mode .sidebar {
 /* RESPONSIVIDADE */
 
 @media (max-width: 1280px) {
+  .about .about-center {
+    margin-bottom: 20px;
+  }
+
   .project-carousel .carousel {
     width: 900px;
   }

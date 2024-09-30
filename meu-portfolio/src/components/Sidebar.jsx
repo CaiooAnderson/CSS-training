@@ -12,6 +12,39 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 const Sidebar = ({ activeSection, setActiveSection }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [currentTitle, setCurrentTitle] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % titles.length;
+      const fullText = titles[i];
+      const updatedText = isDeleting
+        ? fullText.substring(0, currentTitle.length - 1)
+        : fullText.substring(0, currentTitle.length + 1);
+
+      setCurrentTitle(updatedText);
+
+      if (!isDeleting && updatedText === fullText) {
+        setTimeout(() => setIsDeleting(true), 1000);
+        setTypingSpeed(50);
+      } else if (isDeleting && updatedText === '') {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+        setTypingSpeed(150);
+      } else {
+        setTypingSpeed(isDeleting ? 50 : 150);
+      }
+    };
+    
+    const titles = ['Front-End', 'Back-End', 'Full-Stack'];
+    const timer = setTimeout(handleTyping, typingSpeed);
+
+    return () => clearTimeout(timer);
+  }, [currentTitle, isDeleting, loopNum, typingSpeed]);
+
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -44,7 +77,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         {isOpen && (
           <>
             <h2 className='titulo'>Caio Anderson</h2>
-            <p className='subtitulo'>Desenvolvedor Front-End</p>
+            <p className='subtitulo'>Desenvolvedor {currentTitle}</p>
           </>
         )}
       </div>
