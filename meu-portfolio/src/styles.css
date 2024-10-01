@@ -1216,9 +1216,9 @@ body.dark-mode .sidebar {
     margin-bottom: 20px;
   }
 
-  .project-carousel .carousel {
+  /* .project-carousel .carousel {
     width: 900px;
-  }
+  } */
 }
 
 @media (max-width: 1024px) {
@@ -1326,14 +1326,13 @@ body.dark-mode .sidebar {
     height: 320px;
   }
 
-  .project-carousel .carousel {
+  /* .project-carousel .carousel {
     width: 600px;
-  }
+  } */
 
-  .carousel-container {
+  /* .carousel-container {
     width: 300px;
-    align-items: center;
-  }
+  } */
 
   .carousel .carousel-container .react-multiple-carousel__arrow--right,
   .carousel .carousel-container .react-multiple-carousel__arrow--left {

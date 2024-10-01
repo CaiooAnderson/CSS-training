@@ -55,7 +55,7 @@ const Contact = () => {
         <Fade in={true} timeout={1000}>
         <Box className='contact' sx={{
                                     mt: 0,
-                                    p: 2,
+                                    p: { xs: 0, md: 2 },
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: '100vh',
@@ -83,7 +83,7 @@ const Contact = () => {
             <Fade in={true} timeout={2500}>
                 <Box className='contact-info-container' sx={{ margin: 'auto', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Box className='contact-info'>
-                        <Typography variant='h3' sx={{ fontSize: { xs: '1.25rem', sm: '2rem', md: '3rem' } }}>
+                        <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
                             Caio Anderson
                         </Typography>
                             <Box className='contact-container' sx={{ display: 'flex', alignItems: 'center' }}>
@@ -107,31 +107,32 @@ const Contact = () => {
                                                                     borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',
                                                                     padding: '10px',
-                                                                    marginLeft: '0px'
+                                                                    marginLeft: { xs: '-50px', sm: '0px'},
                                                                    }}>
-                                    <GiPortal size={48} className='portal-icon-svg' />
+                                    <GiPortal className='portal-icon-svg'/>
                                 </Box>
                             </Box>
                     </Box>
                     <Box className='contact-socials' sx={{
                                                     display: 'flex', 
                                                     justifyContent: 'center', 
-                                                    gap: { xs: 1, sm: 2 },  
+                                                    gap: { xs: 1, sm: 2 },
+                                                    fontSize: { xs: '24px', sm: '32px' }
                                                     }}>
                         <a href='https://linkedin.com/in/caioandersongoes' target='_blank' rel='noreferrer'>
-                            <FaLinkedin size={32}></FaLinkedin>
+                            <FaLinkedin></FaLinkedin>
                         </a>
                         <a href='https://github.com/CaiooAnderson' target='_blank' rel='noreferrer'>
-                            <FaGithub size={32}></FaGithub>
+                            <FaGithub></FaGithub>
                         </a>
                         <a href='mailto:caio2.dev@gmail.com'>
-                            <CiMail size={32}></CiMail>
+                            <CiMail></CiMail>
                         </a>
                         <a href='https://www.instagram.com/caioo_213/' target='_blank' rel="noreferrer">
-                            <FaInstagram size={32}></FaInstagram>
+                            <FaInstagram></FaInstagram>
                         </a>
                         <a href="https://wa.me/5521995397912?text=Olá,%20Caio.%20Fiquei%20interessado%20na%20apresentação%20dada%20em%20seu%20portfólio!%20Podemos%20conversar?" target='_blank' rel="noopener noreferrer">
-                            <FaWhatsapp size={32}></FaWhatsapp>
+                            <FaWhatsapp></FaWhatsapp>
                         </a>
                     </Box>
                 </Box>

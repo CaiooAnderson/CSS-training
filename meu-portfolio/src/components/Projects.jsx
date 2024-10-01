@@ -114,7 +114,7 @@ const Projects = () => {
             <Fade in={true} timeout={2000}>
         <Box className='project-container' sx={{ margin: 'auto' }}>
             <Box className='project-carousel-container' onMouseMove={handleMouseMove} sx={{ 
-                                                                                        width: { xs: '500px', sm: '500px' },
+                                                                                        width: { xs: 'calc(100vw - 80px)', sm: '500px' },
                                                                                         borderRadius: { xs: 0, sm: 1 },
                                                                                         'button': {
                                                                                             padding: { xs: '0px 4px', sm: '5px 15px' }
@@ -127,9 +127,16 @@ const Projects = () => {
                     sx={{
                         position: 'relative',
                         overflow: 'hidden',
-                        padding: { xs: 0.25, sm: 2},
-                        borderRadius: { xs: 2, sm: 4},
+                        mt: { xs: 2, sm: 0 },
+                        padding: { xs: 1, sm: 2},
+                        borderRadius: { xs: 0, sm: 4},
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+                        display: { xs: 'flex' },
+                        flexWrap: { xs: 'wrap', sm: 'nowrap' },
+                        gap: { xs: 1 },
+                        '& .project-button': {
+                            width: { xs: 'calc(50% - 4px)', sm: 'auto' },
+                            },
                         '&::before': {
                         content: '""',
                         position: 'absolute',
@@ -159,11 +166,20 @@ const Projects = () => {
                 <Box className='project-carousel'>
                     <Box className='carousel' 
                         sx={{ 
-                            width: '1000px',
+                            width: { xs: 'calc(90vw - 80px)', md: '900px', lg: '1000px' },
                             margin: '0 auto',
                             p: 0 
                         }}>
-                    <Box className='carousel-container' sx={{ width: '600px', display: 'flex', flexDirection: 'column', margin: '0 auto' }}>
+                    <Box className='carousel-container' sx={{ 
+                                                            width: { xs: '100px', sm: '600px' }, 
+                                                            display: 'flex', 
+                                                            flexDirection: 'column', 
+                                                            alignItems: 'center', 
+                                                            margin: '0 auto',
+                                                            '.carousel-container': {
+                                                                width: '220px'
+                                                            }
+                                                            }}>
                     <Carousel 
                         ref={carouselRef}
                         responsive={responsive} 
@@ -179,9 +195,9 @@ const Projects = () => {
                         {projetosFiltrados.map((project) => (
                             <Box key={project.name} onClick={() => handleOpenModal(project)} 
                                 sx={{ 
-                                margin: '0 40px',
-                                width: '220px',
-                                height: '250px',
+                                margin: { xs: '20px auto', sm: '0 40px'},
+                                width: { xs: '140px', sm: '220px'},
+                                height: { xs: '200px', sm: '250px'},
                                 backgroundColor: '#fff', 
                                 cursor: 'pointer',
                                 textAlign: 'center',
@@ -207,10 +223,11 @@ const Projects = () => {
             {/* Modal */}
             <Modal open={openModal} onClose={handleCloseModal}>
                 <Card sx={{
-                    width: '400px',
-                    margin: 'auto',
-                    mt: '10%',
-                    padding: 2,
+                    width: { xs: '220px', sm: '400px'},
+                    margin: { xs: '0 auto', sm: 'auto'},
+                    mt: { xs: '5%', sm: '10%'},
+                    ml: { xs: '20%', sm: 'auto' },
+                    padding: { xs: 0.75, sm: 2},
                     borderRadius: 4,
                     backgroundColor: '#fff',
                     position: 'relative',
@@ -219,9 +236,24 @@ const Projects = () => {
                     {selectedProject && (
                         <>
                             <CardContent>
-                                <Typography variant="h4" sx={{ mb: 2 }}>{selectedProject.name}</Typography>
-                                <img src={selectedProject.imagemProjeto} alt={selectedProject.name} style={{ width: '100%', marginBottom: '20px', borderRadius: '8px' }} />
-                                <Typography variant="body1">{selectedProject.desc}</Typography>
+                                <Typography variant="h4" sx={{ 
+                                                                mb: { xs: 0.5, sm: 2}, 
+                                                                textAlign: 'center', 
+                                                                fontSize: { xs: '22px', sm: 'auto' }, 
+                                                                fontWeight: 'bold' 
+                                                            }}>
+                                    {selectedProject.name}
+                                </Typography>
+                                <img src={selectedProject.imagemProjeto} alt={selectedProject.name} 
+                                    style={{ width: '100%', borderRadius: '8px' }} 
+                                />
+                                <Typography variant="body1" sx={{ 
+                                                                    mt: { xs: 0.5, sm: 2 }, 
+                                                                    textAlign: 'center', 
+                                                                    fontSize: { xs: '16px', sm: 'auto' } 
+                                                                }}>
+                                    {selectedProject.desc}
+                                </Typography>
                                 <Box className='tech-icons-card' sx={{ 
                                                                     position: 'absolute', 
                                                                     top: '50%', 
@@ -252,8 +284,27 @@ const Projects = () => {
                                 </Box>
                             </CardContent>
                             <CardActions>
-                                <Button variant="contained" sx={{ backgroundColor: '#6a1b9a', color: '#fff', '&:hover': { backgroundColor: '#4a0072' } }}>Acessar Repositório</Button>
-                                <Button variant="outlined" sx={{ borderColor: '#6a1b9a', color: '#6a1b9a', '&:hover': { borderColor: '#4a0072', color: '#4a0072' } }}>Acessar Site</Button>
+                                <Button variant="contained" sx={{ 
+                                                                    backgroundColor: '#6a1b9a', 
+                                                                    color: '#fff',
+                                                                    fontSize: { xs: '12px', sm: 'auto' }, 
+                                                                    '&:hover': { 
+                                                                        backgroundColor: '#4a0072' 
+                                                                    } 
+                                                                }}>
+                                    Acessar Repositório
+                                    </Button>
+                                <Button variant="outlined" sx={{ 
+                                                                borderColor: '#6a1b9a', 
+                                                                color: '#6a1b9a',
+                                                                fontSize: { xs: '12px', sm: 'auto' },
+                                                                '&:hover': { 
+                                                                    borderColor: '#4a0072', 
+                                                                    color: '#4a0072' 
+                                                                } 
+                                                            }}>
+                                    Acessar Site
+                                </Button>
                             </CardActions>
                         </>
                     )}
