@@ -22,9 +22,9 @@ const Contact = () => {
     ]
 
     const palavras = [
-        '< Desenvolvedor Front-End />',
-        '< Desenvolvedor Back-End />',
-        '< Desenvolvedor Web />',
+        '<Desenvolvedor Front-End />',
+        '<Desenvolvedor Back-End />',
+        '<Desenvolvedor Web />',
     ];
 
     const [index, setIndex] = useState(0);
@@ -59,6 +59,7 @@ const Contact = () => {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: '100vh',
+                                    width: { xs: 'calc(100vw - 80px)', md: 'auto'},
                                     position: 'relative',
                                     }}>
             <Zoom in={true} timeout={1750}>
@@ -81,15 +82,23 @@ const Contact = () => {
             </Box>
             </Zoom>
             <Fade in={true} timeout={2500}>
-                <Box className='contact-info-container' sx={{ margin: 'auto', display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
-                    <Box className='contact-info'>
+                <Box className='contact-info-container' sx={{ margin: { xs: 'auto 8px', md: 'auto'}, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
+                    <Box className='contact-info' sx= {{ width: { xs: '100%', sm: 'auto' } }}>
                         <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
                             Caio Anderson
                         </Typography>
-                            <Box className='contact-container' sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Box className='contact-container' sx={{ 
+                                                                    display: 'flex', 
+                                                                    alignItems: 'center',
+                                                                    justifyContent: 'space-around',
+                                                                    '.portal-icon-svg': {
+                                                                        fontSize: { xs: '24px', sm: '32px', md: '40px' },
+                                                                    }
+                                                                }}>
                                 <Box className='words-container' sx={{
                                                                     position: 'relative',
-                                                                    width: { xs: '250px', sm: '350px', md: '400px' },  
+                                                                    width: { xs: '180px', sm: '350px', md: '400px' },
+                                                                    padding: 0,
                                                                     overflow: 'hidden',
                                                                     display: 'flex',
                                                                     alignItems: 'center'
@@ -106,8 +115,8 @@ const Contact = () => {
                                                                     borderTopRightRadius: '10%',
                                                                     borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',
-                                                                    padding: '10px',
-                                                                    marginLeft: { xs: '-50px', sm: '0px'},
+                                                                    padding: { xs: '5px', sm: '10px' },
+                                                                    marginLeft: 0,
                                                                    }}>
                                     <GiPortal className='portal-icon-svg'/>
                                 </Box>

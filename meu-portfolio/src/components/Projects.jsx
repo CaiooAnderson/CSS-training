@@ -114,7 +114,7 @@ const Projects = () => {
             <Fade in={true} timeout={2000}>
         <Box className='project-container' sx={{ margin: 'auto' }}>
             <Box className='project-carousel-container' onMouseMove={handleMouseMove} sx={{ 
-                                                                                        width: { xs: 'calc(100vw - 80px)', sm: '500px' },
+                                                                                        width: { xs: 'calc(100vw - 80px)', sm: '500px', md: 'auto' },
                                                                                         borderRadius: { xs: 0, sm: 1 },
                                                                                         'button': {
                                                                                             padding: { xs: '0px 4px', sm: '5px 15px' }
@@ -177,7 +177,7 @@ const Projects = () => {
                                                             alignItems: 'center', 
                                                             margin: '0 auto',
                                                             '.carousel-container': {
-                                                                width: '220px'
+                                                                width: { xs: '220px', sm: '600px' }
                                                             }
                                                             }}>
                     <Carousel 

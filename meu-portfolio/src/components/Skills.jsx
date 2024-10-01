@@ -121,21 +121,25 @@ const Skills = () => {
                 </Typography>
                 </Box>
                 </Zoom>
-                <Box className='skill-container' sx={{ margin: 'auto', width: { xs: '90%', sm: '100%'}, px: { xs: 1, sm: 2 } }}>
-                <Box className='skills-carousels' sx={{ width: { xs: '95%', sm: '250px' } }}>
+                <Box className='skill-container' sx={{ margin: 'auto 0', width: { xs: '100%', sm: '100%'}, px: { xs: 1, sm: 2 } }}>
+                <Box className='skills-carousels' sx={{ width: { xs: '85%', sm: '250px', md: '100%' } }}>
                     <Box className='front-end-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center' }}>
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Front-End</Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
-                                    margin: { xs: '-10px', sm: '-20px' },
+                                    margin: { xs: '-10px', sm: '-20px', md: '-10px' },
                                     lineHeight: { xs: 'normal' }
                                 },
+                                '.react-multiple-carousel__arrow--right': {
+                                    margin: { xs: '-10px', md: '-20px' }
+                                },
                                 '.react-multiple-carousel__arrow--left': {
-                                    margin: { xs: '-10px' }
+                                    margin: { xs: '-10px', sm: '-20px' }
                                 },
                                 '.skill-item': {
-                                    margin: { xs: 'auto 4px', sm: 'auto 8px' }
-                                }
+                                    margin: { xs: 'auto 4px', sm: 'auto 21px' }
+                                },
+                                borderRadius: { xs: '0', sm: 'auto' },
                             }}>
                                 <Carousel responsive={responsive}>
                                     {skills.frontEnd.map(skill => (
@@ -156,15 +160,19 @@ const Skills = () => {
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Back-End</Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
-                                    margin: { xs: '-10px', sm: '-20px' },
+                                    margin: { xs: '-10px', sm: '-20px', md: '-10px' },
                                     lineHeight: { xs: 'normal' }
                                 },
+                                '.react-multiple-carousel__arrow--right': {
+                                    margin: { xs: '-10px', md: '-20px' }
+                                },
                                 '.react-multiple-carousel__arrow--left': {
-                                    margin: { xs: '-10px' }
+                                    margin: { xs: '-10px', sm: '-20px' }
                                 },
                                 '.skill-item': {
-                                    margin: { xs: 'auto 4px', sm: 'auto 8px' }
-                                }
+                                    margin: { xs: 'auto 4px', sm: 'auto 21px' }
+                                },
+                                borderRadius: { xs: '0', sm: 'auto' }
                             }}>
                                 <Carousel responsive={responsive}>
                                 {skills.backEnd.map(skill => (
@@ -185,15 +193,19 @@ const Skills = () => {
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Ferramentas</Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
-                                    margin: { xs: '-10px', sm: '-20px' },
+                                    margin: { xs: '-10px', sm: '-20px', md: '-10px' },
                                     lineHeight: { xs: 'normal' }
                                 },
+                                '.react-multiple-carousel__arrow--right': {
+                                    margin: { xs: '-10px', md: '-20px' }
+                                },
                                 '.react-multiple-carousel__arrow--left': {
-                                    margin: { xs: '-10px' }
+                                    margin: { xs: '-10px', sm: '-20px' }
                                 },
                                 '.skill-item': {
-                                    margin: { xs: 'auto 4px', sm: 'auto 8px' }
-                                }
+                                    margin: { xs: 'auto 4px', sm: 'auto 21px' }
+                                },
+                                borderRadius: { xs: '0', sm: 'auto' }
                             }}>
                                 <Carousel responsive={responsive}>
                                 {skills.ferramentas.map(skill => (
