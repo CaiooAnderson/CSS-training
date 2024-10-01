@@ -88,9 +88,9 @@ const Contact = () => {
                             Caio Anderson
                         </Typography>
                             <Box className='contact-container' sx={{ 
-                                                                    display: 'flex', 
+                                                                    display: 'flex',
+                                                                    width: '100%', 
                                                                     alignItems: 'center',
-                                                                    justifyContent: 'space-around',
                                                                     '.portal-icon-svg': {
                                                                         fontSize: { xs: '24px', sm: '32px', md: '40px' },
                                                                     }
@@ -101,6 +101,7 @@ const Contact = () => {
                                                                     padding: 0,
                                                                     overflow: 'hidden',
                                                                     display: 'flex',
+                                                                    justifyContent: 'left',
                                                                     alignItems: 'center'
                                                                     }}>
                                     <Slide direction='left' in={slideIn} timeout={500}>
@@ -111,7 +112,7 @@ const Contact = () => {
                                         </Typography>
                                     </Slide>
                                 </Box>
-                                <Box className={`portal-icon ${isActive ? 'active' : ''}`} style={{
+                                <Box className={`portal-icon ${isActive ? 'active' : ''}`} sx={{
                                                                     borderTopRightRadius: '10%',
                                                                     borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',

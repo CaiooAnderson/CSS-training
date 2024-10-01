@@ -122,8 +122,8 @@ const Skills = () => {
                 </Box>
                 </Zoom>
                 <Box className='skill-container' sx={{ margin: 'auto 0', width: { xs: '100%', sm: '100%'}, px: { xs: 1, sm: 2 } }}>
-                <Box className='skills-carousels' sx={{ width: { xs: '85%', sm: '250px', md: '100%' } }}>
-                    <Box className='front-end-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center' }}>
+                <Box className='skills-carousels' sx={{ width: { xs: '92.5%', sm: '250px', md: '100%' } }}>
+                    <Box className='front-end-skills' sx={{ mt: {md: 0.3, lg: 0.5}, textAlign: 'center', pt: { xs: 1, sm: 0 } }}>
                         <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Front-End</Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
@@ -139,7 +139,7 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto 4px', sm: 'auto 21px' }
                                 },
-                                borderRadius: { xs: '0', sm: 'auto' },
+                                borderRadius: { xs: '0', sm: '12px' },
                             }}>
                                 <Carousel responsive={responsive}>
                                     {skills.frontEnd.map(skill => (
@@ -172,7 +172,7 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto 4px', sm: 'auto 21px' }
                                 },
-                                borderRadius: { xs: '0', sm: 'auto' }
+                                borderRadius: { xs: '0', sm: '12px' }
                             }}>
                                 <Carousel responsive={responsive}>
                                 {skills.backEnd.map(skill => (
@@ -205,7 +205,7 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto 4px', sm: 'auto 21px' }
                                 },
-                                borderRadius: { xs: '0', sm: 'auto' }
+                                borderRadius: { xs: '0', sm: '12px' }
                             }}>
                                 <Carousel responsive={responsive}>
                                 {skills.ferramentas.map(skill => (
