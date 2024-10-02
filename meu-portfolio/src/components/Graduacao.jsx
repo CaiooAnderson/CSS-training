@@ -7,7 +7,13 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 const Graduacao = () => {
     return (
             <List className='graduacao'>
-                <Typography variant="h6" sx={{ textAlign: 'center', borderBottom: '1px solid #00000080' }}>Graduação</Typography>
+                <Typography variant="h6" sx={{ 
+                                                textAlign: 'center', 
+                                                borderBottom: '1px solid #00000080', 
+                                                fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } 
+                                                }}>
+                    Graduação
+                </Typography>
                 <ListItem className='lista'>
                     <ListItemAvatar className='graduacao-icon'>
                         <Avatar>

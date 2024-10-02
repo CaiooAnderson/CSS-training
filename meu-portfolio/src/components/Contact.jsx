@@ -55,7 +55,7 @@ const Contact = () => {
         <Fade in={true} timeout={1000}>
         <Box className='contact' sx={{
                                     mt: 0,
-                                    p: { xs: 0, md: 2 },
+                                    p: { xs: 0, sm: 1, md: 2 },
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: '100vh',
@@ -67,8 +67,8 @@ const Contact = () => {
                                                 width: '100%', 
                                                 display: 'flex', 
                                                 justifyContent: 'left', 
-                                                pl: { xs: 1, sm: 0.75, md: 0.5 }, 
-                                                pt: { xs: 1, sm: 0.75, md: 0.5 }
+                                                pl: { xs: 1, sm: 2, md: 3 }, 
+                                                pt: { xs: 1, sm: 2, md: 3 }
                                             }}>
             <Typography variant='h4' sx={{
                                         textAlign: 'left',

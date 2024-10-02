@@ -96,11 +96,12 @@ const Skills = () => {
         <Fade in={true} timeout={1000}>
         <Box className='skills' sx={{ 
                                     mt: 0,  
-                                    p: { xs: 0, md: 2 },
+                                    p: { xs: 0, sm: 1, md: 2 },
                                     display: 'flex',
                                     flexDirection: 'column',
                                     height: { xs: '100%', sm: '100vh' },
                                     position: 'relative',
+                                    minHeight: '100vh',
                                     width: { xs: 'calc(100vw - 80px)', md: '100%' }
                                 }} onMouseMove={handleMouseMove}>
                 <Zoom in={true} timeout={1750}>
@@ -108,8 +109,8 @@ const Skills = () => {
                             width: '100%', 
                             display: 'flex', 
                             justifyContent: 'left',
-                            pl: { xs: 1, sm: 0.75, md: 0.5 }, 
-                            pt: { xs: 1, sm: 0.75, md: 0.5 }
+                            pl: { xs: 1, sm: 2, md: 3 }, 
+                            pt: { xs: 1, sm: 2, md: 3 }
                         }}>
                 <Typography variant='h4' sx={{ 
                                             mb: { xs: 2, sm: 0 }, 

@@ -60,12 +60,12 @@ const Cursos = () => {
           slidesToSlide: 1
         },
         tablet: {
-          breakpoint: { max: 1024, min: 464 },
+          breakpoint: { max: 1024, min: 768 },
           items: 1,
           slidesToSlide: 1
         },
         mobile: {
-          breakpoint: { max: 464, min: 0 },
+          breakpoint: { max: 768, min: 0 },
           items: 1,
           slidesToSlide: 1
         }
@@ -87,24 +87,24 @@ const Cursos = () => {
             gap: 2,
             padding: '8px 0'
             }}>
-            <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080' }}>Cursos Adicionais</Typography>
+            <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080', fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } }}>Cursos Adicionais</Typography>
             <Box className='curso-buttons' sx={{ display: 'flex', flexDirection: 'row', gap: { xs: 1, md: 2}, mb: { xs: 0, md: 1 } }}>
-                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')}>
+                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }} >
                     Front End
                 </Button>
-                <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')}>
+                <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
                     Back End
                 </Button>
-                <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')}>
+                <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
                     Outros
                 </Button>
             </Box>
-            <Box sx={{ position: 'relative', maxWidth: '464px', width: '90%', flexDirection: 'column' }}>
+            <Box sx={{ position: 'relative', maxWidth: '100%', width: { xs: '90%', sm: '75%', md: '65%' }, flexDirection: 'column' }}>
                 <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}>
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
-                            width: { xs: '75%', md: '90%'}, 
+                            width: { xs: '80%', sm: '90%', md: '100%'}, 
                             maxWidth: '350px', 
                             height: '250px', 
                             display: 'flex', 
@@ -112,7 +112,7 @@ const Cursos = () => {
                             whiteSpace: 'normal', 
                             overflow: 'hidden',
                             pt: 2,
-                            position: 'relative'
+                            position: 'relative',
                             }}>
                             <Box className='curso-title' sx={{ 
                                 display: 'flex',
@@ -126,7 +126,8 @@ const Cursos = () => {
                                     textAlign: 'center',
                                     mb: { xs: 0.25, md: 2},
                                     overflow: 'hidden',
-                                    textOverflow: 'ellipsis'
+                                    textOverflow: 'ellipsis',
+                                    fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' }
                                     }}>
                                         {object.nome}
                                 </Typography>

@@ -52,10 +52,10 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsOpen(true);
-      } else {
+      if (window.innerWidth < 1024) {
         setIsOpen(false);
+      } else {
+        setIsOpen(true);
       }
     };
 

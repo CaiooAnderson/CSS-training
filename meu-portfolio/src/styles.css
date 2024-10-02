@@ -712,6 +712,10 @@ body.dark-mode .sidebar {
 }
 
 /* ABOUT */
+.about {
+  background: var(--about-background);
+}
+
 .about h4 {
   color: var(--sidebar-text-hover-color);
   border-color: var(--button-bg-color);

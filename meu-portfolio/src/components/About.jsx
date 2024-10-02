@@ -25,7 +25,7 @@
             <Fade in={true} timeout={1000}>
                 <Box className='about' sx={{    
                                             mt: 0,
-                                            p: { xs: 0, md: 2 },
+                                            p: { xs: 0, sm: 1, md: 2 },
                                             display: 'flex',
                                             flexDirection: 'column',
                                             alignItems: 'center',
@@ -39,14 +39,14 @@
                                                     width: '100%', 
                                                     display: 'flex',
                                                     justifyContent: 'left', 
-                                                    pl: { xs: 1, sm: 0.75, md: 0.5 }, 
-                                                    pt: { xs: 1, sm: 0.75, md: 0.5 } 
+                                                    pl: { xs: 1, sm: 2, md: 3 }, 
+                                                    pt: { xs: 1, sm: 2, md: 3 } 
                                                     }}>
                         <Typography variant='h4' sx={{ 
                                                     fontWeight: 'bold', 
                                                     borderBottom: '4px solid #4a148c', 
                                                     color: '#003366',
-                                                    fontSize: { xs: '1.5rem', sm: '2rem' },
+                                                    fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem', lg: '2rem' },
                                                     mb: { xs: 2, sm: 0 }
                                                     }}>
                             Sobre
@@ -57,9 +57,9 @@
                 <Grid container className='about-center' sx={{ width: '100%', gap: { xs: 2, sm: 4, md: 6, lg: 8}, flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-evenly', margin: '0 auto' }}>
                     <Fade in={true} timeout={2000}>
                         <Grid item className='about-info' sx={{ 
-                                                                width: { xs: '100%', md: '400px' },
+                                                                width: { xs: '100%', sm: '55%', md: '400px' },
                                                                 backgroundColor: '#b4bfff',
-                                                                borderRadius: { xs: 0, md: '8px'},
+                                                                borderRadius: { xs: 0, sm: '4px', md: '8px'},
                                                                 filter: 'drop-shadow(0 0 5px #000)', 
                                                                 height: { xs: 'auto', md: '400px' }, 
                                                                 overflow: 'hidden'
@@ -69,9 +69,9 @@
                     </Fade>
                     <Fade in={true} timeout={2000}>
                         <Grid item className='about-info' sx={{ 
-                                                                width: { xs: '100%', md: '400px' },
+                                                                width: { xs: '100%', sm: '55%', md: '400px' },
                                                                 backgroundColor: '#b4bfff', 
-                                                                borderRadius: { xs: 0, md: '8px'}, 
+                                                                borderRadius: { xs: 0, sm: '4px', md: '8px'}, 
                                                                 filter: 'drop-shadow(0 0 5px #000)', 
                                                                 height: { xs: 'auto', md: '400px' }, 
                                                                 overflow: 'hidden' 

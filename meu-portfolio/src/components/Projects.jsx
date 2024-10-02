@@ -86,11 +86,12 @@ const Projects = () => {
         <Fade in={true} timeout={1000}>
         <Box className='projects' sx={{ 
                                         mt: 0,  
-                                        p: { xs: 0, md: 2 },
+                                        p: { xs: 0, sm: 1, md: 2 },
                                         display: 'flex',
                                         flexDirection: 'column',
                                         height: { xs: '100%', sm: '100vh' },
                                         position: 'relative',
+                                        minHeight: '100vh',
                                         width: { xs: 'calc(100vw - 80px)', md: '100%' }
                                     }}>
             <Zoom in={true} timeout={1750}>
@@ -98,8 +99,8 @@ const Projects = () => {
                                                     width: '100%',
                                                     display: 'flex',
                                                     justifyContent: 'left',
-                                                    pl: { xs: 1, sm: 0.75, md: 0.5 }, 
-                                                    pt: { xs: 1, sm: 0.75, md: 0.5 }
+                                                    pl: { xs: 1, sm: 2, md: 3 }, 
+                                                    pt: { xs: 1, sm: 2, md: 3 }
                                                 }}>
                 <Typography variant='h4' sx={{ 
                                                 fontWeight: 'bold', 
@@ -166,18 +167,18 @@ const Projects = () => {
                 <Box className='project-carousel'>
                     <Box className='carousel' 
                         sx={{ 
-                            width: { xs: 'calc(90vw - 80px)', md: '900px', lg: '1000px' },
+                            width: { xs: 'calc(90vw - 80px)', sm: '400px', md: '900px', lg: '1000px' },
                             margin: '0 auto',
                             p: 0
                         }}>
                     <Box className='carousel-container' sx={{ 
-                                                            width: { xs: '100px', sm: '600px' }, 
+                                                            width: { xs: '100px', sm: '400px' }, 
                                                             display: 'flex', 
                                                             flexDirection: 'column', 
                                                             alignItems: 'center',
                                                             margin: '0 auto',
                                                             '.carousel-container': {
-                                                                width: { xs: '220px', sm: '600px' }
+                                                                width: { xs: '220px', sm: '300px', md: '600px' }
                                                             }
                                                             }}>
                     <Carousel 
@@ -225,7 +226,7 @@ const Projects = () => {
                 <Card sx={{
                     width: { xs: '220px', sm: '400px'},
                     margin: { xs: '0 auto', sm: 'auto'},
-                    mt: { xs: '5%', sm: '10%'},
+                    mt: { xs: '5%', sm: '20%'},
                     ml: { xs: '20%', sm: 'auto' },
                     padding: { xs: 0.75, sm: 2},
                     borderRadius: 4,
@@ -239,7 +240,7 @@ const Projects = () => {
                                 <Typography variant="h4" sx={{ 
                                                                 mb: { xs: 0.5, sm: 2}, 
                                                                 textAlign: 'center', 
-                                                                fontSize: { xs: '22px', sm: 'auto' }, 
+                                                                fontSize: { xs: '22px', sm: '28px', md: 'auto' }, 
                                                                 fontWeight: 'bold' 
                                                             }}>
                                     {selectedProject.name}
@@ -250,7 +251,7 @@ const Projects = () => {
                                 <Typography variant="body1" sx={{ 
                                                                     mt: { xs: 0.5, sm: 2 }, 
                                                                     textAlign: 'center', 
-                                                                    fontSize: { xs: '16px', sm: 'auto' } 
+                                                                    fontSize: { xs: '16px', sm: '24px', md: 'auto' } 
                                                                 }}>
                                     {selectedProject.desc}
                                 </Typography>
@@ -287,7 +288,7 @@ const Projects = () => {
                                 <Button variant="contained" sx={{ 
                                                                     backgroundColor: '#6a1b9a', 
                                                                     color: '#fff',
-                                                                    fontSize: { xs: '12px', sm: 'auto' }, 
+                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' }, 
                                                                     '&:hover': { 
                                                                         backgroundColor: '#4a0072' 
                                                                     } 
@@ -297,7 +298,7 @@ const Projects = () => {
                                 <Button variant="outlined" sx={{ 
                                                                 borderColor: '#6a1b9a', 
                                                                 color: '#6a1b9a',
-                                                                fontSize: { xs: '12px', sm: 'auto' },
+                                                                fontSize: { xs: '12px', sm: '16px', md: 'auto' },
                                                                 '&:hover': { 
                                                                     borderColor: '#4a0072', 
                                                                     color: '#4a0072' 
