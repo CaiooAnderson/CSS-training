@@ -133,7 +133,7 @@ const Projects = () => {
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
                         display: { xs: 'flex' },
                         flexWrap: { xs: 'wrap', sm: 'nowrap' },
-                        gap: { xs: 1 },
+                        gap: { xs: 1, },
                         '& .project-button': {
                             width: { xs: 'calc(50% - 4px)', sm: 'auto' },
                             },
@@ -168,13 +168,13 @@ const Projects = () => {
                         sx={{ 
                             width: { xs: 'calc(90vw - 80px)', md: '900px', lg: '1000px' },
                             margin: '0 auto',
-                            p: 0 
+                            p: 0
                         }}>
                     <Box className='carousel-container' sx={{ 
                                                             width: { xs: '100px', sm: '600px' }, 
                                                             display: 'flex', 
                                                             flexDirection: 'column', 
-                                                            alignItems: 'center', 
+                                                            alignItems: 'center',
                                                             margin: '0 auto',
                                                             '.carousel-container': {
                                                                 width: { xs: '220px', sm: '600px' }

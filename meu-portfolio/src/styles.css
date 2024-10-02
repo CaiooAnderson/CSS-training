@@ -1445,7 +1445,6 @@ body.dark-mode .sidebar {
   .front-end-skills,
   .back-end-skills,
   .tools-skills {
-    width: 250px;
     padding: auto 0;
   }
   
@@ -1463,7 +1462,7 @@ body.dark-mode .sidebar {
   }
 
   .skill-item {
-    margin: auto 8px;
+    /* margin: auto 8px; */
     width: 80px;
   }
 
@@ -1478,7 +1477,7 @@ body.dark-mode .sidebar {
   }
 
   .skill-carousel-container ul {
-    margin-left: 10px;
+    margin: auto 0px;
   }
 
   .skill-carousel-container {
