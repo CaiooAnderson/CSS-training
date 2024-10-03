@@ -9,47 +9,90 @@ const Cursos = () => {
 
     const cursos = {
         'Front-End': [
-            {   nome: 'Front-end: HTML, CSS, JavaScript, React e TypeScript', 
+            {   
+                nome: 'Front-end: HTML, CSS, JavaScript, React e TypeScript', 
                 curso: 'Udemy', duração: '50', year: '2022'
             },
-            {   nome: 'HTML: Elementos para a criação de páginas Web',
-                curso: 'Bradesco', duração: '0', year: '2000' 
+            {   
+                nome: 'HTML: Elementos para a criação de páginas Web',
+                curso: 'Bradesco', duração: '10', year: '2023'
             },
-            {   nome: 'HTML e CSS: Responsividade e publicação de projetos',
-                curso: 'Alura', duração: '0', year: '2024'
+            {   
+                nome: 'HTML e CSS: Responsividade e publicação de projetos',
+                curso: 'Alura', duração: '6', year: '2024'
             },
-            {   nome: 'HTML - Avançado: Elementos para a criação de páginas Web',
-                curso: 'Bradesco', duração: '0', year: '2024'
+            {   
+                nome: 'HTML - Avançado: Elementos para a criação de páginas Web',
+                curso: 'Bradesco', duração: '20', year: '2023'
             },
-            {   nome: 'Melhore sua experiência de desenvolvimento com TypeScript',
-                curso: 'Alura', duração: '0', year: '2024'
+            {   
+                nome: 'Melhore sua experiência de desenvolvimento com TypeScript',
+                curso: 'Alura', duração: '32', year: '2024'
             },
-            {   nome: 'React: como os componentes funcionam',
-                curso: 'Alura', duração: '0', year: '2024'
+            {   
+                nome: 'React: como os componentes funcionam',
+                curso: 'Alura', duração: '8', year: '2024'
             },
-            {   nome: 'React: Desenvolvendo com JavaScript',
-                curso: 'Alura', duração: '0', year: '2024'
+            {   
+                nome: 'React: Desenvolvendo com JavaScript',
+                curso: 'Alura', duração: '14', year: '2024'
+            },
+            {   
+                nome: 'TypeScript: Técnicas e boas práticas',
+                curso: 'Alura', duração: '10', year: '2024'
             },
         ],
         'Back-End': [
-            {   nome: 'Python: Desenvolvimento do básico ao nível intermediário', 
-                curso: 'CVTI', duração: '40', year: '2023' },
-            {   nome: 'Desenvolvimento Back-End com JavaScript e MongoDB', 
-                curso: 'Alura', duração: '0', year: '2023' },
-            {   nome: 'Curso de Node.js: Programando em JavaScript com foco no back-end', 
-                curso: 'Alura', duração: '0', year: '2024' }
+            {   
+                nome: 'Python: Desenvolvimento do básico ao nível intermediário', 
+                curso: 'CVTI', duração: '40', year: '2023' 
+            },
+            {   
+                nome: 'Curso de Node.js: Programando em JavaScript com foco no back-end', 
+                curso: 'Alura', duração: '74', year: '2024' 
+            },
+            {   
+                nome: 'Node.js: Desenvolvendo API com Sequelize e SQLite', 
+                curso: 'Alura', duração: '20', year: '2024' 
+            },
+            {   
+                nome: 'Node.js: Buscas, filtros, paginação e erros em API', 
+                curso: 'Alura', duração: '10', year: '2024' 
+            },
+            {   
+                nome: 'Node.js: API Rest com Express e MongoDB', 
+                curso: 'Alura', duração: '10', year: '2024' 
+            },
+            {   
+                nome: 'JS: manipulando elementos no DOM', 
+                curso: 'Alura', duração: '6', year: '2024' 
+            },
         ],
         'Outros': [
-            {   nome: 'Fundamentos de TI - Hardware e Software', 
-                curso: 'Bradesco', duração: '0', year: '2000' },
-            {   nome: 'Lei Geral de Proteção de Dados (LGPD)', 
-                curso: 'Bradesco', duração: '0', year: '2000' },
-            {   nome: 'Microsoft Excel 2016 - Intermediário',
-                curso: 'Bradesco', duração: '20', year: '2024' },
-            {   nome: 'Introdução à Programação Orientada a Objetos (POO)', 
-                curso: 'Bradesco', duração: '0', year: '2000' },
-            {   nome: 'Inglês (Avançado): Curso de Capacitação',
-                curso: 'Wizard', duração: '0', year: '2016' }
+            {   
+                nome: 'Microsoft Excel 2016 - Intermediário',
+                curso: 'Bradesco', duração: '20', year: '2024' 
+            },
+            {   
+                nome: 'HTTP: entendendo a web por baixo dos panos', 
+                curso: 'Alura', duração: '10', year: '2024' 
+            },
+            {   
+                nome: 'Fundamentos de TI - Hardware e Software', 
+                curso: 'Bradesco', duração: '15', year: '2023' 
+            },
+            {   
+                nome: 'Lei Geral de Proteção de Dados (LGPD)', 
+                curso: 'Bradesco', duração: '30', year: '2023' 
+            },
+            {   
+                nome: 'Introdução à Programação Orientada a Objetos (POO)', 
+                curso: 'Bradesco', duração: '10', year: '2023' 
+            },
+            {   
+                nome: 'Inglês (Avançado): Curso de Capacitação',
+                curso: 'Wizard', duração: '400', year: '2016' 
+            }
         ]
     };
 

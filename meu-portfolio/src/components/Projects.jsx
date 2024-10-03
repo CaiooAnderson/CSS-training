@@ -32,11 +32,51 @@ const Projects = () => {
     const capas = importAll(require.context('../assets/projetos-capa', false, /\.(gif)$/));
 
     const projetos = [
-        { name: 'Cartas Tridimensionais', categoria: 'Front-End', imagemProjeto: capas[0], imagensDemonstracao: [capas[1], capas[2]], desc: 'Experiência visual interativa com cartas em 3D e animações dinâmicas.', linguagens: [<FaHtml5 />, <FaCss3Alt />] },
-        { name: 'Tabela de Ranking', categoria: 'Front-End', imagemProjeto: capas[1], imagensDemonstracao: [capas[1], capas[2]], desc: 'Tabela com a temática de Pokémon para criação e gerenciamento de novos usuários.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Pomodoro (Temporizador)', categoria: 'Outros', imagemProjeto: capas[2], imagensDemonstracao: [capas[1], capas[2]], desc: 'Ferramenta de produtividade com ciclos personalizáveis para foco e descanso.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />] },
-        { name: 'Calculadora de Imposto de Renda', categoria: 'Back-End', imagemProjeto: capas[3], imagensDemonstracao: [capas[1], capas[2]], desc: 'Calculadora intuitiva para estimar o imposto de renda com base em rendimentos.', linguagens: [<FaPython />] },
-        { name: 'Gestão de Equipes', categoria: 'Outros', imagemProjeto: capas[4], imagensDemonstracao: [capas[1], capas[2]], desc: 'Aplicação para criar e gerenciar times, distribuindo equipes.', linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />] },
+        { 
+            name: 'Cartas Tridimensionais', 
+            categoria: 'Front-End', 
+            imagemProjeto: capas[0], 
+            imagensDemonstracao: [capas[1], capas[2]], 
+            desc: 'Experiência visual interativa com cartas em 3D e animações dinâmicas.', 
+            linguagens: [<FaHtml5 />, <FaCss3Alt />], 
+            repoLink: 'https://github.com/CaiooAnderson/Star-Card', 
+            siteLink: 'https://star-card.vercel.app/' },
+        { 
+            name: 'Tabela de Ranking', 
+            categoria: 'Front-End', 
+            imagemProjeto: capas[1], 
+            imagensDemonstracao: [capas[1], capas[2]], 
+            desc: 'Tabela com a temática de Pokémon para criação e gerenciamento de novos usuários.', 
+            linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />], 
+            repoLink: 'https://github.com/CaiooAnderson/Tabela-de-Jogos', 
+            siteLink: 'https://tabela-de-jogos-lac.vercel.app/' },
+        { 
+            name: 'Pomodoro (Temporizador)', 
+            categoria: 'Outros', 
+            imagemProjeto: capas[2], 
+            imagensDemonstracao: [capas[1], capas[2]], 
+            desc: 'Ferramenta de produtividade com ciclos personalizáveis para foco e descanso.', 
+            linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />], 
+            repoLink: 'https://github.com/CaiooAnderson/timer', 
+            siteLink: 'https://timer-tawny-eight.vercel.app/' },
+        { 
+            name: 'Calculadora de Imposto de Renda', 
+            categoria: 'Back-End', 
+            imagemProjeto: capas[3], 
+            imagensDemonstracao: [capas[1], capas[2]], 
+            desc: 'Calculadora intuitiva para estimar o imposto de renda com base em rendimentos.', 
+            linguagens: [<FaPython />], 
+            repoLink: 'https://github.com/CaiooAnderson/CVTI', 
+            siteLink: '' },
+        { 
+            name: 'Gestão de Equipes', 
+            categoria: 'Outros', 
+            imagemProjeto: capas[4], 
+            imagensDemonstracao: [capas[1], capas[2]], 
+            desc: 'Aplicação para criar e gerenciar times, distribuindo equipes.', 
+            linguagens: [<FaHtml5 />, <FaCss3Alt />, <FaJs />, <FaReact />, <FaNodeJs />], 
+            repoLink: 'https://github.com/CaiooAnderson/project-team-creator', 
+            siteLink: 'https://project-team-creator.vercel.app/' },
     ];
 
     const projetosFiltrados = projetos.filter(project => filter === 'Todos' || project.categoria === filter);
@@ -244,7 +284,9 @@ const Projects = () => {
                                                                 top: 8, 
                                                                 right: 8,
                                                                 cursor: 'pointer',
-                                                                color: '#6a1b9a', 
+                                                                color: '#000',
+                                                                border: '1px solid #eee',
+                                                                borderRadius: 2, 
                                                                 fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
                                                                 '&:hover': { color: '#4a0072' }
                                                                 }} />
@@ -299,26 +341,17 @@ const Projects = () => {
                                     ))}
                                 </Box>
                             </CardContent>
-                            <CardActions>
-                                <Button variant="contained" sx={{ 
-                                                                    backgroundColor: '#6a1b9a', 
-                                                                    color: '#fff',
-                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' }, 
-                                                                    '&:hover': { 
-                                                                        backgroundColor: '#4a0072' 
-                                                                    } 
-                                                                }}>
+                            <CardActions sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                                <Button className='card-button' variant="contained" href={selectedProject.repoLink} target='_blank'
+                                                                                sx={{ 
+                                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' }, 
+                                                                                }}>
                                     Acessar Repositório
                                     </Button>
-                                <Button variant="outlined" sx={{ 
-                                                                borderColor: '#6a1b9a', 
-                                                                color: '#6a1b9a',
-                                                                fontSize: { xs: '12px', sm: '16px', md: 'auto' },
-                                                                '&:hover': { 
-                                                                    borderColor: '#4a0072', 
-                                                                    color: '#4a0072' 
-                                                                } 
-                                                            }}>
+                                <Button className='card-button' variant="contained" href={selectedProject.siteLink} target='_blank' 
+                                                                                sx={{ 
+                                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' },
+                                                                                }}>
                                     Acessar Site
                                 </Button>
                             </CardActions>

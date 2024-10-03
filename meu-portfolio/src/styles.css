@@ -247,14 +247,6 @@ body.dark-mode {
   color: var(--dark-text-color);
 }
 
-body.dark-mode a {
-  color: var(--dark-icon-color);
-}
-
-body.dark-mode a:hover {
-  color: var(--dark-sidebar-icon-hover-color);
-}
-
 body.dark-mode .sidebar {
   background: var(--dark-sidebar-background);
   border-right-color: var(--dark-background-color-opacity);
@@ -511,8 +503,19 @@ body.dark-mode .sidebar {
   background: var(--dark-home-button-hover-color);
 }
 
+.dark-mode .card-button {
+  background: var(--dark-home-button-color);
+  color: var(--dark-text-color);
+}
+
+.dark-mode .card-button:hover {
+  background: var(--dark-button-hover-bg-color);
+  filter: brightness(1.2);
+}
+
 .dark-mode .contact {
   background: var(--dark-about-background);
+  color: var(--dark-about-h6-color);
 }
 
 .dark-mode .contact p {
@@ -1046,6 +1049,16 @@ body.dark-mode .sidebar {
 
 .project-button.active:hover {
   background: var(--button-active-bg-color);
+}
+
+.card-button {
+  background: var(--home-button-hover-color);
+  filter: brightness(1.2);
+  color: var(--dark-button-active-text-color);
+}
+
+.card-button:hover {
+  background: var(--sidebar-button-text-color);
 }
 
 /* CONTACT */
