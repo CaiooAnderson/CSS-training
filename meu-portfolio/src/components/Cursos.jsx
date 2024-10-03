@@ -89,7 +89,7 @@ const Cursos = () => {
             }}>
             <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080', fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } }}>Cursos Adicionais</Typography>
             <Box className='curso-buttons' sx={{ display: 'flex', flexDirection: 'row', gap: { xs: 1, md: 2}, mb: { xs: 0, md: 1 } }}>
-                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }} >
+                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
                     Front End
                 </Button>
                 <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
@@ -99,12 +99,12 @@ const Cursos = () => {
                     Outros
                 </Button>
             </Box>
-            <Box sx={{ position: 'relative', maxWidth: '100%', width: { xs: '90%', sm: '75%', md: '65%' }, flexDirection: 'column' }}>
+            <Box sx={{ position: 'relative', maxWidth: '100%', width: { xs: '85%', sm: '90%', md: '100%' }, flexDirection: 'column' }}>
                 <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}>
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
-                            width: { xs: '80%', sm: '90%', md: '100%'}, 
+                            width: { xs: '80%', sm: '90%'}, 
                             maxWidth: '350px', 
                             height: '250px', 
                             display: 'flex', 
@@ -127,7 +127,7 @@ const Cursos = () => {
                                     mb: { xs: 0.25, md: 2},
                                     overflow: 'hidden',
                                     textOverflow: 'ellipsis',
-                                    fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' }
+                                    fontSize: { xs: '0.875rem', sm: '1rem' }
                                     }}>
                                         {object.nome}
                                 </Typography>

@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap} from "react-icons/fa";
 import { SiTypescript, SiPostgresql, SiMui } from "react-icons/si";
+import CloseIcon from '@mui/icons-material/Close';
 import Hint from './Hint';
 
 const Projects = () => {
@@ -222,18 +223,32 @@ const Projects = () => {
             </Fade>
 
             {/* Modal */}
-            <Modal open={openModal} onClose={handleCloseModal}>
+            <Modal open={openModal} onClose={handleCloseModal} closeAfterTransition sx={{ 
+                                                                                        display: 'flex',
+                                                                                        justifyContent: 'center',
+                                                                                        alignItems: 'center',
+                                                                                        ml: '1.5rem'
+                                                                                    }}>
+                <Fade in={openModal}>
                 <Card sx={{
                     width: { xs: '220px', sm: '400px'},
                     margin: { xs: '0 auto', sm: 'auto'},
-                    mt: { xs: '5%', sm: '20%'},
-                    ml: { xs: '20%', sm: 'auto' },
                     padding: { xs: 0.75, sm: 2},
                     borderRadius: 4,
                     backgroundColor: '#fff',
                     position: 'relative',
                     overflow: 'visible',
                 }}>
+                    <CloseIcon onClick={handleCloseModal} sx={{
+                                                                position: 'absolute',
+                                                                top: 8, 
+                                                                right: 8,
+                                                                cursor: 'pointer',
+                                                                color: '#6a1b9a', 
+                                                                fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
+                                                                '&:hover': { color: '#4a0072' }
+                                                                }} />
+
                     {selectedProject && (
                         <>
                             <CardContent>
@@ -310,6 +325,7 @@ const Projects = () => {
                         </>
                     )}
                 </Card>
+                </Fade>
             </Modal>
             <Fade in={true} timeout={4500}>
                 <Box className='hint-box'>

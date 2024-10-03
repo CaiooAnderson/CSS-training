@@ -1286,6 +1286,14 @@ body.dark-mode .sidebar {
     display: none; 
   }
 
+  .sidebar.open nav ul {
+    margin: auto;
+  }
+
+  .sidebar.closed nav ul {
+    margin-bottom: 30%;
+  }
+
   .sidebar.open button p {
     display: inline; 
   }
@@ -1345,66 +1353,6 @@ body.dark-mode .sidebar {
 }
 
 @media (max-width: 430px) {
-  .menu-button {
-    margin-bottom: 10px;
-  }
-
-  .sidebar.open {
-    width: 101%; 
-    border: none;
-    padding-top: 10px;
-  }
-
-  .sidebar.closed nav {
-    justify-content: space-around;
-  }
-
-  .sidebar.closed nav ul li {
-    margin: 10px 0;
-    padding: 3px 0;
-  }
-
-  .sidebar.closed .profile-section {
-    display: none;
-  }
-
-  .profile-section {
-    margin-bottom: 0;
-  }
-
-  .sidebar nav ul li {
-    margin-top: 3px;
-    margin-bottom: 0;
-  }
-
-  .theme-toggle {
-    margin-bottom: 0;
-    height: 30px;
-  }
-
-  .sidebar .profile-section img {
-    margin-bottom: 10px;
-  }
-
-  .sidebar .profile-section h2.titulo {
-    font-size: 1.2rem;
-    margin: 4px 0;
-  }
-
-  .sidebar .profile-section p.subtitulo {
-    font-size: 0.9rem;
-    margin: 0;
-  }
-
-  .sidebar nav ul li button p {
-    font-size: 1rem;
-  }
-
-  .sidebar .footer-sidebar p {
-    font-size: 0.8rem;
-    margin-bottom: 0px;
-  }
-
   body .about {
     height: 100%;
     background: var(--about-background);
@@ -1510,5 +1458,67 @@ body.dark-mode .sidebar {
   .hint-container {
     width: 230px;
     height: 120px;
+  }
+}
+
+@media (max-width: 320px) {
+  .menu-button {
+    margin-bottom: 10px;
+  }
+
+  .sidebar.open {
+    width: 101%; 
+    border: none;
+    padding-top: 10px;
+  }
+
+  .sidebar.closed nav {
+    justify-content: space-around;
+  }
+
+  .sidebar.closed nav ul li {
+    margin: 10px 0;
+    padding: 3px 0;
+  }
+
+  .sidebar.closed .profile-section {
+    display: none;
+  }
+
+  .profile-section {
+    margin-bottom: 0;
+  }
+
+  .sidebar nav ul li {
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+
+  .theme-toggle {
+    margin-bottom: 0;
+    height: 30px;
+  }
+
+  .sidebar .profile-section img {
+    margin-bottom: 10px;
+  }
+
+  .sidebar .profile-section h2.titulo {
+    font-size: 1.2rem;
+    margin: 4px 0;
+  }
+
+  .sidebar .profile-section p.subtitulo {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .sidebar nav ul li button p {
+    font-size: 1rem;
+  }
+
+  .sidebar .footer-sidebar p {
+    font-size: 0.8rem;
+    margin-bottom: 0px;
   }
 }

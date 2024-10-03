@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom } from '@mui/material';
+import { Zoom, Box, Button, IconButton, Typography } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '../assets/perfil-1.jpeg';
 import ThemeToggle from './ThemeToggle';
@@ -67,12 +67,12 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
   }, []);
 
   return (
-    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+    <Box className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <button className="menu-button" onClick={toggleSidebar}>
         <MenuIcon />
       </button>
     <Zoom in={isOpen} timeout={500}>
-      <div className='profile-section'>
+      <Box className='profile-section'>
         <img src={profilePic} alt="Perfil" className="profile-pic" />
         {isOpen && (
           <>
@@ -80,7 +80,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
             <p className='subtitulo'>Desenvolvedor {currentTitle}</p>
           </>
         )}
-      </div>
+      </Box>
     </Zoom>
       <nav>
         <ul>
@@ -115,17 +115,17 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
             </button>
           </li>
         </ul>
-        <div className='theme-toggle'>
+        <Box className='theme-toggle'>
           <ThemeToggle />
-        </div>
+        </Box>
       </nav>
       <Zoom in={isOpen} timeout={300}>
-      <div className='footer-sidebar'>
+      <Box className='footer-sidebar'>
         <p>&copy; Copyright Portfólio</p>
         <p>Desenvolvido por Caio Anderson</p>
-      </div>
+      </Box>
       </Zoom>
-    </div>
+    </Box>
   );
 };
 
