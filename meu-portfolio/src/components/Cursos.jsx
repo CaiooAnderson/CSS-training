@@ -132,18 +132,59 @@ const Cursos = () => {
             }}>
             <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080', fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } }}>Cursos Adicionais</Typography>
             <Box className='curso-buttons' sx={{ display: 'flex', flexDirection: 'row', gap: { xs: 1, md: 2}, mb: { xs: 0, md: 1 } }}>
-                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
+                <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} 
+                    sx={{ 
+                        fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, 
+                        background: filter === 'Front-End' ? 'var(--button-active-bg-color)' : 'var(--button-bg-color)',
+                        color: filter === 'Front-End' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
+                        border: filter === 'Front-End' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
+                        boxShadow: filter === 'Front-End' && '0 0 2px #0000001a',
+                        '&:hover': {
+                            opacity: 1,
+                            filter: 'brightness(1.2)',
+                            background: 'var(--home-button-hover-color)'
+                        }
+                    }}>
                     Front End
                 </Button>
-                <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
+                <Button className={filter === 'Back-End' ? 'active' : 'desativado'} variant={filter === 'Back-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Back-End')} 
+                    sx={{ 
+                        fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
+                        background: filter === 'Back-End' ? 'var(--button-active-bg-color)' : 'var(--button-bg-color)',
+                        color: filter === 'Back-End' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
+                        border: filter === 'Back-End' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
+                        boxShadow: filter === 'Back-End' && '0 0 2px #0000001a',
+                        '&:hover': {
+                            opacity: 1,
+                            filter: 'brightness(1.2)',
+                            background: 'var(--home-button-hover-color)'
+                        }
+                    }}>
                     Back End
                 </Button>
-                <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')} sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' } }}>
+                <Button className={filter === 'Outros' ? 'active' : 'desativado'} variant={filter === 'Outros' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Outros')} 
+                    sx={{ 
+                        fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' },
+                        background: filter === 'Outros' ? 'var(--button-active-bg-color)' : 'var(--button-bg-color)',
+                        color: filter === 'Outros' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
+                        border: filter === 'Outros' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
+                        boxShadow: filter === 'Outros' && '0 0 2px #0000001a',
+                        '&:hover': {
+                            opacity: 1,
+                            filter: 'brightness(1.2)',
+                            background: 'var(--home-button-hover-color)'
+                        }
+                    }}>
                     Outros
                 </Button>
             </Box>
-            <Box sx={{ position: 'relative', maxWidth: '100%', width: { xs: '85%', sm: '90%', md: '100%' }, flexDirection: 'column' }}>
-                <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}>
+            <Box sx={{ 
+                        position: 'relative', 
+                        maxWidth: '100%', 
+                        width: { xs: '85%', sm: '90%', md: '100%' }, 
+                        flexDirection: 'column' 
+                    }}>
+                <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}> 
                     {cursos[filter].map((object, index) => (
                         <Box className='curso-container' key={filter + index} sx={{ 
                             borderRadius: '8px', 
@@ -156,6 +197,8 @@ const Cursos = () => {
                             overflow: 'hidden',
                             pt: 2,
                             position: 'relative',
+                            background: 'linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)',
+                            border: '2px solid #420079'
                             }}>
                             <Box className='curso-title' sx={{ 
                                 display: 'flex',

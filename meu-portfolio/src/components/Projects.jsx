@@ -126,6 +126,7 @@ const Projects = () => {
     return (
         <Fade in={true} timeout={1000}>
         <Box className='projects' sx={{ 
+                                        background: 'var(--home-background)',
                                         mt: 0,  
                                         p: { xs: 0, sm: 1, md: 2 },
                                         display: 'flex',
@@ -146,7 +147,11 @@ const Projects = () => {
                 <Typography variant='h4' sx={{ 
                                                 fontWeight: 'bold', 
                                                 mb: { xs: 2, sm: 0 },
-                                                borderBottom: '2px solid #000', 
+                                                borderBottom: '4px solid',
+                                                borderColor: 'var(--button-bg-color)',
+                                                color: 'var(--sidebar-text-hover-color)',
+                                                borderBottomLeftRadius: '12px',
+                                                borderBottomRightRadius: '4px', 
                                                 fontSize: { xs: '1.5rem', sm: '2rem' } 
                                             }}>
                     Projetos
@@ -155,27 +160,45 @@ const Projects = () => {
             </Zoom>
             <Fade in={true} timeout={2000}>
         <Box className='project-container' sx={{ margin: 'auto' }}>
-            <Box className='project-carousel-container' onMouseMove={handleMouseMove} sx={{ 
-                                                                                        width: { xs: 'calc(100vw - 80px)', sm: '500px', md: 'auto' },
-                                                                                        borderRadius: { xs: 0, sm: 1 },
-                                                                                        'button': {
-                                                                                            padding: { xs: '0px 4px', sm: '5px 15px' }
-                                                                                        },
-                                                                                        '.project-carousel-button-container': {
-                                                                                            mb: { xs: 1, sm: 2 },
-                                                                                        }
-                                                                                        }}>
+            <Box className='project-carousel-container' onMouseMove={handleMouseMove} 
+                sx={{ 
+                    position: 'relative',
+                    overflow: 'hidden',
+                    backgroundSize: 'cover',
+                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.4)',
+                    backdropFilter: 'blur(10px)',
+                    marginBottom: '32px',
+                    height: '400px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    animation: 'waveAnimation 20s infinite ease-in-out',
+                    width: { xs: 'calc(100vw - 80px)', sm: '500px', md: 'auto' },
+                    borderRadius: { xs: 0, sm: 1 },
+                    'button': {
+                        padding: { xs: '0px 4px', sm: '5px 15px' }
+                    },
+                    '.project-carousel-button-container': {
+                        mb: { xs: 1, sm: 2 },
+                    }
+                }}>
                 <Box className='project-carousel-button-container' 
                     sx={{
                         position: 'relative',
                         overflow: 'hidden',
                         mt: { xs: 2, sm: 0 },
+                        mb: 2,
                         padding: { xs: 1, sm: 2},
                         borderRadius: { xs: 0, sm: 4},
                         boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
-                        display: { xs: 'flex' },
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                         flexWrap: { xs: 'wrap', sm: 'nowrap' },
-                        gap: { xs: 1, },
+                        gap: 1,
+                        background: 'linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1))',
+                        backgroundSize: '200% auto',
+                        animation: 'shine 5s infinite ease-in-out',
                         '& .project-button': {
                             width: { xs: 'calc(50% - 4px)', sm: 'auto' },
                             },
@@ -250,7 +273,16 @@ const Projects = () => {
                                     zIndex: 10,
                                 },
                             }}>
-                                <img src={project.imagemProjeto} alt={''} style={{ width: '100%', height: '100%', border: '3px solid #8a2be2', minHeight: '220px', objectFit: 'cover', borderRadius: '0px', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)' }} />
+                                <img src={project.imagemProjeto} alt={''} 
+                                    style={{ 
+                                            width: '100%', 
+                                            height: '100%', 
+                                            border: '3px solid #8a2be2', 
+                                            minHeight: '220px', 
+                                            objectFit: 'cover', 
+                                            borderRadius: '0px', 
+                                            boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)' 
+                                        }}/>
                             </Box>
                         ))}
                     </Carousel>
@@ -343,15 +375,27 @@ const Projects = () => {
                             </CardContent>
                             <CardActions sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
                                 <Button className='card-button' variant="contained" href={selectedProject.repoLink} target='_blank'
-                                                                                sx={{ 
-                                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' }, 
-                                                                                }}>
+                                    sx={{ 
+                                        fontSize: { xs: '12px', sm: '16px', md: 'auto' },
+                                        background: 'var(--home-button-hover-color)',
+                                        filter: 'brightness(1.2)',
+                                        color: 'var(--dark-button-active-text-color)',
+                                        '&:hover': {
+                                            background: 'var(--sidebar-button-text-color)'
+                                        }
+                                    }}>
                                     Acessar Repositório
                                     </Button>
                                 <Button className='card-button' variant="contained" href={selectedProject.siteLink} target='_blank' 
-                                                                                sx={{ 
-                                                                                    fontSize: { xs: '12px', sm: '16px', md: 'auto' },
-                                                                                }}>
+                                    sx={{ 
+                                        fontSize: { xs: '12px', sm: '16px', md: 'auto' },
+                                        background: 'var(--home-button-hover-color)',
+                                        filter: 'brightness(1.2)',
+                                        color: 'var(--dark-button-active-text-color)',
+                                        '&:hover': {
+                                            background: 'var(--sidebar-button-text-color)'
+                                        }
+                                    }}>
                                     Acessar Site
                                 </Button>
                             </CardActions>

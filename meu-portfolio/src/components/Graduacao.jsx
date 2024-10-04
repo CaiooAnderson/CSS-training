@@ -14,25 +14,37 @@ const Graduacao = () => {
                                                 }}>
                     Graduação
                 </Typography>
-                <ListItem className='lista'>
+                <ListItem className='lista' sx={{ margin: '32px 0' }}>
                     <ListItemAvatar className='graduacao-icon'>
-                        <Avatar>
+                        <Avatar sx={{ 
+                                        background: 'var(--button-bg-color)',
+                                        outline: '1px solid var(--sidebar-active-icon-color)',
+                                        color: 'var(--sidebar-active-icon-color)'               
+                                    }}>
                             <SchoolOutlinedIcon />
                         </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Curso" secondary="Análise e Desenvolvimento de Sistemas" />
                 </ListItem>
-                <ListItem className='lista'>
+                <ListItem className='lista' sx={{ margin: '32px 0' }}>
                     <ListItemAvatar className='graduacao-icon'>
-                        <Avatar>
+                        <Avatar sx={{ 
+                                        background: 'var(--button-bg-color)',
+                                        outline: '1px solid var(--sidebar-active-icon-color)',
+                                        color: 'var(--sidebar-active-icon-color)'               
+                                    }}>
                             <LocationOnOutlinedIcon />
                         </Avatar>
                     </ListItemAvatar>
                     <ListItemText primary="Universidade" secondary="UNOPAR - Universidade Norte do Paraná" />
                 </ListItem>
-                <ListItem className='lista'>
+                <ListItem className='lista' sx={{ margin: '32px 0' }}>
                     <ListItemAvatar className='graduacao-icon'>
-                        <Avatar>
+                        <Avatar sx={{ 
+                                        background: 'var(--button-bg-color)',
+                                        outline: '1px solid var(--sidebar-active-icon-color)',
+                                        color: 'var(--sidebar-active-icon-color)'               
+                                    }}>
                             <AccessTimeOutlinedIcon />
                         </Avatar>
                     </ListItemAvatar>

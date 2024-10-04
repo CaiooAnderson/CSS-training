@@ -94,16 +94,20 @@ const Skills = () => {
 
     return (
         <Fade in={true} timeout={1000}>
-        <Box className='skills' sx={{ 
-                                    mt: 0,  
-                                    p: { xs: 0, sm: 1, md: 2 },
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    height: { xs: '100%', sm: '100vh' },
-                                    position: 'relative',
-                                    minHeight: '100vh',
-                                    width: { xs: 'calc(100vw - 80px)', md: '100%' }
-                                }} onMouseMove={handleMouseMove}>
+        <Box className='skills' onMouseMove={handleMouseMove}
+            sx={{ 
+                mt: 0,  
+                p: { xs: 0, sm: 1, md: 2 },
+                display: 'flex',
+                flexDirection: 'column',
+                height: { xs: '100%', sm: '100vh' },
+                position: 'relative',
+                minHeight: '100vh',
+                width: { xs: 'calc(100vw - 80px)', md: '100%' },
+                background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), #4a7bac80 0%, #4a7bac80 10%, #3d9eff 80%)',
+                transition: 'background 0.5s ease',
+                gap: '0.5rem',
+            }}>
                 <Zoom in={true} timeout={1750}>
                 <Box sx={{ 
                             width: '100%', 
@@ -117,20 +121,53 @@ const Skills = () => {
                                             fontWeight: 'bold', 
                                             borderBottom: '2px solid #000',
                                             fontSize: { xs: '1.5rem', sm: '2rem' },
+                                            color: 'var(--sidebar-text-hover-color)',
+                                            borderColor: 'var(--button-bg-color)',
+                                            borderWidth: '4px',
+                                            borderBottomLeftRadius: '12px',
+                                            borderBottomRightRadius: '4px',
                                             }}>
                     Habilidades
                 </Typography>
                 </Box>
                 </Zoom>
-                <Box className='skill-container' sx={{ margin: 'auto 0', width: { xs: '100%', sm: '100%'}, px: { xs: 1, sm: 2 } }}>
-                <Box className='skills-carousels' sx={{ width: '100%', maxWidth: '100%', margin: '0 auto', overflow: 'hidden' }}>
+                <Box className='skill-container' 
+                    sx={{ 
+                        margin: 'auto 0', 
+                        width: { xs: '100%', sm: '100%'}, 
+                        px: { xs: 1, sm: 2 } 
+                    }}>
+                <Box className='skills-carousels' sx={{ 
+                                                        display: 'flex',
+                                                        flexDirection: 'column',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        width: '100%', 
+                                                        maxWidth: '100%', 
+                                                        margin: '0 auto', 
+                                                        overflow: 'hidden' 
+                                                    }}>
                     <Box className='front-end-skills' sx={{ 
                                                             mt: {md: 0.3, lg: 0.5}, 
                                                             textAlign: 'center', 
                                                             pt: { xs: 1, sm: 0 }, 
-                                                            width: { xs: '100%', sm: '600px' } 
+                                                            width: { xs: '100%', sm: '600px' },
+                                                            padding: '16px 0',
+                                                            paddingTop: 0, 
                                                         }}>
-                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Front-End</Typography>
+                        <Typography variant='h5' sx={{ 
+                                                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                                                    display: 'inline',
+                                                    background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                                    backgroundSize: '400% 400%',
+                                                    padding: '5px 20px 3.5px',
+                                                    borderTopLeftRadius: '20px',
+                                                    borderTopRightRadius: '4px',
+                                                    position: 'relative',
+                                                    animation: 'nebulosa 15s ease infinite'
+                                                    }}>
+                            Front-End
+                        </Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
                                     margin: { xs: '0px', sm: '-20px', md: '-10px' },
@@ -145,6 +182,11 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto', sm: 'auto 21px' }
                                 },
+                                overflow: 'hidden',
+                                padding: '10px',
+                                background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                backgroundSize: '400% 400%',
+                                animation: 'nebulosa 15s ease infinite',
                                 borderRadius: { xs: '0', sm: '12px' },
                                 width: { xs: '100%', sm: '100%', md: '100%' }
                             }}>
@@ -155,7 +197,27 @@ const Skills = () => {
                                     className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
                                     onClick={() => handleSkillClick(skill.name)}
                                     sx={{    
-                                        borderColor: skill.color,
+                                        background: 'rgba(255, 255, 255, 0.3)',
+                                        backdropFilter: 'blur(10px)',
+                                        width: '100px',
+                                        height: '100px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: '8px',
+                                        margin: '0 20px',
+                                        border: `2px solid ${skill.color}`,
+                                        transition: 'transform 0.5s ease, box-shadow 0.5s ease',
+                                        cursor: 'pointer',
+                                        '&.selecionado .skill-icon': {
+                                            animation: 'float 2.5s ease-in-out infinite',
+                                            filter: 'drop-shadow(0px 12px 4px rgba(0, 0, 0, 0.2))',
+                                            marginTop: '8px',
+                                        },
+                                        '&.nao-selecionado .skill-icon': {
+                                            animation: 'rotate 1s ease-in-out forwards',
+                                        },
                                     }}>
                                     <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
                                 </Box>
@@ -167,9 +229,23 @@ const Skills = () => {
                                                             mt: {md: 0.3, lg: 0.5}, 
                                                             textAlign: 'center', 
                                                             pt: { xs: 0.5, sm: 0 }, 
-                                                            width: { xs: '100%', sm: '600px' } 
+                                                            width: { xs: '100%', sm: '600px' },
+                                                            padding: '16px 0',
+                                                            paddingTop: 0
                                                         }}>
-                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Back-End</Typography>
+                        <Typography variant='h5' sx={{ 
+                                                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                                                    display: 'inline',
+                                                    background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                                    backgroundSize: '400% 400%',
+                                                    padding: '5px 20px 3.5px',
+                                                    borderTopLeftRadius: '20px',
+                                                    borderTopRightRadius: '4px',
+                                                    position: 'relative',
+                                                    animation: 'nebulosa 15s ease infinite' 
+                                                    }}>
+                            Back-End
+                        </Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
                                     margin: { xs: '0px', sm: '-20px', md: '-10px' },
@@ -184,6 +260,11 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto', sm: 'auto 21px' }
                                 },
+                                overflow: 'hidden',
+                                padding: '10px',
+                                background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                backgroundSize: '400% 400%',
+                                animation: 'nebulosa 15s ease infinite',
                                 borderRadius: { xs: '0', sm: '12px' },
                                 width: { xs: '100%', sm: '100%', md: '100%' }
                             }}>
@@ -194,7 +275,27 @@ const Skills = () => {
                                     className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
                                     onClick={() => handleSkillClick(skill.name)}
                                     sx={{   
-                                        borderColor: skill.color,
+                                        background: 'rgba(255, 255, 255, 0.3)',
+                                        backdropFilter: 'blur(10px)',
+                                        width: '100px',
+                                        height: '100px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: '8px',
+                                        margin: '0 20px',
+                                        border: `2px solid ${skill.color}`,
+                                        transition: 'transform 0.5s ease, box-shadow 0.5s ease',
+                                        cursor: 'pointer',
+                                        '&.selecionado .skill-icon': {
+                                            animation: 'float 2.5s ease-in-out infinite',
+                                            filter: 'drop-shadow(0px 12px 4px rgba(0, 0, 0, 0.2))',
+                                            marginTop: '8px',
+                                        },
+                                        '&.nao-selecionado .skill-icon': {
+                                            animation: 'rotate 1s ease-in-out forwards',
+                                        },
                                     }}>
                                     <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
                                 </Box>
@@ -206,9 +307,23 @@ const Skills = () => {
                                                         mt: {md: 0.3, lg: 0.5}, 
                                                         textAlign: 'center', 
                                                         pt: { xs: 0.5, sm: 0 }, 
-                                                        width: { xs: '100%', sm: '600px' } 
+                                                        width: { xs: '100%', sm: '600px' },
+                                                        padding: '16px 0',
+                                                        paddingTop: 0,
                                                     }}>
-                        <Typography variant='h5' sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}>Ferramentas</Typography>
+                        <Typography variant='h5' sx={{ 
+                                                    fontSize: { xs: '1.25rem', sm: '1.5rem' },
+                                                    display: 'inline',
+                                                    background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                                    backgroundSize: '400% 400%',
+                                                    padding: '5px 20px 3.5px',
+                                                    borderTopLeftRadius: '20px',
+                                                    borderTopRightRadius: '4px',
+                                                    position: 'relative',
+                                                    animation: 'nebulosa 15s ease infinite' 
+                                                    }}>
+                            Ferramentas
+                        </Typography>
                             <Box className='skill-carousel-container' sx={{
                                 'button': {
                                     margin: { xs: '0px', sm: '-20px', md: '-10px' },
@@ -223,6 +338,11 @@ const Skills = () => {
                                 '.skill-item': {
                                     margin: { xs: 'auto', sm: 'auto 21px' }
                                 },
+                                overflow: 'hidden',
+                                padding: '10px',
+                                background: 'linear-gradient(270deg, #dd00ff, #00d4ff, #4b0082, #dd00ff)',
+                                backgroundSize: '400% 400%',
+                                animation: 'nebulosa 15s ease infinite',
                                 borderRadius: { xs: '0', sm: '12px' },
                                 width: { xs: '100%', sm: '100%', md: '100%' }
                             }}>
@@ -233,7 +353,27 @@ const Skills = () => {
                                     className={`skill-item ${clickedSkill === skill.name ? 'selecionado' : 'nao-selecionado'}`} 
                                     onClick={() => handleSkillClick(skill.name)}
                                     sx={{   
-                                        borderColor: skill.color,
+                                        background: 'rgba(255, 255, 255, 0.3)',
+                                        backdropFilter: 'blur(10px)',
+                                        width: '100px',
+                                        height: '100px',
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: '8px',
+                                        margin: '0 20px',
+                                        border: `2px solid ${skill.color}`,
+                                        transition: 'transform 0.5s ease, box-shadow 0.5s ease',
+                                        cursor: 'pointer',
+                                        '&.selecionado .skill-icon': {
+                                            animation: 'float 2.5s ease-in-out infinite',
+                                            filter: 'drop-shadow(0px 12px 4px rgba(0, 0, 0, 0.2))',
+                                            marginTop: '8px',
+                                        },
+                                        '&.nao-selecionado .skill-icon': {
+                                            animation: 'rotate 1s ease-in-out forwards',
+                                        },
                                     }}>
                                     <SkillDetails key={skill.name} icon={skill.icon} label={skill.name} color={skill.color} bgColor={skill.bgColor} isSelected={clickedSkill === skill.name} />
                                 </Box>

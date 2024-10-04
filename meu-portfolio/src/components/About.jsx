@@ -32,7 +32,8 @@
                                             justifyContent: 'center',
                                             height: '100vh',
                                             position: 'relative',
-                                            width: { xs: 'calc(100vw - 80px)', md: '100%' }
+                                            width: { xs: 'calc(100vw - 80px)', md: '100%' },
+                                            background: 'var(--about-background)'
                                             }}>
                 <Zoom in={true} timeout={1750}>
                     <Box className='about-title' sx={{ 
@@ -44,8 +45,11 @@
                                                     }}>
                         <Typography variant='h4' sx={{ 
                                                     fontWeight: 'bold', 
-                                                    borderBottom: '4px solid #4a148c', 
-                                                    color: '#003366',
+                                                    borderBottom: '4px solid',
+                                                    borderColor: 'var(--button-bg-color)', 
+                                                    color: 'var(--sidebar-text-hover-color)',
+                                                    borderBottomLeftRadius: '12px',
+                                                    borderBottomRightRadius: '4px',
                                                     fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem', lg: '2rem' },
                                                     mb: { xs: 2, sm: 0 }
                                                     }}>
