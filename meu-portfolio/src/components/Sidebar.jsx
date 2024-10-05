@@ -72,8 +72,32 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         <MenuIcon />
       </button>
     <Zoom in={isOpen} timeout={500}>
-      <Box className='profile-section'>
-        <img src={profilePic} alt="Perfil" className="profile-pic" />
+      <Box className='profile-section' sx={{ 
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            marginBottom: '20px',
+                                            '@media (max-width: 1024px)': {
+                                              marginBottom: '10px'
+                                            }
+                                          }}>
+        <img src={profilePic} alt="Perfil" className="profile-pic" style={{ 
+                                                                            outline: '4px solid #000',
+                                                                            width: '100px',
+                                                                            height: '100px',
+                                                                            borderRadius: '50%',
+                                                                            objectFit: 'cover',
+                                                                            marginBottom: '10px',
+                                                                            animation: 'shineAndDecay 10s infinite',
+                                                                            '&': {
+                                                                              maxWidth: '100%'
+                                                                            },
+                                                                            '@media (max-width: 1024px)': {
+                                                                              width: '100px',
+                                                                              height: '100px'
+                                                                            }
+                                                                          }} />
         {isOpen && (
           <>
             <h2 className='titulo'>Caio Anderson</h2>
@@ -115,12 +139,29 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
             </button>
           </li>
         </ul>
-        <Box className='theme-toggle'>
+        <Box className='theme-toggle' sx={{ 
+                                          display: 'flex',
+                                          flexDirection: 'row-reverse',
+                                          marginBottom: '10px',
+                                          '@media (max-width: 1024px)': {
+                                            flexDirection: 'row',
+                                            alignItems: 'flex-start',
+                                            marginBottom: '5px',
+                                          },
+                                          '@media (max-width: 320px)': {
+                                            marginBottom: 0,
+                                            height: '30px'
+                                          }
+                                        }}>
           <ThemeToggle />
         </Box>
       </nav>
       <Zoom in={isOpen} timeout={300}>
-      <Box className='footer-sidebar'>
+      <Box className='footer-sidebar' sx={{ 
+                                          fontSize: 'small',
+                                          textAlign: 'center',
+                                          fontWeight: '500'
+                                        }}>
         <p>&copy; Copyright Portfólio</p>
         <p>Desenvolvido por Caio Anderson</p>
       </Box>

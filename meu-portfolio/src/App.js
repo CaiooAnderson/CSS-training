@@ -5,7 +5,7 @@ import Skills from './components/Skills.jsx';
 import Projects from './components/Projects.jsx';
 import Contact from './components/Contact.jsx';
 import Sidebar from './components/Sidebar.jsx';
-import { Fade } from '@mui/material';
+import { Box, Fade } from '@mui/material';
 import './styles.css';
 
 function App() {
@@ -29,16 +29,16 @@ function App() {
     };
     
   return (
-      <div className="App">
+      <Box className="App" sx={{ display: 'flex', height: '100vh' }}>
           <Sidebar activeSection={activeSection} setActiveSection={setActiveSection} className='sidebar' />
           <main className='content'>
             <Fade in={true} timeout={1000}>
-                <div>
+                <Box>
                     {renderSection()}
-                </div>
+                </Box>
             </Fade>
           </main>
-      </div>
+      </Box>
   );
 }
 

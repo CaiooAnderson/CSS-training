@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Fade } from '@mui/material';
+import { Box, Fade, Typography } from '@mui/material';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 
 const Hint = ({ tips }) => {
@@ -49,7 +49,34 @@ const Hint = ({ tips }) => {
                                                             } 
                                                         }} />
             <Fade in={true} timeout={500} key={index}>
-                <p className='hint-text'>{tips[index]}</p>
+                <Typography className='hint-text' sx={{ 
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        color: '#336699',
+                                                        padding: '0 10px',
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        textAlign: 'center',
+                                                        boxSizing: 'border-box',
+                                                        lineHeight: 1.2,
+                                                        animation: 'scroll-vertical 10s linear infinite',
+                                                            '& p': {
+                                                                position: 'absolute',
+                                                                whiteSpace: 'nowrap',
+                                                                paddingTop: '5px',
+                                                                verticalAlign: 'middle'
+                                                            },
+                                                            '@media (max-width: 430px)': {
+                                                                '&': {
+                                                                    marginBottom: 0,
+                                                                    fontSize: '0.8rem',
+                                                                    padding: '0.2rem'
+                                                                }
+                                                            }
+                                                        }}>
+                    {tips[index]}
+                </Typography>
             </Fade>
         </Box>
     );
