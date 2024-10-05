@@ -1059,7 +1059,7 @@ body.dark-mode .sidebar {
 }
 
 /* CONTACT */
-.contact {
+/* .contact {
   background: var(--about-background);
 }
 
@@ -1106,24 +1106,6 @@ body.dark-mode .sidebar {
   animation: pulseIcon 1s ease-in-out;
 }
 
-@keyframes pulseIcon {
-  0% {
-      transform: scale(1);
-      background: var(--about-background);
-      color: var(--sidebar-button-text-color);
-  }
-  50% {
-      transform: scale(1.2); 
-      background: var(--sidebar-text-hover-color);
-      color: var(--button-active-text-color);
-  }
-  100% {
-      transform: scale(1);
-      background: var(--sidebar-text-hover-color);
-      color: var(--sidebar-button-text-color);
-  }
-}
-
 .portal-icon-svg {
   filter: drop-shadow(0 0 5px var(--button-active-text-color));
 }
@@ -1144,17 +1126,28 @@ body.dark-mode .sidebar {
 .contact-socials a:hover {
   color: var(--home-button-hover-color);
   filter: drop-shadow(0px 0px 10px #fff);
-}
+} */
 
-.contact-hint {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+@keyframes pulseIcon {
+  0% {
+      transform: scale(1);
+      background: var(--about-background);
+      color: var(--sidebar-button-text-color);
+  }
+  50% {
+      transform: scale(1.2); 
+      background: var(--sidebar-text-hover-color);
+      color: var(--button-active-text-color);
+  }
+  100% {
+      transform: scale(1);
+      background: var(--sidebar-text-hover-color);
+      color: var(--sidebar-button-text-color);
+  }
 }
 
 /* HINT */
-.hint-container {
+/* .hint-container {
   width: 300px;
   height: 150px;
   background: linear-gradient(to bottom left, #ffd700 0%, #ffd700 50%, #ffa500 100%);
@@ -1186,7 +1179,7 @@ body.dark-mode .sidebar {
 
 .hint-icon path {
   filter: drop-shadow(0px 0px 5px #000000);
-}
+} */
 
 .hint-text {
   width: 100%;
@@ -1216,12 +1209,12 @@ body.dark-mode .sidebar {
   width: 100%;
 }
 
-.hint-box {
+/* .hint-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
+} */
 
 /* RESPONSIVIDADE */
 
@@ -1410,7 +1403,7 @@ body.dark-mode .sidebar {
     padding: auto 0;
   }
   
-  .skills .skill-container {
+  /* .skills .skill-container {
     padding: 0;
   }
 
@@ -1421,10 +1414,10 @@ body.dark-mode .sidebar {
   .skill-carousel-container {
     height: 100px;
     width: calc(100vw - 80px);
+    z-index: 10;
   }
 
   .skill-item {
-    /* margin: auto 8px; */
     width: 80px;
   }
 
@@ -1442,22 +1435,18 @@ body.dark-mode .sidebar {
     margin: auto 0px;
   }
 
-  .skill-carousel-container {
-    z-index: 10;
-  }
-
   .skill-carousel-container .skill-item {
     height: 80px;
-  }
+  } */
 
-  .skill-icon-container svg {
+  /* .skill-icon-container svg {
     height: 30px;
     width: 30px;
   }
 
   .skill-icon-container {
     height: 30px;
-  }
+  } */
 
   .hint-text {
     margin-bottom: 0;
@@ -1465,10 +1454,10 @@ body.dark-mode .sidebar {
     padding: 0.2rem;
   }
 
-  .hint-container {
+  /* .hint-container {
     width: 230px;
     height: 120px;
-  }
+  } */
 }
 
 @media (max-width: 320px) {

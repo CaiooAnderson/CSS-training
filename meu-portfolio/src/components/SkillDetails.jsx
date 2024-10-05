@@ -3,25 +3,50 @@ import { Box, Typography, Slide } from "@mui/material";
 
 const SkillDetails = ({ icon: Icon, label, color, bgColor, isSelected }) => {
     return (
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <Box className={`skill-icon-container ${isSelected ? 'selecionado' : ''}`} 
+      <Box sx={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                '@media (max-width: 430px)': {
+                  '.skill-icon-container': {
+                    height: '30px',
+                  },
+                  '.skill-icon-container svg': {
+                    height: '30px',
+                    width: '30px',
+                  },
+                }   
+              }}>
+        <Box className={`skill-icon-container ${isSelected ? 'selecionado' : ''}`}
+          sx={{ 
+            position: 'relative',
+            zIndex: 5,
+            width: '60px',
+            height: '60px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            '& svg': {
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60px',
+              height: '60px',
+            },
+          }} 
           style={{ 
                   '--icon-bg-color': bgColor,
-                  position: 'relative',
-                  zIndex: 5,
-                  width: '60px',
-                  height: '60px',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center' 
                 }}>
-          <Icon className={`skill-icon ${isSelected ? 'flutuando' : ''}`} 
+          <Icon className={`skill-icon ${isSelected ? 'flutuando' : ''}`}
+            sx={{
+              color: color,
+              fontSize: '24px',
+              transition: 'transform 0.6s ease-in-out',
+            }} 
             style={{ 
                     color: color, 
                     fontSize: '24px',
-                    transition: 'transform 0.6s ease-in-out',
-                    width: '60px',
-                    height: '60px'
                   }} />
         </Box>  
         <Slide direction="up" in={isSelected} mountOnEnter unmountOnExit>

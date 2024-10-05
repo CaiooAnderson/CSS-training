@@ -61,6 +61,7 @@ const Contact = () => {
                                     height: '100vh',
                                     width: { xs: 'calc(100vw - 80px)', md: 'auto'},
                                     position: 'relative',
+                                    background: 'var(--about-background)',
                                     }}>
             <Zoom in={true} timeout={1750}>
             <Box className='contact-title' sx={{ 
@@ -75,7 +76,11 @@ const Contact = () => {
                                         mb: { xs: 2, sm: 0 },
                                         fontWeight: 'bold',
                                         fontSize: { xs: '1.5rem', sm: '2rem' },
-                                        borderBottom: '2px solid #000'
+                                        borderBottom: '4px solid',
+                                        borderColor: 'var(--button-bg-color)',
+                                        borderBottomLeftRadius: '12px',
+                                        borderBottomRightRadius: '4px',
+                                        color: 'var(--sidebar-text-hover-color)',
                                         }}>
                 Contato
             </Typography>
@@ -84,7 +89,10 @@ const Contact = () => {
             <Fade in={true} timeout={2500}>
                 <Box className='contact-info-container' sx={{ margin: { xs: 'auto 8px', md: 'auto'}, display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'center' }}>
                     <Box className='contact-info' sx= {{ width: { xs: '100%', sm: 'auto' } }}>
-                        <Typography variant='h3' sx={{ fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' } }}>
+                        <Typography variant='h3' sx={{ 
+                                                        fontSize: { xs: '1.5rem', sm: '2rem', md: '3rem' },
+                                                        color: 'var(--home-h2-color)',
+                                                    }}>
                             Caio Anderson
                         </Typography>
                             <Box className='contact-container' sx={{ 
@@ -102,32 +110,57 @@ const Contact = () => {
                                                                     overflow: 'hidden',
                                                                     display: 'flex',
                                                                     justifyContent: 'left',
-                                                                    alignItems: 'center'
+                                                                    alignItems: 'center',
+                                                                    whiteSpace: 'nowrap'
                                                                     }}>
                                     <Slide direction='left' in={slideIn} timeout={500}>
-                                        <Typography variant='h5' sx={{ fontSize: { xs: '0.75rem', sm: '1.25rem', md: '1.5rem' } }}>
+                                        <Typography variant='h5' sx={{ 
+                                                                    fontSize: { xs: '0.75rem', sm: '1.25rem', md: '1.5rem' },
+                                                                    color: 'var(--home-h6-color)'
+                                                                    }}>
                                         <span className='words-container' style={{ whiteSpace: 'nowrap' }}>
                                             {palavras[index]}
                                         </span>
                                         </Typography>
                                     </Slide>
                                 </Box>
-                                <Box className={`portal-icon ${isActive ? 'active' : ''}`} sx={{
+                                <Box className={'portal-icon'} sx={{
+                                                                    display: 'flex',
+                                                                    justifyContent: 'center',
+                                                                    alignItems: 'center',
+                                                                    transition: 'animation 1s ease-in-out, color 0.5s ease',
+                                                                    background: 'var(--home-background)',
+                                                                    color: 'var(--sidebar-button-text-color)',
                                                                     borderTopRightRadius: '10%',
                                                                     borderBottomRightRadius: '10%',
                                                                     borderRadius: '50%',
                                                                     padding: { xs: '5px', sm: '10px' },
                                                                     marginLeft: 0,
+                                                                    animation: isActive ? 'pulseIcon 1s ease-in-out' : 'none'
                                                                    }}>
-                                    <GiPortal className='portal-icon-svg'/>
+                                    <GiPortal className='portal-icon-svg' 
+                                        sx={{
+                                            filter: 'drop-shadow(0 0 5px var(--button-active-text-color))', 
+                                            }}/>
                                 </Box>
                             </Box>
                     </Box>
                     <Box className='contact-socials' sx={{
                                                     display: 'flex', 
-                                                    justifyContent: 'center', 
+                                                    justifyContent: 'space-around',
                                                     gap: { xs: 1, sm: 2 },
-                                                    fontSize: { xs: '24px', sm: '32px' }
+                                                    fontSize: { xs: '24px', sm: '32px' },
+                                                    height: '40%',
+                                                    width: '80%',
+                                                    flexDirection: 'row',
+                                                    alignItems: 'flex-end',
+                                                    a: {
+                                                        color: 'var(--dark-button-active-text-color)',
+                                                    },
+                                                    'a:hover': {
+                                                        color: 'var(--home-button-hover-color)',
+                                                        filter: 'drop-shadow(0px 0px 10px #fff)',
+                                                    }
                                                     }}>
                         <a href='https://linkedin.com/in/caioandersongoes' target='_blank' rel='noreferrer'>
                             <FaLinkedin></FaLinkedin>
@@ -150,7 +183,11 @@ const Contact = () => {
             <Fade in={true} timeout={4500}>
             <Box className='hint-box' sx={{
                                             fontSize: { xs: '0.75rem', sm: '1rem' },
-                                            textAlign: 'center'
+                                            textAlign: 'center',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
                                             }}>
                 <Hint tips={tips} />
             </Box>

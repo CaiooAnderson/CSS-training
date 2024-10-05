@@ -107,6 +107,36 @@ const Skills = () => {
                 background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), #4a7bac80 0%, #4a7bac80 10%, #3d9eff 80%)',
                 transition: 'background 0.5s ease',
                 gap: '0.5rem',
+                '@media (max-width: 430px)': {
+                    '.skill-container': {
+                        padding: 0,
+                    },
+                    h4: {
+                        marginBottom: 'auto',
+                    },
+                    '.skill-carousel-container': {
+                        height: '100px',
+                        width: 'calc(100vw - 80px)',
+                        zIndex: 10,
+                    },
+                    '.skill-item': {
+                        width: '80px',
+                    },
+                    '.skill-item h6': {
+                        marginTop: '1rem',
+                        fontSize: '0.75rem',
+                    },
+                    '.skill-carousel-container button': {
+                        minWidth: '30px',
+                        minHeight: '30px',
+                    },
+                    '.skill-carousel-container ul': {
+                        margin: 'auto 0px',
+                    },
+                    '.skill-carousel-container .skill-item': {
+                        height: '80px',
+                    },
+                }
             }}>
                 <Zoom in={true} timeout={1750}>
                 <Box sx={{ 
@@ -384,7 +414,12 @@ const Skills = () => {
                 </Box>
             </Box>
                 <Fade in={true} timeout={4500}>
-                    <Box className='hint-box'>
+                    <Box className='hint-box' sx={{ 
+                                                    display: 'flex',
+                                                    flexDirection: 'column',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center'                            
+                                                }}>
                     <Hint tips={tips} />
                     </Box>
                 </Fade>

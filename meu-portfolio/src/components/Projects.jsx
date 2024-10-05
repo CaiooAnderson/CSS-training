@@ -405,7 +405,12 @@ const Projects = () => {
                 </Fade>
             </Modal>
             <Fade in={true} timeout={4500}>
-                <Box className='hint-box'>
+                <Box className='hint-box' sx={{ 
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                justifyContent: 'center'                            
+                                            }}>
                     <Hint tips={tips} />
                 </Box>
             </Fade>
