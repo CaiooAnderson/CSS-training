@@ -24,7 +24,7 @@ const Contact = () => {
     const palavras = [
         '<Desenvolvedor Front-End />',
         '<Desenvolvedor Back-End />',
-        '<Desenvolvedor Web />',
+        '<Desenvolvedor Full-Stack />',
     ];
 
     const [index, setIndex] = useState(0);

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom, Box } from '@mui/material';
+import { Zoom, Box, Slide } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '../assets/perfil-1.jpeg';
 import ThemeToggle from './ThemeToggle';
@@ -9,15 +9,19 @@ import AutoStoriesOutlinedIcon from '@mui/icons-material/AutoStoriesOutlined';
 import AssignmentTurnedInOutlinedIcon from '@mui/icons-material/AssignmentTurnedInOutlined';
 import PermContactCalendarOutlinedIcon from '@mui/icons-material/PermContactCalendarOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
+import { useTranslation } from 'react-i18next';
 
 const Sidebar = ({ activeSection, setActiveSection }) => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [currentTitle, setCurrentTitle] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
+  const titles = t('titles', { returnObjects: true });
 
   useEffect(() => {
+    if (!titles || titles.length === 0) return;
     const handleTyping = () => {
       const i = loopNum % titles.length;
       const fullText = titles[i];
@@ -39,11 +43,10 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
       }
     };
     
-    const titles = ['Front-End', 'Back-End', 'Full-Stack'];
     const timer = setTimeout(handleTyping, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [currentTitle, isDeleting, loopNum, typingSpeed]);
+  }, [currentTitle, isDeleting, loopNum, typingSpeed, titles]);
 
 
   const toggleSidebar = () => {
@@ -89,26 +92,24 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                               marginBottom: '10px'
                                             }
                                           }}>
-        <img src={profilePic} alt="Perfil" className="profile-pic" style={{ 
-                                                                            outline: '4px solid #000',
-                                                                            width: '100px',
-                                                                            height: '100px',
-                                                                            borderRadius: '50%',
-                                                                            objectFit: 'cover',
-                                                                            marginBottom: '10px',
-                                                                            animation: 'shineAndDecay 10s infinite',
-                                                                            '&': {
-                                                                              maxWidth: '100%'
-                                                                            },
-                                                                            '@media (max-width: 1024px)': {
-                                                                              width: '100px',
-                                                                              height: '100px'
-                                                                            }
-                                                                          }} />
+        <Box component="img" src={profilePic} alt="Perfil" className="profile-pic" sx={{
+                                                                                        outline: '4px solid #000',
+                                                                                        width: '100px',
+                                                                                        height: '100px',
+                                                                                        borderRadius: '50%',
+                                                                                        objectFit: 'cover',
+                                                                                        marginBottom: '10px',
+                                                                                        animation: 'shineAndDecay 10s infinite',
+                                                                                        maxWidth: '100%',
+                                                                                        '@media (max-width: 1024px)': {
+                                                                                          width: '100px',
+                                                                                          height: '100px'
+                                                                                        }
+                                                                                      }} />
         {isOpen && (
           <>
             <h2 className='titulo'>Caio Anderson</h2>
-            <p className='subtitulo'>Desenvolvedor {currentTitle}</p>
+            <p className='subtitulo'>{t('developer', { currentTitle })}</p>
           </>
         )}
       </Box>
@@ -124,7 +125,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
           <li>
             <button className={activeSection === 'about' ? 'active' : ''} onClick={() => handleButtonClick('about')}>
               <PersonOutlinedIcon className='icon' />
-              {isOpen && <p>Sobre Mim</p>}
+              {isOpen && <p>{t('about')}</p>}
             </button>
           </li>
           <li>
@@ -163,7 +164,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
           <ThemeToggle />
         </Box>
       </nav>
-      <Zoom in={isOpen} timeout={300}>
+      <Slide in={isOpen} direction='right' timeout={500}>
       <Box className='footer-sidebar' sx={{ 
                                           fontSize: 'small',
                                           textAlign: 'center',
@@ -172,7 +173,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         <p>&copy; Copyright Portfólio</p>
         <p>Desenvolvido por Caio Anderson</p>
       </Box>
-      </Zoom>
+      </Slide>
     </Box>
   );
 };

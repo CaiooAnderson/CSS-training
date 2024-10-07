@@ -3,8 +3,11 @@
     import Graduacao from './Graduacao';
     import Cursos from './Cursos';
     import Hint from './Hint';
+    import { useTranslation } from 'react-i18next';
 
     const About = () => {
+
+        const { t } = useTranslation();
 
         const tips = [
             'Não possuo experiência profissional, porém estou em busca de novas oportunidades!',
@@ -65,7 +68,7 @@
                                                         }
                                                     }
                                                     }}>
-                            Sobre
+                            {t('about')}
                         </Typography>
                     </Box>
                 </Zoom>

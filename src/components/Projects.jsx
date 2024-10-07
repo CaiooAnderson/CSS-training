@@ -2,8 +2,9 @@ import { useState, useRef } from 'react';
 import { Box, Button, Typography, Modal, Card, CardContent, CardActions, Fade, Zoom } from '@mui/material';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaWordpress, FaPython, FaBootstrap} from "react-icons/fa";
-import { SiTypescript, SiPostgresql, SiMui } from "react-icons/si";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaPython} from "react-icons/fa";
+// import { FaBootstrap, FaWordpress } from "react-icons/fa";
+// import { SiTypescript, SiPostgresql, SiMui } from "react-icons/si";
 import CloseIcon from '@mui/icons-material/Close';
 import Hint from './Hint';
 

@@ -829,8 +829,11 @@ body.dark-mode .sidebar {
   }
 
   .sidebar.open {
-    width: 100%; 
-    border: none;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    z-index: 1000;
+    border: 2px solid #fff;
   }
 
   .sidebar.open + main {
@@ -943,7 +946,7 @@ body.dark-mode .sidebar {
   }
 
   .sidebar.open {
-    width: 101%; 
+    width: 100%; 
     border: none;
     padding-top: 0px;
   }
