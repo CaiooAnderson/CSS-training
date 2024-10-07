@@ -136,7 +136,7 @@ const Contact = () => {
                                                                     borderRadius: '50%',
                                                                     padding: { xs: '5px', sm: '10px' },
                                                                     marginLeft: 0,
-                                                                    animation: isActive ? 'pulseIcon 1s ease-in-out' : 'none'
+                                                                    animation: isActive ? (document.body.classList.contains('dark-mode') ? 'pulseIconDark 1s ease-in-out' : 'pulseIcon 1s ease-in-out') : 'none'
                                                                    }}>
                                     <GiPortal className='portal-icon-svg' 
                                         sx={{

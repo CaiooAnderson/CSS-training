@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Zoom, Box, Button, IconButton, Typography } from '@mui/material';
+import { Zoom, Box } from '@mui/material';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import profilePic from '../assets/perfil-1.jpeg';
 import ThemeToggle from './ThemeToggle';
@@ -49,6 +49,13 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
+
+  const handleButtonClick = (section) => {
+    setActiveSection(section);
+    if (window.innerWidth < 1024) {
+      setIsOpen(false);
+    }
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -109,31 +116,31 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
       <nav>
         <ul>
           <li>
-            <button href='#home' className={activeSection === 'home' ? 'active' : ''} onClick={() => setActiveSection('home')}>
+            <button href='#home' className={activeSection === 'home' ? 'active' : ''} onClick={() => handleButtonClick('home')}>
               <HomeOutlinedIcon className='icon' />
               {isOpen && <p>Home</p>}
             </button>
           </li>
           <li>
-            <button className={activeSection === 'about' ? 'active' : ''} onClick={() => setActiveSection('about')}>
+            <button className={activeSection === 'about' ? 'active' : ''} onClick={() => handleButtonClick('about')}>
               <PersonOutlinedIcon className='icon' />
               {isOpen && <p>Sobre Mim</p>}
             </button>
           </li>
           <li>
-            <button className={activeSection === 'skills' ? 'active' : ''} onClick={() => setActiveSection('skills')}>
+            <button className={activeSection === 'skills' ? 'active' : ''} onClick={() => handleButtonClick('skills')}>
               <AutoStoriesOutlinedIcon className='icon' />
               {isOpen && <p>Habilidades</p>}
             </button>
           </li>
           <li>
-            <button className={activeSection === 'projects' ? 'active' : ''} onClick={() => setActiveSection('projects')}>
+            <button className={activeSection === 'projects' ? 'active' : ''} onClick={() => handleButtonClick('projects')}>
               <AssignmentTurnedInOutlinedIcon className='icon' />
               {isOpen && <p>Projetos</p>}
             </button>
           </li>
           <li>
-            <button className={activeSection === 'contact' ? 'active' : ''} onClick={() => setActiveSection('contact')}>
+            <button className={activeSection === 'contact' ? 'active' : ''} onClick={() => handleButtonClick('contact')}>
               <PermContactCalendarOutlinedIcon className='icon' />
               {isOpen && <p>Contato</p>}
             </button>

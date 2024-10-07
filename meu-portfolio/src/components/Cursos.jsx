@@ -139,10 +139,10 @@ const Cursos = () => {
                         color: filter === 'Front-End' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
                         border: filter === 'Front-End' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
                         boxShadow: filter === 'Front-End' && '0 0 2px #0000001a',
-                        '&:hover': {
+                        '&:hover': filter !== 'Front-End' && {
                             opacity: 1,
                             filter: 'brightness(1.2)',
-                            background: 'var(--home-button-hover-color)'
+                            background: 'var(--button-bg-color)',
                         }
                     }}>
                     Front End
@@ -154,10 +154,10 @@ const Cursos = () => {
                         color: filter === 'Back-End' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
                         border: filter === 'Back-End' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
                         boxShadow: filter === 'Back-End' && '0 0 2px #0000001a',
-                        '&:hover': {
+                        '&:hover': filter !== 'Back-End' && {
                             opacity: 1,
                             filter: 'brightness(1.2)',
-                            background: 'var(--home-button-hover-color)'
+                            background: 'var(--button-bg-color)',
                         }
                     }}>
                     Back End
@@ -169,10 +169,10 @@ const Cursos = () => {
                         color: filter === 'Outros' ? 'var(--button-active-text-color)' : 'var(--sidebar-button-text-color)',
                         border: filter === 'Outros' ? '1px solid #fff' : '1px solid var(--button-active-bg-color)',
                         boxShadow: filter === 'Outros' && '0 0 2px #0000001a',
-                        '&:hover': {
+                        '&:hover': filter !== 'Outros' && {
                             opacity: 1,
                             filter: 'brightness(1.2)',
-                            background: 'var(--home-button-hover-color)'
+                            background: 'var(--button-bg-color)',
                         }
                     }}>
                     Outros
