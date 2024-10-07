@@ -130,8 +130,33 @@ const Cursos = () => {
             gap: 2,
             padding: '8px 0'
             }}>
-            <Typography className='container-name' variant="h6" sx={{ textAlign: 'center', width: '100%', borderBottom: '1px solid #00000080', fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } }}>Cursos Adicionais</Typography>
-            <Box className='curso-buttons' sx={{ display: 'flex', flexDirection: 'row', gap: { xs: 1, md: 2}, mb: { xs: 0, md: 1 } }}>
+            <Typography className='container-name' variant="h6" sx={{ 
+                                                                    textAlign: 'center', 
+                                                                    width: '100%', 
+                                                                    borderBottom: '1px solid #00000080', 
+                                                                    fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.75rem' } 
+                                                                    }}>
+                Cursos Adicionais
+            </Typography>
+            <Box className='curso-buttons' sx={{ 
+                                                display: 'flex', 
+                                                flexDirection: 'row', 
+                                                gap: { xs: 1, md: 2}, 
+                                                mb: { xs: 0, md: 1 },
+                                                '@media (max-width: 430px)': {
+                                                    display: 'flex',
+                                                    justifyContent: 'space-around',
+                                                    width: '100%',
+                                                    padding: '0 10px',
+                                                    margin: 0,
+                                                    'button': {
+                                                        flexGrow: 1,
+                                                        fontSize: '0.75rem',
+                                                        lineHeight: '1rem',
+                                                        padding: '0.25rem 0'
+                                                    }
+                                                } 
+                                            }}>
                 <Button className={filter === 'Front-End' ? 'active' : 'desativado'} variant={filter === 'Front-End' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Front-End')} 
                     sx={{ 
                         fontSize: { xs: '0.75rem', sm: '0.875rem', md: '1rem' }, 
@@ -198,7 +223,11 @@ const Cursos = () => {
                             pt: 2,
                             position: 'relative',
                             background: 'linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%)',
-                            border: '2px solid #420079'
+                            border: '2px solid #420079',
+                            '@media (max-width: 1024px)': {
+                                height: '200px',
+                                maxWidth: '200px'
+                            }
                             }}>
                             <Box className='curso-title' sx={{ 
                                 display: 'flex',

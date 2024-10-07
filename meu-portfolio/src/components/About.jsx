@@ -33,7 +33,11 @@
                                             height: '100vh',
                                             position: 'relative',
                                             width: { xs: 'calc(100vw - 80px)', md: '100%' },
-                                            background: 'var(--about-background)'
+                                            background: 'var(--about-background)',
+                                            '@media (max-width: 430px)': {
+                                                height: '100%',
+                                                background: 'var(--about-background)'
+                                            }
                                             }}>
                 <Zoom in={true} timeout={1750}>
                     <Box className='about-title' sx={{ 
@@ -41,7 +45,10 @@
                                                     display: 'flex',
                                                     justifyContent: 'left', 
                                                     pl: { xs: 1, sm: 2, md: 3 }, 
-                                                    pt: { xs: 1, sm: 2, md: 3 } 
+                                                    pt: { xs: 1, sm: 2, md: 3 },
+                                                    '@media (max-width: 430px)': {
+                                                        marginBottom: '20px'
+                                                    }
                                                     }}>
                         <Typography variant='h4' sx={{ 
                                                     fontWeight: 'bold', 
@@ -51,14 +58,43 @@
                                                     borderBottomLeftRadius: '12px',
                                                     borderBottomRightRadius: '4px',
                                                     fontSize: { xs: '1.5rem', sm: '2rem', md: '2rem', lg: '2rem' },
-                                                    mb: { xs: 2, sm: 0 }
+                                                    mb: { xs: 2, sm: 0 },
+                                                    '@media (max-width: 1024px)': {
+                                                        '& h4': {
+                                                            marginBottom: 0
+                                                        }
+                                                    }
                                                     }}>
                             Sobre
                         </Typography>
                     </Box>
                 </Zoom>
-                <Box className='about-container' sx={{ margin: 'auto 0', width: '100%' }}>
-                <Grid container className='about-center' sx={{ width: '100%', gap: { xs: 2, sm: 4, md: 6, lg: 8}, flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-evenly', margin: '0 auto' }}>
+                <Box className='about-container' sx={{ 
+                                                    margin: 'auto 0', 
+                                                    width: '100%',
+                                                    '@media (max-width: 430px)': {
+                                                        '.about-center': {
+                                                            gap: 0
+                                                        }
+                                                    }
+                                                    }}>
+                <Grid container className='about-center' sx={{ 
+                                                                width: '100%', 
+                                                                gap: { xs: 2, sm: 4, md: 6, lg: 8}, 
+                                                                flexDirection: { xs: 'column', md: 'row' }, 
+                                                                alignItems: 'center', 
+                                                                justifyContent: 'space-evenly', 
+                                                                margin: '0 auto',
+                                                                '@media (max-width: 1280px)': {
+                                                                    marginBottom: '20px'
+                                                                },
+                                                                '@media (max-width: 430px)': {
+                                                                    margin: 0,
+                                                                    '.about-info': {
+                                                                        marginBottom: '20px'
+                                                                    }
+                                                                }
+                                                            }}>
                     <Fade in={true} timeout={2000}>
                         <Grid item className='about-info' sx={{ 
                                                                 width: { xs: '100%', sm: '55%', md: '400px' },
@@ -66,7 +102,10 @@
                                                                 borderRadius: { xs: 0, sm: '4px', md: '8px'},
                                                                 filter: 'drop-shadow(0 0 5px #000)', 
                                                                 height: { xs: 'auto', md: '400px' }, 
-                                                                overflow: 'hidden'
+                                                                overflow: 'hidden',
+                                                                '@media (max-width: 1024px)': {
+                                                                    height: '320px'
+                                                                }
                                                             }}>
                             <Graduacao />
                         </Grid>

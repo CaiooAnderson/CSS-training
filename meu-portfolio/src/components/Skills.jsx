@@ -175,7 +175,18 @@ const Skills = () => {
                                                         width: '100%', 
                                                         maxWidth: '100%', 
                                                         margin: '0 auto', 
-                                                        overflow: 'hidden' 
+                                                        overflow: 'hidden',
+                                                        '@media (max-width: 430px)': {
+                                                            '.front-end-skills': {
+                                                                padding: 'auto 0'
+                                                            },
+                                                            '.back-end-skills': {
+                                                                padding: 'auto 0'
+                                                            },
+                                                            '.tools-skills': {
+                                                                padding: 'auto 0'
+                                                            }
+                                                        }
                                                     }}>
                     <Box className='front-end-skills' sx={{ 
                                                             mt: {md: 0.3, lg: 0.5}, 

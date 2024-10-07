@@ -6,7 +6,14 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 
 const Graduacao = () => {
     return (
-            <List className='graduacao'>
+            <List className='graduacao' sx={{ 
+                                            '@media (max-width: 430px)': {
+                                                'li': {
+                                                    margin: '0 0.5rem',
+                                                    padding: '0.5rem'
+                                                }
+                                            } 
+                                        }}>
                 <Typography variant="h6" sx={{ 
                                                 textAlign: 'center', 
                                                 borderBottom: '1px solid #00000080', 

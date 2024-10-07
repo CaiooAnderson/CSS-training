@@ -236,13 +236,21 @@ const Projects = () => {
                             p: 0
                         }}>
                     <Box className='carousel-container' sx={{ 
-                                                            width: { xs: '100px', sm: '400px' }, 
-                                                            display: 'flex', 
-                                                            flexDirection: 'column', 
+                                                            width: { xs: '100px', sm: '400px' },
+                                                            display: 'flex',
+                                                            flexDirection: 'column',
                                                             alignItems: 'center',
                                                             margin: '0 auto',
                                                             '.carousel-container': {
                                                                 width: { xs: '220px', sm: '300px', md: '600px' }
+                                                            },
+                                                            '@media (max-width: 1024px)': {
+                                                                '.carousel-container .react-multiple-carousel__arrow--right': {
+                                                                    margin: '-10px'
+                                                                },
+                                                                '.carousel-container .react-multiple-carousel__arrow--left': {
+                                                                    margin: '-10px'
+                                                                }
                                                             }
                                                             }}>
                     <Carousel 
