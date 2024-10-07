@@ -157,7 +157,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                             marginBottom: '5px',
                                           },
                                           '@media (max-width: 320px)': {
-                                            marginBottom: 0,
+                                            marginBottom: 'auto',
                                             height: '30px'
                                           }
                                         }}>
