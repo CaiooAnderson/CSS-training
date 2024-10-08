@@ -68,7 +68,7 @@
                                                         }
                                                     }
                                                     }}>
-                            {t('about')}
+                            Sobre
                         </Typography>
                     </Box>
                 </Zoom>

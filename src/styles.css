@@ -907,7 +907,11 @@ body.dark-mode .sidebar {
   .sidebar.open nav ul {
     margin: 0 auto;
     height: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .sidebar.open nav ul li svg {
+    align-items: flex-start;
   }
 
   .sidebar.open nav {
@@ -970,6 +974,41 @@ body.dark-mode .sidebar {
   .carousel-container .react-multiple-carousel__arrow--left {
     margin: -10px;
   } */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebar.open .titulo {
+    font-size: 36px;
+  }
+  .sidebar.open .subtitulo {
+    font-size: 24px;
+  }
+  .sidebar nav ul li button {
+    font-size: 24px;
+  }
+  .sidebar.open nav ul li svg {
+    width: 32px;
+    height: 32px;
+  }
+  .sidebar.open img {
+    width: 125px;
+    height: 125px;
+  }
+  .sidebar.open .menu-button svg {
+    width: 32px;
+    height: 32px;
+  }
+  .sidebar.closed .menu-button svg {
+    width: 28px;
+    height: 28px;
+  }
+  .sidebar.closed nav ul li svg {
+    width: 28px;
+    height: 28px;
+  }
+  .sidebar.open .footer-sidebar p {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 320px) {

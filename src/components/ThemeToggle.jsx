@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
+import { Box } from '@mui/material'
 import Switch from '@mui/material/Switch';
 
 const ThemeToggle = () => {
@@ -30,16 +31,20 @@ const ThemeToggle = () => {
   };
 
   return (
+    <Box>
     <FormControlLabel
       className='switch'
       control={
         <Switch
           checked={darkTheme}
-          onChange={toggleTheme}
+          onChange={toggleTheme} sx={{ 
+                                      transform: { xs: 'scale(1)', sm: 'scale(1.1)', md: 'scale(1.2)' }                              
+                                    }}
         />
       }
       label={darkTheme ? 'Escuro' : 'Claro'}
     />
+    </Box>
   );
 };
 

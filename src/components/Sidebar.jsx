@@ -104,6 +104,12 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                                                                         '@media (max-width: 1024px)': {
                                                                                           width: '100px',
                                                                                           height: '100px'
+                                                                                        },
+                                                                                        '@media (min-width: 768px) and (max-width: 1024px)': {
+                                                                                          '.sidebar.open img': {
+                                                                                            width: '125px',
+                                                                                            height: '125px'
+                                                                                          }
                                                                                         }
                                                                                       }} />
         {isOpen && (
