@@ -12,7 +12,12 @@ const Graduacao = () => {
                                                     margin: '0 0.5rem',
                                                     padding: '0.5rem'
                                                 }
-                                            } 
+                                            },
+                                            '@media (max-width: 1024px)': {
+                                                'li': {
+                                                    margin: '10px 0'
+                                                }
+                                            }
                                         }}>
                 <Typography variant="h6" sx={{ 
                                                 textAlign: 'center', 

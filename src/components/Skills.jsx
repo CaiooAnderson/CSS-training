@@ -107,6 +107,22 @@ const Skills = () => {
                 background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), #4a7bac80 0%, #4a7bac80 10%, #3d9eff 80%)',
                 transition: 'background 0.5s ease',
                 gap: '0.5rem',
+                '.skill-carousel-container ul': {
+                    display: 'flex',
+                    margin: '0 20px'
+                },
+                '.skill-carousel-container button': {
+                    border: '2px solid #fff',
+                    background: 'var(--home-button-color)',
+                    opacity: '0.75',
+                    margin: '-20px',
+                    zIndex: 100
+                },
+                '.skill-carousel-container button:hover': {
+                    background: 'var(--home-button-color)',
+                    opacity: 1,
+                    filter: 'brightness(1.2)'
+                },
                 '@media (max-width: 430px)': {
                     '.skill-container': {
                         padding: 0,

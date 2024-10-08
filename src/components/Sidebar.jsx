@@ -150,7 +150,139 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                                                 flex: 1,
                                                                 display: 'flex',
                                                                 flexDirection: 'column',
-                                                              }
+                                                              },
+                                                              '@media (max-width: 1024px)': {
+                                                                'main': {
+                                                                  marginLeft: '80px',
+                                                                  transition: 'margin-left 0.3s ease'
+                                                                },
+                                                                '&.closed + main': {
+                                                                  marginLeft: '80px'
+                                                                },
+                                                                '&.closed': {
+                                                                  width: '80px'
+                                                                },
+                                                                '&.open': {
+                                                                  width: '100%',
+                                                                  height: '100vh',
+                                                                  overflow: 'hidden',
+                                                                  position: 'fixed',
+                                                                  top: 0,
+                                                                  left: 0,
+                                                                  zIndex: 1000,
+                                                                  border: '2px solid #fff',
+                                                                  paddingTop: 0
+                                                                },
+                                                                '&.open + main': {
+                                                                  marginLeft: 0
+                                                                },
+                                                                '.menu-button': {
+                                                                  display: 'block',
+                                                                  marginBottom: '15px',
+                                                                },
+                                                                '.menu-button button': {
+                                                                  color: 'var(--sidebar-active-icon-color)'
+                                                                },
+                                                                '&.closed .profile-section': {
+                                                                  display: 'none'
+                                                                },
+                                                                '&.closed nav': {
+                                                                  justifyContent: 'space-around'
+                                                                },
+                                                                '&.closed nav ul': {
+                                                                  display: 'flex',
+                                                                  flexDirection: 'column',
+                                                                  justifyContent: 'space-evenly',
+                                                                  height: '70%'
+                                                                },
+                                                                '&.closed nav ul li': {
+                                                                  margin: '10px 0',
+                                                                  padding: '3px 0'
+                                                                },
+                                                                '&.open nav ul li': {
+                                                                  marginTop: '3px',
+                                                                  marginBottom: 0
+                                                                },
+                                                                '&.open .profile-section': {
+                                                                  marginBottom: 0
+                                                                },
+                                                                '.profile-pic': {
+                                                                  width: '100px',
+                                                                  height: '100px'
+                                                                },
+                                                                '& .titulo': {
+                                                                  marginTop: 0
+                                                                },
+                                                                '& .subtitulo': {
+                                                                  marginBottom: 0
+                                                                },
+                                                                '& nav ul': {
+                                                                  margin: 0
+                                                                },
+                                                                '& nav ul li': {
+                                                                  margin: '10px 0'
+                                                                },
+                                                                'button p': {
+                                                                  display: 'none'
+                                                                },
+                                                                '&.open nav ul': {
+                                                                  margin: '0 auto',
+                                                                  height: '100%',
+                                                                  justifyContent: 'space-evenly'
+                                                                },
+                                                                '&.open nav ul li svg': {
+                                                                  alignItems: 'flex-start'
+                                                                },
+                                                                '&.open nav': {
+                                                                  marginBottom: '10px'
+                                                                },
+                                                                '&.open button p': {
+                                                                  display: 'inline'
+                                                                },
+                                                                '.switch': {
+                                                                  display: 'flex',
+                                                                  flexDirection: 'column'
+                                                                },
+                                                                '&.open .switch': {
+                                                                  flexDirection: 'row'
+                                                                },
+                                                                '.theme-toggle': {
+                                                                  flexDirection: 'row',
+                                                                  alignItems: 'flex-start',
+                                                                  marginBottom: 'auto'
+                                                                },
+                                                                '.footer-sidebar p': {
+                                                                  display: 'none'
+                                                                },
+                                                                '&.open .footer-sidebar p': {
+                                                                  display: 'block'
+                                                                }
+                                                              },
+
+                                                              '@media (min-width: 768px) and (max-width: 1024px)': {
+                                                                '& nav ul li button': {
+                                                                  fontSize: '24px'
+                                                                },
+                                                                '&.open nav ul li svg': {
+                                                                  width: '32px',
+                                                                  height: '32px'
+                                                                },
+                                                                '&.open .menu-button svg': {
+                                                                  width: '32px',
+                                                                  height: '32px'
+                                                                },
+                                                                '&.closed .menu-button svg': {
+                                                                  width: '28px',
+                                                                  height: '28px'
+                                                                },
+                                                                '&.closed nav ul li svg': {
+                                                                  width: '28px',
+                                                                  height: '28px'
+                                                                },
+                                                                '&.open .footer-sidebar p': {
+                                                                  fontSize: '20px'
+                                                                }
+                                                                }
                                                                 }}>
       <button className="menu-button" onClick={toggleSidebar}>
         <MenuIcon />
@@ -177,10 +309,19 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                             '@media (max-width: 1024px)': {
                                               marginBottom: '10px'
                                             },
-                                            '@media (max-width: 320px)': {
-                                              img: {
-                                                marginBottom: '5px'
+                                            '@media (min-width: 768px) and (max-width: 1024px)': {
+                                              '.titulo': {
+                                                fontSize: '36px'
                                               },
+                                              '.subtitulo': {
+                                                fontSize: '24px'
+                                              },
+                                              'img': {
+                                                width: '125px',
+                                                height: '125px'
+                                              },
+                                            },
+                                            '@media (max-width: 320px)': {
                                               '.titulo': {
                                                 fontSize: '1.2rem',
                                                 margin: '2px 0'
@@ -200,6 +341,9 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                                                                         marginBottom: '10px',
                                                                                         animation: 'shineAndDecay 10s infinite',
                                                                                         maxWidth: '100%',
+                                                                                        'img': {
+                                                                                          maxWidth: '100%'
+                                                                                        },
                                                                                         '@media (max-width: 1024px)': {
                                                                                           width: '100px',
                                                                                           height: '100px'

@@ -202,7 +202,7 @@ const Projects = () => {
                         animation: 'shine 5s infinite ease-in-out',
                         '& .project-button': {
                             width: { xs: 'calc(50% - 4px)', sm: 'auto' },
-                            },
+                        },
                         '&::before': {
                         content: '""',
                         position: 'absolute',
@@ -214,6 +214,23 @@ const Projects = () => {
                         opacity: 0.5, 
                         zIndex: -1,
                         },
+                        '.desativado': {
+                            background: 'var(--button-bg-color)',
+                            color: 'var(--sidebar-button-text-color)',
+                            border: '1px solid var(--button-active-bg-color)'
+                        },
+                        '.project-button:hover': {
+                            filter: 'brightness(1.2)'
+                        },
+                        '.project-button.active': {
+                            background: 'var(--button-active-bg-color)',
+                            color: 'var(--button-active-text-color)',
+                            border: '1px solid #fff',
+                            boxShadow: '0 0 2px #0000001a'
+                        },
+                        '.project-button.active:hover': {
+                            background: 'var(--button-active-bg-color)'
+                        }
                     }}>
                     <Button className={`project-button ${filter === 'Todos' ? 'active' : 'desativado'}`} variant={filter === 'Todos' ? 'contained' : 'outlined'} onClick={() => handleFilterChange('Todos')}>
                         Todos
@@ -234,7 +251,16 @@ const Projects = () => {
                         sx={{ 
                             width: { xs: 'calc(90vw - 80px)', sm: '400px', md: '900px', lg: '1000px' },
                             margin: '0 auto',
-                            p: 0
+                            p: 0,
+                            'button': {
+                                backgroundColor: 'var(--home-button-color)',
+                                border: '2px solid #fff',
+                                margin: '0 -25px'
+                            },
+                            'button:hover': {
+                                backgroundColor: 'var(--home-button-hover-color)',
+                                filter: 'drop-shadow(0px 0px 2px #fff)'
+                            }
                         }}>
                     <Box className='carousel-container' sx={{ 
                                                             width: { xs: '100px', sm: '400px' },
@@ -280,7 +306,7 @@ const Projects = () => {
                                 '&:hover': { 
                                     transform: 'scale(0.95)', 
                                     zIndex: 10,
-                                },
+                                }
                             }}>
                                 <img src={project.imagemProjeto} alt={''} 
                                     style={{ 

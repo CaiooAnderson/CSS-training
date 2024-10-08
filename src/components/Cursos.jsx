@@ -207,7 +207,20 @@ const Cursos = () => {
                         position: 'relative', 
                         maxWidth: '100%', 
                         width: { xs: '85%', sm: '90%', md: '100%' }, 
-                        flexDirection: 'column' 
+                        flexDirection: 'column',
+                        'li': {
+                            display: 'flex',
+                            justifyContent: 'space-around'
+                        },
+                        'button': {
+                            background: 'var(--home-button-color)',
+                            border: '2px solid #000',
+                            opacity: '0.75',
+                            margin: '0 -12px'
+                        },
+                        'button:hover': {
+                            background: 'var(--home-button-hover-color)'
+                        }
                     }}>
                 <Carousel className='curso-carousel' responsive={responsive} ssr={true} containerClass="curso-carousel-container" ref={carouselRef}> 
                     {cursos[filter].map((object, index) => (
@@ -227,7 +240,7 @@ const Cursos = () => {
                             '@media (max-width: 1024px)': {
                                 height: '200px',
                                 maxWidth: '200px'
-                            }
+                            },
                             }}>
                             <Box className='curso-title' sx={{ 
                                 display: 'flex',
