@@ -4,6 +4,7 @@
     import Cursos from './Cursos';
     import Hint from './Hint';
     import { useTranslation } from 'react-i18next';
+    
 
     const About = () => {
 
@@ -68,7 +69,7 @@
                                                         }
                                                     }
                                                     }}>
-                            Sobre
+                            {t('about')}
                         </Typography>
                     </Box>
                 </Zoom>

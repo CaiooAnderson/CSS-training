@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import { Box } from '@mui/material'
 import Switch from '@mui/material/Switch';
+import { useTranslation } from 'react-i18next';
 
 const ThemeToggle = () => {
   const [darkTheme, setDarkTheme] = useState(false);
+  const { t } = useTranslation();
   const syncWithSystemTheme = () => {
   const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   setDarkTheme(prefersDark);
@@ -42,7 +44,7 @@ const ThemeToggle = () => {
                                     }}
         />
       }
-      label={darkTheme ? 'Escuro' : 'Claro'}
+      label={darkTheme ? t('theme.dark') : t('theme.light')}
     />
     </Box>
   );

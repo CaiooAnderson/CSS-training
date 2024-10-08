@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       titles: ['Front-End', 'Back-End', 'Full-Stack'],
-      developer: 'Developer {{currentTitle}}',
+      developer: '{{currentTitle}} Developer',
       home: 'Home',
       about: 'About',
       skills: 'Skills',
@@ -15,6 +15,10 @@ const resources = {
         copyright: '© Portfolio',
         developedBy: 'Developed by Caio Anderson',
       },
+      theme: {
+        light: 'Light',
+        dark: 'Dark'
+      }
     },
   },
   pt: {
@@ -30,6 +34,10 @@ const resources = {
         copyright: '© Portfólio',
         developedBy: 'Desenvolvido por Caio Anderson',
       },
+      theme: {
+        light: 'Claro',
+        dark: 'Escuro'
+      }
     },
   },
 };

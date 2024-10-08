@@ -92,7 +92,7 @@ main {
 }
 
 /* Componente Sidebar */
-.sidebar {
+/* .sidebar {
   position: fixed; 
   top: 0;
   left: 0;
@@ -106,15 +106,6 @@ main {
   display: flex;
   flex-direction: column;
   transition: width 0.3s ease;
-}
-
-.menu-button {
-  margin: auto;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  display: none;
 }
 
 .sidebar .titulo {
@@ -215,6 +206,15 @@ main {
   font-size: small;
   text-align: center;
   font-weight: 500;
+} */
+
+.menu-button {
+  margin: auto;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  display: none;
 }
 
 /* Foto de perfil */
@@ -1018,23 +1018,19 @@ body.dark-mode .sidebar {
     height: 30px;
   } */
 
-  .sidebar .profile-section img {
+  /* .sidebar .profile-section img {
     margin-bottom: 5px;
-  }
+  } */
 
-  .sidebar .profile-section h2.titulo {
+  /* .sidebar .profile-section h2.titulo {
     font-size: 1.2rem;
     margin: 2px 0;
-  }
+  } */
 
-  .sidebar .profile-section p.subtitulo {
+  /* .sidebar .profile-section p.subtitulo {
     font-size: 0.9rem;
     margin: 0;
-  }
-
-  .sidebar nav ul li button p {
-    font-size: 1rem;
-  }
+  } */
 
   .sidebar .footer-sidebar p {
     font-size: 0.8rem;

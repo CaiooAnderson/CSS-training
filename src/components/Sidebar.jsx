@@ -77,7 +77,81 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
   }, []);
 
   return (
-    <Box className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+    <Box className={`sidebar ${isOpen ? 'open' : 'closed'}`} sx={{ 
+                                                              '&': {
+                                                                position: 'fixed',
+                                                                top: 0,
+                                                                left: 0,
+                                                                width: '300px',
+                                                                height: '100%',
+                                                                background: 'var(--sidebar-background)',
+                                                                padding: '20px',
+                                                                boxShadow: '2px 0 5px #0000001a',
+                                                                borderRight: '2px solid #0000001a',
+                                                                zIndex: 1000,
+                                                                display: 'flex',
+                                                                flexDirection: 'column',
+                                                                transition: 'width 0.3s ease'
+                                                              },
+                                                              '& nav ul': {
+                                                                display: 'flex',
+                                                                flexDirection: 'column',
+                                                                textAlign: 'left',
+                                                                justifyContent: 'center',
+                                                                listStyleType: 'none',
+                                                                padding: 0,
+                                                                margin: '20px 0 0'
+                                                              },
+                                                              '& nav ul li': {
+                                                                margin: '10px 0 20px',
+                                                                width: 'max-content'
+                                                              },
+                                                              '& nav ul li button': {
+                                                                display: 'flex',
+                                                                alignItems: 'center',
+                                                                textDecoration: 'none',
+                                                                fontWeight: 'bold',
+                                                                width: '100%',
+                                                                border: 'none',
+                                                                backgroundColor: 'transparent',
+                                                                position: 'relative'
+                                                              },
+                                                              '& nav ul li button:hover': {
+                                                                color: 'var(--button-hover-bg-color)'
+                                                              },
+                                                              '& nav ul li button p': {
+                                                                color: 'var(--text-color)',
+                                                                margin: '0 0 0 10px',
+                                                                whiteSpace: 'nowrap'
+                                                              },
+                                                              '& nav ul li button:hover p': {
+                                                                color: 'var(--sidebar-text-hover-color)'
+                                                              },
+                                                              '& button.active p': {
+                                                                color: 'var(--sidebar-active-text-color)',
+                                                                fontWeight: 'bolder',
+                                                                filter: 'drop-shadow(1px 1px 4px #00336680)',
+                                                              },
+                                                              '& button .icon': {
+                                                                color: 'var(--icon-color)',
+                                                                width: '24px',
+                                                                height: '24px',
+                                                              },
+                                                              '& button:hover .icon': {
+                                                                color: 'var(--sidebar-icon-hover-color)',
+                                                              },
+                                                              '& button.active .icon': {
+                                                                color: 'var(--sidebar-active-icon-color)',
+                                                              },
+                                                              '& nav ul li button, & button p': {
+                                                                transition: '0.2s',
+                                                              },
+                                                              '& nav': {
+                                                                flex: 1,
+                                                                display: 'flex',
+                                                                flexDirection: 'column',
+                                                              }
+                                                                }}>
       <button className="menu-button" onClick={toggleSidebar}>
         <MenuIcon />
       </button>
@@ -88,8 +162,33 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
                                             alignItems: 'center',
                                             justifyContent: 'center',
                                             marginBottom: '20px',
+                                            '.titulo': {
+                                              marginTop: '20px',
+                                              fontWeight: '600'
+                                            },
+                                            '.subtitulo': {
+                                              fontWeight: '600',
+                                              color: 'var(--text-color)',
+                                              backgroundColor: 'var(--bg-text-color)',
+                                              boxShadow: '0 2px 2px 1px #494949',
+                                              padding: '8px',
+                                              borderRadius: '16px'
+                                            },
                                             '@media (max-width: 1024px)': {
                                               marginBottom: '10px'
+                                            },
+                                            '@media (max-width: 320px)': {
+                                              img: {
+                                                marginBottom: '5px'
+                                              },
+                                              '.titulo': {
+                                                fontSize: '1.2rem',
+                                                margin: '2px 0'
+                                              },
+                                              '.subtitulo': {
+                                                fontSize: '0.9rem',
+                                                margin: 0
+                                              }
                                             }
                                           }}>
         <Box component="img" src={profilePic} alt="Perfil" className="profile-pic" sx={{
@@ -115,7 +214,7 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
         {isOpen && (
           <>
             <h2 className='titulo'>Caio Anderson</h2>
-            <p className='subtitulo'>{t('developer', { currentTitle })}</p>
+            <p className='subtitulo' translate='no'>{t('developer', { currentTitle })}</p>
           </>
         )}
       </Box>
@@ -174,7 +273,11 @@ const Sidebar = ({ activeSection, setActiveSection }) => {
       <Box className='footer-sidebar' sx={{ 
                                           fontSize: 'small',
                                           textAlign: 'center',
-                                          fontWeight: '500'
+                                          fontWeight: '500',
+                                          '@media (max-width: 320px)': {
+                                              fontSize: '0.8rem',
+                                              marginBottom: 0
+                                            }
                                         }}>
         <p>&copy; Copyright Portfólio</p>
         <p>Desenvolvido por Caio Anderson</p>
