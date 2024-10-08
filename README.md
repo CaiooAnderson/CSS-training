@@ -80,3 +80,7 @@ Você pode me encontrar nas seguintes plataformas:
   <a href="mailto:caioandersongoes@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="https://portfolio-caio-zeta.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-FF5722?style=for-the-badge&logo=todoist&logoColor=white" target="_blank"></a>
 </div>
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](./LICENSE).
